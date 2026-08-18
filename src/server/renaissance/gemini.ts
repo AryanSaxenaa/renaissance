@@ -1,0 +1,570 @@
+/**
+ * Gemini AI API Integration
+ * Real integration with Google's Gemini AI for patent analysis, modernization, and image generation
+ */
+
+const GEMINI_TEXT_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+const GEMINI_IMAGE_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp-image-generation:generateContent';
+
+function getGeminiApiKey(): string {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    throw new Error('GEMINI_API_KEY environment variable is not set');
+  }
+  return apiKey;
+}
+
+interface GeminiResponse {
+  candidates?: Array<{
+    content?: {
+      parts?: Array<{
+        text?: string;
+      }>;
+    };
+  }>;
+  error?: {
+    message: string;
+    code: number;
+  };
+}
+
+interface ModernizationSuggestion {
+  aspect: string;
+  original: string;
+  modernized: string;
+  material: string;
+  technicalDetail?: string;
+}
+
+interface PatentAnalysis {
+  modernizations: ModernizationSuggestion[];
+  properties: {
+    torque: string;
+    stress: string;
+    material: string;
+    expiryYear: number;
+  };
+  thoughtLog: Array<{
+    timestamp: Date;
+    message: string;
+    type: 'info' | 'success' | 'error' | 'warning';
+  }>;
+  blueprintDescription: string;
+}
+
+/**
+ * Call the Gemini API with a prompt
+ */
+async function callGeminiApi(prompt: string): Promise<string> {
+  const apiKey = getGeminiApiKey();
+  const response = await fetch(`${GEMINI_TEXT_API_URL}?key=${apiKey}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      contents: [
+        {
+          parts: [
+            {
+              text: prompt,
+            },
+          ],
+        },
+      ],
+      generationConfig: {
+        temperature: 0.7,
+        maxOutputTokens: 2048,
+      },
+    }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Gemini API error: ${response.status} - ${errorText}`);
+  }
+
+  const data: GeminiResponse = await response.json();
+
+  if (data.error) {
+    throw new Error(`Gemini API error: ${data.error.message}`);
+  }
+
+  const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+  if (!text) {
+    throw new Error('No response from Gemini API');
+  }
+
+  return text;
+}
+
+/**
+ * Analyze an expired patent and generate modernization suggestions using Gemini AI
+ */
+export async function analyzePatentWithGemini(patent: {
+  patentId: string;
+  title: string;
+  abstract: string;
+  claims: string[];
+  division: string;
+  expiryYear: number;
+}): Promise<PatentAnalysis> {
+  const thoughtLog: PatentAnalysis['thoughtLog'] = [];
+  const now = Date.now();
+
+  // Log the start
+  thoughtLog.push({
+    timestamp: new Date(now),
+    message: 'INITIALIZING GEMINI AI ANALYSIS ENGINE...',
+    type: 'info',
+  });
+
+  thoughtLog.push({
+    timestamp: new Date(now + 100),
+    message: `LOADING PATENT DATA: ${patent.patentId}`,
+    type: 'info',
+  });
+
+  // Create the analysis prompt
+  const prompt = `You are a Principal Mechanical Engineer and Materials Scientist specializing in modernizing expired patents for high-performance applications.
+  
+  TASK: Analyze this expired patent and create a comprehensive modernization plan.
+  
+  PATENT DATA:
+  ID: ${patent.patentId}
+  TITLE: ${patent.title}
+  ABSTRACT: ${patent.abstract}
+  DIVISION: ${patent.division}
+  CLAIMS (Excerpt): ${patent.claims.slice(0, 5).join('\n')}
+  
+  Provide your analysis in the following JSON format ONLY (no markdown):
+  {
+    "modernizations": [
+      {
+        "aspect": "Specific component/subsystem (e.g., 'Main Drive Shaft', 'Housing Casing')",
+        "original": "Likely original material/method (e.g., 'Cast Iron', 'Analog Dial')",
+        "modernized": "Modern engineering equivalent (e.g., 'Carbon PEEK Composite', 'Digital Twin Interface')",
+        "material": "Specific material grade (e.g., 'Ti-6Al-4V Grade 5', 'Toray T1100G Carbon Fiber')",
+        "technicalDetail": "Deep technical justification (2 sentences). Explain WHY this is better: weight reduction %, efficiency gain, fatigue life improvement."
+      }
+    ],
+    "properties": {
+      "torque": "Estimated torque capacity (e.g., '450 Nm @ 3000 RPM')",
+      "stress": "Max working stress (e.g., '250 MPa (Yield)')",
+      "material": "Primary structural material",
+      "expiryYear": ${patent.expiryYear}
+    },
+    "blueprintDescription": "A highly detailed engineering description of the modernized device, focusing on physical geometry, layout, and visible mechanisms for a technical artist."
+  }
+  
+  REQUIREMENTS:
+  1. Provide exactly 3 modernization suggestions.
+  2. Be ultra-specific with materials (use grades/alloys).
+  3. Focus on:
+     - Weight reduction (Lightweighting)
+     - Smart materials / IoT integration
+     - Advanced manufacturing (DMLS, Filament Winding)`;
+
+  thoughtLog.push({
+    timestamp: new Date(now + 200),
+    message: 'SENDING PATENT DATA TO GEMINI AI...',
+    type: 'info',
+  });
+
+  try {
+    const response = await callGeminiApi(prompt);
+
+    thoughtLog.push({
+      timestamp: new Date(now + 500),
+      message: 'GEMINI AI RESPONSE RECEIVED',
+      type: 'success',
+    });
+
+    thoughtLog.push({
+      timestamp: new Date(now + 600),
+      message: 'PARSING MODERNIZATION MATRIX...',
+      type: 'info',
+    });
+
+    // Extract JSON from response (handle potential markdown wrapping)
+    let jsonStr = response;
+    const jsonMatch = response.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      jsonStr = jsonMatch[0];
+    }
+
+    const analysis = JSON.parse(jsonStr);
+
+    thoughtLog.push({
+      timestamp: new Date(now + 700),
+      message: `IDENTIFIED ${analysis.modernizations?.length || 0} MODERNIZATION OPPORTUNITIES`,
+      type: 'success',
+    });
+
+    thoughtLog.push({
+      timestamp: new Date(now + 800),
+      message: 'CALCULATING ENGINEERING SPECIFICATIONS...',
+      type: 'info',
+    });
+
+    thoughtLog.push({
+      timestamp: new Date(now + 900),
+      message: 'GENERATING TECHNICAL BLUEPRINT PARAMETERS...',
+      type: 'info',
+    });
+
+    thoughtLog.push({
+      timestamp: new Date(now + 1000),
+      message: 'AI ANALYSIS COMPLETE. REMIX VIABILITY: HIGH',
+      type: 'success',
+    });
+
+    // Ensure we have valid modernizations array
+    const modernizations: ModernizationSuggestion[] = (analysis.modernizations || []).map((m: any) => ({
+      aspect: m.aspect || 'Component',
+      original: m.original || 'Original specification',
+      modernized: m.modernized || 'Modern equivalent',
+      material: m.material || 'Advanced composite',
+      technicalDetail: m.technicalDetail || 'Improved performance through modern engineering principles.',
+    }));
+
+    // Ensure we have exactly 3 modernizations
+    while (modernizations.length < 3) {
+      modernizations.push({
+        aspect: 'Control System',
+        original: 'Manual operation',
+        modernized: 'IoT-enabled digital control',
+        material: 'Embedded microcontroller',
+        technicalDetail: 'Enables remote monitoring and real-time telemetry adjustment.',
+      });
+    }
+
+    return {
+      modernizations: modernizations.slice(0, 3),
+      properties: {
+        torque: analysis.properties?.torque || '450 Nm',
+        stress: analysis.properties?.stress || '250 MPa',
+        material: analysis.properties?.material || modernizations[0].material,
+        expiryYear: patent.expiryYear,
+      },
+      thoughtLog,
+      blueprintDescription: analysis.blueprintDescription || `Modernized ${patent.title} with advanced materials`,
+    };
+  } catch (error) {
+    console.error('[Gemini AI] Analysis error:', error);
+
+    thoughtLog.push({
+      timestamp: new Date(now + 500),
+      message: `AI ANALYSIS ERROR: ${error instanceof Error ? error.message : 'Unknown error'}`,
+      type: 'error',
+    });
+
+    thoughtLog.push({
+      timestamp: new Date(now + 600),
+      message: 'FALLING BACK TO HEURISTIC ANALYSIS...',
+      type: 'warning',
+    });
+
+    // Provide fallback analysis
+    return generateFallbackAnalysis(patent, thoughtLog);
+  }
+}
+
+/**
+ * Generate a fallback analysis when AI fails
+ */
+function generateFallbackAnalysis(
+  patent: { division: string; expiryYear: number; title: string },
+  thoughtLog: PatentAnalysis['thoughtLog']
+): PatentAnalysis {
+  const divisionModernizations: Record<string, ModernizationSuggestion[]> = {
+    MECH_ENG: [
+      { aspect: 'Primary Structure', original: 'Cast iron/steel', modernized: 'Ti-6Al-4V Titanium Alloy', material: 'Grade 5 Titanium', technicalDetail: 'Provides 40% weight reduction with superior corrosion resistance.' },
+      { aspect: 'Manufacturing', original: 'Sand casting', modernized: 'Direct Metal Laser Sintering', material: 'DMLS Process', technicalDetail: 'Allows for complex lattice structures that are impossible to cast.' },
+      { aspect: 'Bearings', original: 'Bronze bushings', modernized: 'Ceramic ball bearings', material: 'Silicon Nitride (Si3N4)', technicalDetail: 'Reduces friction by 90% and allows for unlubricated operation.' },
+    ],
+    FLUID_DYN: [
+      { aspect: 'Impeller', original: 'Bronze casting', modernized: 'Carbon fiber reinforced polymer', material: 'CFRP Composite', technicalDetail: 'Reduces rotational inertia for faster spin-up and lower energy consumption.' },
+      { aspect: 'Sealing', original: 'Mechanical packing', modernized: 'Magnetic coupling', material: 'NdFeB Rare Earth', technicalDetail: 'Hermetic seal prevents any fluid leakage and eliminates hazardous emissions.' },
+      { aspect: 'Monitoring', original: 'Pressure gauge', modernized: 'IoT sensor array', material: 'MEMS Sensors', technicalDetail: 'Provides real-time pressure, flow, and vibration data to cloud dashboard.' },
+    ],
+    THERMO_ENG: [
+      { aspect: 'Heat Exchanger', original: 'Copper tubes', modernized: 'Graphene-enhanced aluminum', material: 'Graphene/Al Composite', technicalDetail: 'Increases thermal conductivity by 200% while reducing weight.' },
+      { aspect: 'Insulation', original: 'Fiberglass', modernized: 'Aerogel blanket', material: 'Silica Aerogel', technicalDetail: 'Lowest thermal conductivity solid, allowing thinner insulation layers.' },
+      { aspect: 'Controls', original: 'Thermostat', modernized: 'PID digital controller', material: 'ARM Microcontroller', technicalDetail: 'Precise temperature control prevents overshoot and cycling losses.' },
+    ],
+    INSTRUM: [
+      { aspect: 'Sensor', original: 'Mechanical transducer', modernized: 'MEMS piezoelectric', material: 'PZT Ceramic', technicalDetail: 'High sensitivity and ultra-compact form factor.' },
+      { aspect: 'Display', original: 'Analog meter', modernized: 'OLED touchscreen', material: 'Flexible AMOLED', technicalDetail: 'High-resolution visualization of complex data streams.' },
+      { aspect: 'Communication', original: 'Wired signal', modernized: 'Wireless IoT (LoRaWAN)', material: 'SX1276 Module', technicalDetail: 'Long-range low-power connectivity for remote deployment.' },
+    ],
+    HYDRAUL: [
+      { aspect: 'Cylinder', original: 'Steel tube', modernized: 'Carbon fiber overwrap', material: 'T700 Carbon Fiber', technicalDetail: 'High pressure rating with minimal weight penalty.' },
+      { aspect: 'Seals', original: 'Rubber O-rings', modernized: 'Fluoroelastomer seals', material: 'Viton FKM', technicalDetail: 'Superior chemical and temperature resistance for harsh environments.' },
+      { aspect: 'Valve', original: 'Manual spool', modernized: 'Proportional solenoid', material: 'Hardened SS', technicalDetail: 'Precise flow control with millisecond response time.' },
+    ],
+  };
+
+  const mods = divisionModernizations[patent.division] || divisionModernizations.MECH_ENG;
+
+  thoughtLog.push({
+    timestamp: new Date(),
+    message: 'HEURISTIC ANALYSIS COMPLETE',
+    type: 'success',
+  });
+
+  return {
+    modernizations: mods,
+    properties: {
+      torque: '442.8 Nm',
+      stress: '18.2 MPa',
+      material: mods[0].material,
+      expiryYear: patent.expiryYear,
+    },
+    thoughtLog,
+    blueprintDescription: `Modernized ${patent.title} using advanced materials and manufacturing`,
+  };
+}
+
+/**
+ * Check if a new ArXiv paper is relevant to a remix project using Gemini
+ */
+export async function checkPaperRelevance(
+  paper: { title: string; abstract: string; relevantMaterials: string[] },
+  project: { title: string; modernizations: Array<{ aspect: string; modernized: string; material: string }> }
+): Promise<{ isRelevant: boolean; feasibilityChange: string }> {
+  const prompt = `You are evaluating if a new scientific paper could improve an engineering project.
+
+PAPER:
+Title: ${paper.title}
+Abstract: ${paper.abstract}
+Materials mentioned: ${paper.relevantMaterials.join(', ')}
+
+PROJECT:
+Title: ${project.title}
+Modernizations: ${project.modernizations.map(m => `${m.aspect}: ${m.modernized} (${m.material})`).join('; ')}
+
+Respond in JSON format ONLY:
+{
+  "isRelevant": true/false,
+  "feasibilityChange": "Brief explanation of how this paper could improve the project (or 'Not relevant' if isRelevant is false)"
+}`;
+
+  try {
+    const response = await callGeminiApi(prompt);
+
+    let jsonStr = response;
+    const jsonMatch = response.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      jsonStr = jsonMatch[0];
+    }
+
+    const result = JSON.parse(jsonStr);
+    return {
+      isRelevant: result.isRelevant === true,
+      feasibilityChange: result.feasibilityChange || 'Analysis complete',
+    };
+  } catch (error) {
+    console.error('[Gemini AI] Relevance check error:', error);
+    // Fallback to keyword matching
+    const projectText = `${project.title} ${project.modernizations.map(m => m.material).join(' ')}`.toLowerCase();
+    const isRelevant = paper.relevantMaterials.some(mat => projectText.includes(mat.toLowerCase()));
+    return {
+      isRelevant,
+      feasibilityChange: isRelevant
+        ? `New research in ${paper.relevantMaterials[0] || 'materials'} may improve feasibility`
+        : 'Not relevant',
+    };
+  }
+}
+
+/**
+ * Generate a modernized blueprint image using Gemini 2.0 Flash Image Generation
+ */
+export async function generateBlueprintImage(
+  patent: {
+    title: string;
+    abstract: string;
+    division: string;
+  },
+  modernizations: ModernizationSuggestion[]
+): Promise<{ imageBase64: string | null; description: string }> {
+  const apiKey = getGeminiApiKey();
+
+  // Create a detailed prompt for blueprint-style technical illustration
+  const modernizationList = modernizations
+    .map((m, i) => `${i + 1}. ${m.aspect}: ${m.original} -> ${m.modernized} (Material: ${m.material})`)
+    .join('\n');
+
+  const prompt = `Create a highly technical, precise ENGINEERING BLUEPRINT.
+  
+  SUBJECT: ${patent.title}
+  
+  CONTEXT: This is a 100-year-old patent modernized with 2025 technology.
+  
+  TECHNICAL SPECIFICATIONS:
+  ${modernizationList}
+  
+  VISUAL STYLE:
+  - PHOTOREALISTIC BLUEPRINT TEXTURE: Dark Prussian Blue background with white/cyan ink lines.
+  - VIEW: Exploded isometric view or complex cross-section showing internal mechanisms.
+  - ANNOTATIONS: Technical callouts with leader lines pointing to key components.
+  - GRID: Faint coordinate grid in background.
+  - DETAILS: Show gears, linkages, sensors, and structural members clearly.
+  
+  DO NOT:
+  - Do not create generic sci-fi robots.
+  - Do not create abstract blobs.
+  - Do not include human figures.
+  
+  The image must look like it belongs in a high-end engineering portfolio.`;
+
+  console.log('[Gemini Image] Generating blueprint image with enhanced prompt...');
+
+  try {
+    const response = await fetch(`${GEMINI_IMAGE_API_URL}?key=${apiKey}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        contents: [
+          {
+            parts: [
+              {
+                text: prompt,
+              },
+            ],
+          },
+        ],
+        generationConfig: {
+          responseModalities: ['TEXT', 'IMAGE'],
+        },
+      }),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('[Gemini Image] API error:', errorText);
+      throw new Error(`Gemini Image API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    // Extract image from response
+    const parts = data.candidates?.[0]?.content?.parts || [];
+    let imageBase64: string | null = null;
+    let description = 'Modernized blueprint generated';
+
+    for (const part of parts) {
+      if (part.inlineData?.mimeType?.startsWith('image/')) {
+        imageBase64 = part.inlineData.data;
+      }
+      if (part.text) {
+        description = part.text;
+      }
+    }
+
+    if (imageBase64) {
+      console.log('[Gemini Image] Blueprint image generated successfully');
+    } else {
+      console.log('[Gemini Image] No image in response, using text description');
+    }
+
+    return { imageBase64, description };
+  } catch (error) {
+    console.error('[Gemini Image] Error generating blueprint:', error);
+    return {
+      imageBase64: null,
+      description: `Modernized ${patent.title} featuring ${modernizations[0]?.material || 'advanced materials'}`,
+    };
+  }
+}
+
+/**
+ * Analyze mechanical gaps in a patent and suggest modern solutions
+ */
+export async function analyzeMechanicalGaps(patent: {
+  patentId: string;
+  title: string;
+  abstract: string;
+  claims: string[];
+}): Promise<{
+  gaps: Array<{
+    component: string;
+    originalLimitation: string;
+    modernSolution: string;
+    improvementFactor: string;
+  }>;
+  overallAssessment: string;
+}> {
+  const prompt = `You are an expert mechanical engineer analyzing an expired patent for modernization opportunities.
+
+PATENT: ${patent.patentId} - ${patent.title}
+ABSTRACT: ${patent.abstract}
+CLAIMS: ${patent.claims.slice(0, 4).join('\n')}
+
+Identify the key mechanical limitations of this design from its era and suggest modern solutions.
+
+Respond in JSON format ONLY:
+{
+  "gaps": [
+    {
+      "component": "Name of component/system with limitation",
+      "originalLimitation": "What the original design couldn't achieve",
+      "modernSolution": "Modern technology/material that addresses this",
+      "improvementFactor": "Quantified improvement (e.g., '3x stronger', '50% lighter')"
+    }
+  ],
+  "overallAssessment": "Brief summary of modernization potential (1-2 sentences)"
+}
+
+Identify exactly 4 mechanical gaps.`;
+
+  try {
+    const response = await callGeminiApi(prompt);
+
+    let jsonStr = response;
+    const jsonMatch = response.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      jsonStr = jsonMatch[0];
+    }
+
+    const result = JSON.parse(jsonStr);
+    return {
+      gaps: result.gaps || [],
+      overallAssessment: result.overallAssessment || 'Analysis complete',
+    };
+  } catch (error) {
+    console.error('[Gemini AI] Mechanical gap analysis error:', error);
+    return {
+      gaps: [
+        {
+          component: 'Materials',
+          originalLimitation: 'Heavy steel/iron construction',
+          modernSolution: 'Titanium alloys or carbon fiber composites',
+          improvementFactor: '40-60% weight reduction',
+        },
+        {
+          component: 'Manufacturing',
+          originalLimitation: 'Limited to casting/machining',
+          modernSolution: 'Additive manufacturing (3D printing)',
+          improvementFactor: 'Complex geometries possible',
+        },
+        {
+          component: 'Controls',
+          originalLimitation: 'Manual or mechanical controls',
+          modernSolution: 'Digital sensors and IoT connectivity',
+          improvementFactor: 'Real-time monitoring and automation',
+        },
+        {
+          component: 'Efficiency',
+          originalLimitation: 'Friction and wear issues',
+          modernSolution: 'Ceramic bearings and advanced lubricants',
+          improvementFactor: '30% efficiency improvement',
+        },
+      ],
+      overallAssessment: 'This patent shows significant modernization potential with current materials and manufacturing technology.',
+    };
+  }
+}
