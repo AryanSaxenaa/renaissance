@@ -1,0 +1,11 @@
+{
+  "name": "renaissance-ai",
+  "region": "iad1",
+  "env": {
+    "GEMINI_API_KEY": "@gemini_api_key",
+    "SERPAPI_API_KEY": "@serpapi_api_key",
+    "MODELENCE_SERVICE_ENDPOINT": "@modelence_service_endpoint",
+    "MODELENCE_SERVICE_TOKEN": "@modelence_service_token",
+    "MODELENCE_ENVIRONMENT_ID": "@modelence_environment_id"
+  }
+}
