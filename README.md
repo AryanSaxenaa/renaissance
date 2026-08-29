@@ -1,7 +1,7 @@
 # RenaissanceAI
 
 An industrial alchemist R&D division application for modernizing expired patents using AI.
-
+See Demo - https://youtu.be/xcx4ksbn-zk
 ## Tech Stack
 
 - **Framework**: Modelence (Full-stack TypeScript framework)
