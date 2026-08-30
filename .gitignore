@@ -29,6 +29,7 @@ yarn-error.log*
 # Editor
 .vscode
 .idea
+.cursor
 *.swp
 *.swo
 
