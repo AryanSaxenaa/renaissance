@@ -2,11 +2,13 @@ import type { QueryKey } from '@tanstack/react-query';
 
 const API_BASE = (import.meta.env.VITE_API_URL || 'http://localhost:3000/api').replace(/\/$/, '');
 
-async function request<T>(path: string, body?: unknown): Promise<T> {
+async function request<T>(path: string, body: unknown = {}): Promise<T> {
   const response = await fetch(`${API_BASE}${path}`, {
-    method: body === undefined ? 'GET' : 'POST',
+    // Railway exposes both parameterized and parameterless operations as POST
+    // routes. Sending {} for a parameterless query avoids an accidental GET 404.
+    method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: body === undefined ? undefined : JSON.stringify(body),
+    body: JSON.stringify(body),
   });
   const payload = await response.json().catch(() => ({}));
   if (!response.ok) throw new Error(payload.error || `Request failed (${response.status})`);
