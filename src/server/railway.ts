@@ -99,7 +99,7 @@ app.post('/api/mutation/renaissance/:method', async (req, res, next) => {
     if (method === 'createRemixProject') {
       const { patentId, title, abstract, claims = [], division, expiryYear } = req.body;
       const analysis = await analyzePatentWithGemini({ patentId, title, abstract, claims, division, expiryYear });
-      const image = await generateBlueprintImage({ title, abstract, division }, analysis.modernizations);
+      const image = await generateBlueprintImage({ title, abstract, division, blueprintDescription: analysis.blueprintDescription }, analysis.modernizations);
       const now = new Date().toISOString();
       const project: Project = { _id: randomUUID(), title: `Modernized: ${title}`, description: `AI-generated modernization of expired patent ${patentId}`, sourcePatentId: patentId, sourcePatentTitle: title, status: 'remixed', blueprintSvg: blueprintSvg(division), blueprintImageBase64: image.imageBase64 || '', modernizations: analysis.modernizations, properties: analysis.properties, thoughtLog: analysis.thoughtLog, materialUpdates: [], createdAt: now, updatedAt: now };
       projects.set(project._id, project);

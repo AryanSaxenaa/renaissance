@@ -395,6 +395,7 @@ export async function generateBlueprintImage(
     title: string;
     abstract: string;
     division: string;
+    blueprintDescription?: string;
   },
   modernizations: ModernizationSuggestion[]
 ): Promise<{ imageBase64: string | null; description: string }> {
@@ -409,9 +410,13 @@ ${patent.abstract.slice(0, 1800)}
 MODERNIZATION TARGETS:
 ${modernizationList}
 
+ENGINEERING DESCRIPTION FROM THE ANALYSIS ENGINE:
+${patent.blueprintDescription || `A ${patent.division} mechanism derived from the patent abstract above.`}
+
 COMPOSITION:
 - One centered exploded isometric assembly, fully inside the frame with generous margins.
-- Preserve the recognizable mechanism implied by the source patent; show the upgraded parts as a coherent, manufacturable design.
+- Preserve the recognizable mechanism implied by the source patent and engineering description; show the upgraded parts as a coherent, manufacturable design.
+- Every visible major part must be traceable to the source context, engineering description, or modernization targets. Do not substitute a generic gear assembly, robot, vehicle, turbine, or laboratory device.
 - Use a dark Prussian-blue cyanotype background, fine coordinate grid, orthographic construction lines, section marks, dimension ticks, and crisp cyan/white technical linework.
 - Clearly separate 3–5 major components with restrained leader lines. Use short labels only when legible; never add paragraphs or decorative UI text.
 - Include visible gears, shafts, bearings, linkages, sensors, fasteners, and structural members only when appropriate to the mechanism.
