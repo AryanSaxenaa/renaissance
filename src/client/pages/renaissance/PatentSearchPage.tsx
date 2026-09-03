@@ -143,7 +143,7 @@ export default function PatentSearchPage() {
       setThoughtMessages((prev) => [
         ...prev,
         { timestamp: new Date(), message: `FOUND ${patents.length} MATCHING PATENT(S)`, type: 'success' },
-        { timestamp: new Date(), message: `INITIALIZING GEMINI AI ANALYSIS ENGINE...`, type: 'info' },
+        { timestamp: new Date(), message: `INITIALIZING DEEPSEEK AI ANALYSIS ENGINE...`, type: 'info' },
       ]);
       setHeuristicLoad(28);
       setAnalyzedPatents(new Set()); // Reset analyzed patents for new search
@@ -157,7 +157,7 @@ export default function PatentSearchPage() {
     }
   }, [patents]);
 
-  // Automatically analyze patents one by one using Gemini AI
+  // Automatically analyze patents one by one using DeepSeek AI
   useEffect(() => {
     if (patents && analyzingPatentIndex !== null && analyzingPatentIndex < patents.length && !isAnalyzing) {
       const patent = patents[analyzingPatentIndex];
@@ -238,7 +238,7 @@ export default function PatentSearchPage() {
     setThoughtMessages((prev) => [
       ...prev,
       { timestamp: new Date(), message: `INITIATING REMIX SEQUENCE FOR: ${selectedPatent.patentId}...`, type: 'success' },
-      { timestamp: new Date(), message: 'LOADING GEMINI AI PATENT RECOMBINATION MATRIX...', type: 'info' },
+      { timestamp: new Date(), message: 'LOADING DEEPSEEK AI PATENT RECOMBINATION MATRIX...', type: 'info' },
       { timestamp: new Date(), message: 'GENERATING MODERNIZATION SUGGESTIONS...', type: 'info' },
     ]);
     setHeuristicLoad(72);

@@ -5,7 +5,7 @@ See Demo - https://youtu.be/xcx4ksbn-zk
 ## Tech Stack
 
 - **Framework**: Modelence (Full-stack TypeScript framework)
-- **AI**: Google Gemini 2.0 Flash (Text & Image Generation)
+- **AI**: OpenRouter with DeepSeek (direct DeepSeek fallback)
 - **Database**: MongoDB (via Modelence Cloud)
 - **Frontend**: React + Vite + TailwindCSS
 - **Web research**: SerpApi (Google Patents, Google Search, and Google News)
@@ -14,7 +14,7 @@ See Demo - https://youtu.be/xcx4ksbn-zk
 
 - **Patent Search**: Search expired patents using Google Patents API
 - **Product Diligence**: Enrich a patent with live market and industry signals from SerpApi, linked source citations, and a transparent opportunity score
-- **AI Modernization**: Gemini AI analyzes patents and suggests modern upgrades
+- **AI Modernization**: DeepSeek analyzes patents and suggests modern upgrades
 - **Blueprint Generation**: AI-generated technical blueprint images
 - **Remix Laboratory**: Interactive workspace for patent modernization projects
 - **ArXiv Integration**: Automatic scanning for relevant new research papers
@@ -28,7 +28,10 @@ See Demo - https://youtu.be/xcx4ksbn-zk
 
 2. Create `.modelence.env` with your API keys:
    ```
-   GEMINI_API_KEY=your_gemini_api_key
+   OPENROUTER_API_KEY=your_openrouter_api_key
+   OPENROUTER_MODEL=deepseek/deepseek-chat
+   DEEPSEEK_API_KEY=your_deepseek_api_key
+   DEEPSEEK_MODEL=deepseek-chat
    SERPAPI_API_KEY=your_serpapi_key
    ```
 
@@ -47,7 +50,7 @@ See Demo - https://youtu.be/xcx4ksbn-zk
 2. Go to [railway.app](https://railway.app)
 3. Create new project from GitHub repo
 4. Add environment variables in Railway dashboard:
-   - `GEMINI_API_KEY`
+   - `OPENROUTER_API_KEY` or `DEEPSEEK_API_KEY`
    - `SERPAPI_API_KEY`
    - All variables from `.modelence.env`
 5. Deploy automatically
@@ -79,7 +82,10 @@ docker run -p 3000:3000 --env-file .modelence.env renaissance-ai
 
 | Variable | Description |
 |----------|-------------|
-| `GEMINI_API_KEY` | Google Gemini API key for AI features |
+| `OPENROUTER_API_KEY` | OpenRouter API key for AI features |
+| `OPENROUTER_MODEL` | OpenRouter model, default: `deepseek/deepseek-chat` |
+| `DEEPSEEK_API_KEY` | Optional direct DeepSeek fallback key |
+| `DEEPSEEK_MODEL` | Direct DeepSeek model, default: `deepseek-chat` |
 | `SERPAPI_API_KEY` | SerpApi key for Google Patents search |
 | `MODELENCE_SERVICE_ENDPOINT` | Modelence Cloud endpoint |
 | `MODELENCE_SERVICE_TOKEN` | Modelence Cloud authentication token |
@@ -91,8 +97,8 @@ Patent discovery uses the `google_patents` engine. Opening a result runs an even
 
 ## API Models Used
 
-- **Text Generation**: `gemini-2.0-flash`
-- **Image Generation**: `gemini-2.0-flash-exp-image-generation`
+- **Text Generation**: `deepseek/deepseek-chat` through OpenRouter, or `deepseek-chat` directly
+- **Blueprint visuals**: deterministic SVG fallback; no Gemini dependency
 
 ## License
 

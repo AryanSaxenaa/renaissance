@@ -1,27 +1,32 @@
 /**
- * Gemini AI API Integration
- * Real integration with Google's Gemini AI for patent analysis, modernization, and image generation
+ * OpenRouter / DeepSeek AI integration for patent analysis and modernization.
  */
 
-const GEMINI_TEXT_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
-const GEMINI_IMAGE_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp-image-generation:generateContent';
+const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
+const DEEPSEEK_API_URL = 'https://api.deepseek.com/chat/completions';
 
-function getGeminiApiKey(): string {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
-    throw new Error('GEMINI_API_KEY environment variable is not set');
+function getAiConfig(): { apiKey: string; url: string; model: string; provider: string } {
+  if (process.env.OPENROUTER_API_KEY) {
+    return {
+      apiKey: process.env.OPENROUTER_API_KEY,
+      url: OPENROUTER_API_URL,
+      model: process.env.OPENROUTER_MODEL || 'deepseek/deepseek-chat',
+      provider: 'OpenRouter',
+    };
   }
-  return apiKey;
+  if (process.env.DEEPSEEK_API_KEY) {
+    return {
+      apiKey: process.env.DEEPSEEK_API_KEY,
+      url: DEEPSEEK_API_URL,
+      model: process.env.DEEPSEEK_MODEL || 'deepseek-chat',
+      provider: 'DeepSeek',
+    };
+  }
+  throw new Error('OPENROUTER_API_KEY or DEEPSEEK_API_KEY environment variable is required');
 }
 
-interface GeminiResponse {
-  candidates?: Array<{
-    content?: {
-      parts?: Array<{
-        text?: string;
-      }>;
-    };
-  }>;
+interface ChatResponse {
+  choices?: Array<{ message?: { content?: string } }>;
   error?: {
     message: string;
     code: number;
@@ -53,46 +58,42 @@ interface PatentAnalysis {
 }
 
 /**
- * Call the Gemini API with a prompt
+ * Call OpenRouter first, or DeepSeek directly when OpenRouter is not configured.
  */
 async function callGeminiApi(prompt: string): Promise<string> {
-  const apiKey = getGeminiApiKey();
-  const response = await fetch(`${GEMINI_TEXT_API_URL}?key=${apiKey}`, {
+  const config = getAiConfig();
+  const response = await fetch(config.url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      Authorization: `Bearer ${config.apiKey}`,
+      ...(config.provider === 'OpenRouter' ? { 'HTTP-Referer': 'https://github.com/AryanSaxenaa/renaissance', 'X-Title': 'RenaissanceAI' } : {}),
     },
     body: JSON.stringify({
-      contents: [
-        {
-          parts: [
-            {
-              text: prompt,
-            },
-          ],
-        },
-      ],
-      generationConfig: {
-        temperature: 0.7,
-        maxOutputTokens: 2048,
+      model: config.model,
+      messages: [{ role: 'user', content: prompt }],
+      temperature: 0.7,
+      max_tokens: 2048,
+      response_format: {
+        type: 'text',
       },
     }),
   });
 
   if (!response.ok) {
     const errorText = await response.text();
-    throw new Error(`Gemini API error: ${response.status} - ${errorText}`);
+    throw new Error(`${config.provider} API error: ${response.status} - ${errorText}`);
   }
 
-  const data: GeminiResponse = await response.json();
+  const data: ChatResponse = await response.json();
 
   if (data.error) {
-    throw new Error(`Gemini API error: ${data.error.message}`);
+    throw new Error(`${config.provider} API error: ${data.error.message}`);
   }
 
-  const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+  const text = data.choices?.[0]?.message?.content;
   if (!text) {
-    throw new Error('No response from Gemini API');
+    throw new Error(`No response from ${config.provider} API`);
   }
 
   return text;
@@ -389,96 +390,12 @@ export async function generateBlueprintImage(
   },
   modernizations: ModernizationSuggestion[]
 ): Promise<{ imageBase64: string | null; description: string }> {
-  const apiKey = getGeminiApiKey();
-
-  // Create a detailed prompt for blueprint-style technical illustration
-  const modernizationList = modernizations
-    .map((m, i) => `${i + 1}. ${m.aspect}: ${m.original} -> ${m.modernized} (Material: ${m.material})`)
-    .join('\n');
-
-  const prompt = `Create a highly technical, precise ENGINEERING BLUEPRINT.
-  
-  SUBJECT: ${patent.title}
-  
-  CONTEXT: This is a 100-year-old patent modernized with 2025 technology.
-  
-  TECHNICAL SPECIFICATIONS:
-  ${modernizationList}
-  
-  VISUAL STYLE:
-  - PHOTOREALISTIC BLUEPRINT TEXTURE: Dark Prussian Blue background with white/cyan ink lines.
-  - VIEW: Exploded isometric view or complex cross-section showing internal mechanisms.
-  - ANNOTATIONS: Technical callouts with leader lines pointing to key components.
-  - GRID: Faint coordinate grid in background.
-  - DETAILS: Show gears, linkages, sensors, and structural members clearly.
-  
-  DO NOT:
-  - Do not create generic sci-fi robots.
-  - Do not create abstract blobs.
-  - Do not include human figures.
-  
-  The image must look like it belongs in a high-end engineering portfolio.`;
-
-  console.log('[Gemini Image] Generating blueprint image with enhanced prompt...');
-
-  try {
-    const response = await fetch(`${GEMINI_IMAGE_API_URL}?key=${apiKey}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        contents: [
-          {
-            parts: [
-              {
-                text: prompt,
-              },
-            ],
-          },
-        ],
-        generationConfig: {
-          responseModalities: ['TEXT', 'IMAGE'],
-        },
-      }),
-    });
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('[Gemini Image] API error:', errorText);
-      throw new Error(`Gemini Image API error: ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    // Extract image from response
-    const parts = data.candidates?.[0]?.content?.parts || [];
-    let imageBase64: string | null = null;
-    let description = 'Modernized blueprint generated';
-
-    for (const part of parts) {
-      if (part.inlineData?.mimeType?.startsWith('image/')) {
-        imageBase64 = part.inlineData.data;
-      }
-      if (part.text) {
-        description = part.text;
-      }
-    }
-
-    if (imageBase64) {
-      console.log('[Gemini Image] Blueprint image generated successfully');
-    } else {
-      console.log('[Gemini Image] No image in response, using text description');
-    }
-
-    return { imageBase64, description };
-  } catch (error) {
-    console.error('[Gemini Image] Error generating blueprint:', error);
-    return {
-      imageBase64: null,
-      description: `Modernized ${patent.title} featuring ${modernizations[0]?.material || 'advanced materials'}`,
-    };
-  }
+  // OpenRouter and DeepSeek are text providers; retain the blueprint description
+  // and let the deterministic SVG renderer provide the visual fallback.
+  return {
+    imageBase64: null,
+    description: `Modernized ${patent.title} featuring ${modernizations[0]?.material || 'advanced materials'}`,
+  };
 }
 
 /**
