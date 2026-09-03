@@ -31,7 +31,7 @@ export default function AppLayout({ children, sidebar }: AppLayoutProps) {
   const navigate = useNavigate();
 
   return (
-    <div className="h-screen overflow-hidden flex flex-col bg-cyanotype-dark text-technical-white">
+    <div className="app-shell fixed inset-0 h-[100dvh] min-h-screen overflow-hidden flex flex-col bg-cyanotype-dark text-technical-white">
       {/* Vellum overlay for texture */}
       <div className="vellum-overlay" />
 
