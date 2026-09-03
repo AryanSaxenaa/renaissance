@@ -17,6 +17,9 @@ coverage
 .env.test.local
 .env.production.local
 
+.env
+.env.*
+!.env.example
 .modelence.env
 .modelence.backup.env
 .modelence

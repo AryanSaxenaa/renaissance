@@ -26,7 +26,12 @@ See Demo - https://youtu.be/xcx4ksbn-zk
    npm install
    ```
 
-2. Create `.modelence.env` with your API keys:
+2. Copy `.env.example` to `.env` and add your API keys:
+   ```bash
+   cp .env.example .env
+   ```
+
+   Then edit `.env`:
    ```
    OPENROUTER_API_KEY=your_openrouter_api_key
    OPENROUTER_MODEL=deepseek/deepseek-chat
@@ -52,7 +57,7 @@ See Demo - https://youtu.be/xcx4ksbn-zk
 4. Add environment variables in Railway dashboard:
    - `OPENROUTER_API_KEY` or `DEEPSEEK_API_KEY`
    - `SERPAPI_API_KEY`
-   - All variables from `.modelence.env`
+   - All variables from `.env`
 5. Deploy automatically
 
 ### Option 2: Render
@@ -75,7 +80,7 @@ npm run build
 docker build -t renaissance-ai .
 
 # Run container
-docker run -p 3000:3000 --env-file .modelence.env renaissance-ai
+docker run -p 3000:3000 --env-file .env renaissance-ai
 ```
 
 ## Environment Variables

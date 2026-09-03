@@ -55,7 +55,7 @@ export interface PatentDiligenceBrief {
 function getSerpApiKey(): string {
   const apiKey = process.env.SERPAPI_API_KEY;
   if (!apiKey) {
-    throw new Error('SERPAPI_API_KEY environment variable is not set. Please add your SerpApi key to .modelence.env');
+    throw new Error('SERPAPI_API_KEY environment variable is not set. Please add your SerpApi key to .env');
   }
   return apiKey;
 }
