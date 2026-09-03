@@ -401,7 +401,23 @@ export async function generateBlueprintImage(
   const modernizationList = modernizations
     .map((m, i) => `${i + 1}. ${m.aspect}: ${m.original} -> ${m.modernized} (${m.material})`)
     .join('\n');
-  const prompt = `Technical engineering blueprint of ${patent.title}. Show an exploded isometric view with visible gears, linkages, sensors, structural members, and callout annotations. Use a dark Prussian blue blueprint background with crisp cyan and white technical linework, grid coordinates, and no people or sci-fi styling. Modernization details:\n${modernizationList}`;
+  const prompt = `Create a precise industrial engineering blueprint illustration for the expired patent "${patent.title}".
+
+SOURCE CONTEXT:
+${patent.abstract.slice(0, 1800)}
+
+MODERNIZATION TARGETS:
+${modernizationList}
+
+COMPOSITION:
+- One centered exploded isometric assembly, fully inside the frame with generous margins.
+- Preserve the recognizable mechanism implied by the source patent; show the upgraded parts as a coherent, manufacturable design.
+- Use a dark Prussian-blue cyanotype background, fine coordinate grid, orthographic construction lines, section marks, dimension ticks, and crisp cyan/white technical linework.
+- Clearly separate 3–5 major components with restrained leader lines. Use short labels only when legible; never add paragraphs or decorative UI text.
+- Include visible gears, shafts, bearings, linkages, sensors, fasteners, and structural members only when appropriate to the mechanism.
+
+STYLE AND EXCLUSIONS:
+High-contrast technical drafting, clean vector-like edges, accurate proportions, restrained annotations, no people, no hands, no logos, no product branding, no fantasy/sci-fi elements, no photorealistic render, no clutter, no illegible pseudo-text, no cropped components.`;
 
   try {
     const response = await fetch(OPENROUTER_IMAGE_API_URL, {
@@ -416,6 +432,7 @@ export async function generateBlueprintImage(
         model: process.env.OPENROUTER_IMAGE_MODEL || 'google/gemini-2.5-flash-image',
         prompt,
         output_format: 'png',
+        aspect_ratio: '16:9',
       }),
     });
 

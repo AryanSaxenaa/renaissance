@@ -119,8 +119,8 @@ export default function PatentSearchPage() {
         ...prev,
         {
           timestamp: new Date(),
-          message: `AI ENGINE ERROR: ${error instanceof Error ? error.message.toUpperCase() : 'ANALYSIS FAILED'}`,
-          type: 'error',
+          message: `PREVIEW ANALYSIS UNAVAILABLE: ${error instanceof Error ? error.message.toUpperCase() : 'ANALYSIS FAILED'}`,
+          type: 'warning',
         },
       ]);
     },
