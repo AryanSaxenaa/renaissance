@@ -10,6 +10,10 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src')
     }
   },
+  build: {
+    outDir: path.resolve(__dirname, './dist/client'),
+    emptyOutDir: true,
+  },
   server: {
     host: "0.0.0.0",
     allowedHosts: true

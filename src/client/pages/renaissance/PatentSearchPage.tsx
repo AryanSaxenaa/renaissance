@@ -1,8 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useQuery, useMutation } from '@tanstack/react-query';
-import { modelenceQuery, modelenceMutation } from '@modelence/react-query';
-import { useSession } from 'modelence/client';
+import { modelenceQuery, modelenceMutation } from '@/client/lib/api';
 import { Search, Loader2, AlertCircle, History, ChevronLeft, ChevronRight, Database } from 'lucide-react';
 import toast from 'react-hot-toast';
 import AppLayout from '@/client/components/renaissance/AppLayout';
@@ -25,7 +24,7 @@ interface PatentPreviewAnalysis {
 }
 
 export default function PatentSearchPage() {
-  const { user } = useSession();
+  const user = { handle: 'PUBLIC OPERATOR' };
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const initialQuery = searchParams.get('q') || '';

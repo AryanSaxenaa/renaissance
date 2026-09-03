@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useSession } from 'modelence/client';
 import { AlertCircle, User, Bell, Palette, Database, Cpu } from 'lucide-react';
 import AppLayout from '@/client/components/renaissance/AppLayout';
 import ThoughtTerminal from '@/client/components/renaissance/ThoughtTerminal';
 
 export default function SettingsPage() {
-  const { user } = useSession();
+  const user = { handle: 'PUBLIC OPERATOR' };
 
   // If not authenticated
   if (!user) {

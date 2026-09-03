@@ -50,6 +50,12 @@ See Demo - https://youtu.be/xcx4ksbn-zk
 
 ## Deployment
 
+### Split deployment: Vercel frontend + Railway backend
+
+The hackathon build is public and does not require authentication. Deploy the repository to Railway as the Node API (`npm run build`, then `npm start`) and deploy the same repository to Vercel as the Vite client. Set `VITE_API_URL` in Vercel to the Railway URL ending in `/api`. Set `OPENROUTER_API_KEY`, `SERPAPI_API_KEY`, and the model variables in Railway only; never expose provider keys to Vercel.
+
+The current Railway adapter keeps projects in memory for a simple demo. A restart clears the archive. Add Supabase persistence when durable projects are needed.
+
 ### Option 1: Railway (Recommended)
 
 1. Push your code to GitHub

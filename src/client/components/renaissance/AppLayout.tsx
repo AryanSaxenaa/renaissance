@@ -1,5 +1,4 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useSession } from 'modelence/client';
 import {
   Database,
   FlaskConical,
@@ -7,8 +6,6 @@ import {
   Settings,
   Search,
   PlusSquare,
-  LogOut,
-  User,
   Cpu,
 } from 'lucide-react';
 import { cn } from '@/client/lib/utils';
@@ -29,7 +26,7 @@ const subNavItems = [
 ];
 
 export default function AppLayout({ children, sidebar }: AppLayoutProps) {
-  const { user } = useSession();
+  const user = { handle: 'PUBLIC OPERATOR' };
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -70,30 +67,10 @@ export default function AppLayout({ children, sidebar }: AppLayoutProps) {
           </div>
         </div>
 
-        {/* User Info */}
-        <div className="flex items-center gap-6 text-[10px] tracking-widest">
-          {user ? (
-            <>
-              <div className="text-right">
-                <p className="opacity-40">OPERATOR STATUS</p>
-                <p className="text-amber-glow">{user.handle}</p>
-              </div>
-              <Link
-                to="/logout"
-                className="h-10 w-10 border border-technical-white/40 flex items-center justify-center hover:bg-technical-white/10 transition-colors"
-              >
-                <LogOut className="w-4 h-4" />
-              </Link>
-            </>
-          ) : (
-            <Link
-              to="/login"
-              className="h-10 px-4 border border-technical-white/40 flex items-center justify-center gap-2 hover:bg-technical-white/10 transition-colors"
-            >
-              <User className="w-4 h-4" />
-              <span>SIGN IN</span>
-            </Link>
-          )}
+        {/* Public demo status */}
+        <div className="text-right text-[10px] tracking-widest">
+          <p className="opacity-40">DEMO ACCESS</p>
+          <p className="text-amber-glow">{user.handle}</p>
         </div>
       </header>
 

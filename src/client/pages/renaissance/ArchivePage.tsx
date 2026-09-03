@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import { modelenceQuery } from '@modelence/react-query';
-import { useSession } from 'modelence/client';
+import { modelenceQuery } from '@/client/lib/api';
 import { Loader2, AlertCircle, FolderOpen, Clock, Bell, Search } from 'lucide-react';
 import AppLayout from '@/client/components/renaissance/AppLayout';
 import ThoughtTerminal from '@/client/components/renaissance/ThoughtTerminal';
@@ -27,7 +26,7 @@ const statusColors: Record<string, string> = {
 };
 
 export default function ArchivePage() {
-  const { user } = useSession();
+  const user = { handle: 'PUBLIC OPERATOR' };
 
   // Fetch user's projects
   const { data: projects, isLoading, error } = useQuery({

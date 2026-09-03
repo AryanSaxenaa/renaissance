@@ -1,5 +1,8 @@
 {
-    "buildCommand": "npm run build",
-    "outputDirectory": ".modelence/build/client",
-    "framework": "vite"
+    "buildCommand": "npm run build:client",
+    "outputDirectory": "dist/client",
+    "framework": "vite",
+    "rewrites": [
+        { "source": "/(.*)", "destination": "/index.html" }
+    ]
 }

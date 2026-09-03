@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { modelenceQuery, modelenceMutation, createQueryKey } from '@modelence/react-query';
-import { useSession } from 'modelence/client';
+import { modelenceQuery, modelenceMutation, createQueryKey } from '@/client/lib/api';
 import { Save, Trash2, Loader2, ArrowLeft, AlertCircle, Beaker } from 'lucide-react';
 import toast from 'react-hot-toast';
 import AppLayout from '@/client/components/renaissance/AppLayout';
@@ -50,7 +49,7 @@ interface RemixProject {
 }
 
 export default function LaboratoryPage() {
-  const { user } = useSession();
+  const user = { handle: 'PUBLIC OPERATOR' };
   const { projectId } = useParams<{ projectId: string }>();
   const queryClient = useQueryClient();
 
