@@ -39,7 +39,17 @@ interface SerpApiPatentResult {
 
 interface SerpApiResponse {
   organic_results?: SerpApiPatentResult[];
+  news_results?: Array<{ title?: string; link?: string; snippet?: string; source?: string }>;
   error?: string;
+}
+
+export interface PatentDiligenceBrief {
+  opportunityScore: number;
+  scoreLabel: 'HIGH' | 'MEDIUM' | 'LOW';
+  demandSignals: string[];
+  competitorSignals: string[];
+  sources: Array<{ title: string; url: string; type: 'MARKET' | 'NEWS' }>;
+  generatedAt: string;
 }
 
 function getSerpApiKey(): string {
@@ -313,6 +323,66 @@ export async function searchPatentsByProblemStatement(
     : problemStatement;
 
   return searchGooglePatents(searchQuery, { maxResults, onlyExpired: true });
+}
+
+async function searchSerpApi(params: Record<string, string>): Promise<SerpApiResponse> {
+  const response = await fetch(`${SERPAPI_BASE_URL}?${new URLSearchParams({ ...params, api_key: getSerpApiKey() })}`);
+  if (!response.ok) {
+    throw new Error(`SerpApi error: ${response.status} - ${await response.text()}`);
+  }
+  const data: SerpApiResponse = await response.json();
+  if (data.error) throw new Error(`SerpApi error: ${data.error}`);
+  return data;
+}
+
+/**
+ * Build a cited product-opportunity brief from multiple live SerpApi engines.
+ * This is research support, not legal freedom-to-operate advice.
+ */
+export async function getPatentDiligenceBrief(
+  patent: { patentId: string; title: string; abstract: string }
+): Promise<PatentDiligenceBrief> {
+  const topic = `${patent.title} ${patent.abstract}`.slice(0, 320);
+  const [marketData, newsData] = await Promise.all([
+    searchSerpApi({ engine: 'google', q: `${topic} market applications competitors`, num: '5' }),
+    searchSerpApi({ engine: 'google_news', q: `${patent.title} technology`, num: '5' }),
+  ]);
+
+  const marketResults = marketData.organic_results || [];
+  const newsResults = newsData.news_results || [];
+  const sources = [
+    ...marketResults.slice(0, 4).map((result) => ({
+      title: cleanPatentText(result.title || 'Market research result'),
+      url: (result as SerpApiPatentResult & { link?: string }).link || '',
+      type: 'MARKET' as const,
+    })),
+    ...newsResults.slice(0, 4).map((result) => ({
+      title: cleanPatentText(result.title || 'Industry news result'),
+      url: result.link || '',
+      type: 'NEWS' as const,
+    })),
+  ].filter((source) => source.url);
+
+  const demandSignals = marketResults
+    .slice(0, 3)
+    .map((result) => cleanPatentText(result.snippet || result.title || 'Live market result'));
+  const competitorSignals = newsResults
+    .slice(0, 3)
+    .map((result) => cleanPatentText(result.snippet || result.title || 'Live industry result'));
+
+  // Transparent heuristic: source breadth and recency are signals, not a valuation.
+  const opportunityScore = Math.min(100, Math.max(15,
+    35 + Math.min(30, marketResults.length * 6) + Math.min(25, newsResults.length * 5) + (sources.length >= 5 ? 10 : 0)
+  ));
+
+  return {
+    opportunityScore,
+    scoreLabel: opportunityScore >= 70 ? 'HIGH' : opportunityScore >= 45 ? 'MEDIUM' : 'LOW',
+    demandSignals,
+    competitorSignals,
+    sources,
+    generatedAt: new Date().toISOString(),
+  };
 }
 
 /**

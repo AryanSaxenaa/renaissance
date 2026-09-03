@@ -1,4 +1,4 @@
-import { X, FlaskConical, Loader2, Calendar, Users, FileText, Tag } from 'lucide-react';
+import { X, FlaskConical, Loader2, Calendar, Users, FileText, Tag, ExternalLink, Radar } from 'lucide-react';
 import { cn } from '@/client/lib/utils';
 
 export interface PatentDetail {
@@ -13,11 +13,22 @@ export interface PatentDetail {
   claims?: string[];
 }
 
+export interface PatentDiligenceBrief {
+  opportunityScore: number;
+  scoreLabel: 'HIGH' | 'MEDIUM' | 'LOW';
+  demandSignals: string[];
+  competitorSignals: string[];
+  sources: Array<{ title: string; url: string; type: 'MARKET' | 'NEWS' }>;
+  generatedAt: string;
+}
+
 interface PatentDetailModalProps {
   patent: PatentDetail;
   onClose: () => void;
   onRemix: () => void;
   isRemixing?: boolean;
+  diligence?: PatentDiligenceBrief;
+  isLoadingDiligence?: boolean;
 }
 
 export default function PatentDetailModal({
@@ -25,6 +36,8 @@ export default function PatentDetailModal({
   onClose,
   onRemix,
   isRemixing = false,
+  diligence,
+  isLoadingDiligence = false,
 }: PatentDetailModalProps) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -145,6 +158,46 @@ export default function PatentDetailModal({
               </div>
             </div>
           )}
+
+          {/* Live SerpApi diligence */}
+          <div className="border border-amber-glow/30 bg-amber-glow/5 p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <Radar className="w-4 h-4 text-amber-glow" />
+              <h3 className="text-xs font-bold tracking-widest opacity-70">LIVE PRODUCT DILIGENCE</h3>
+            </div>
+            {isLoadingDiligence && <p className="text-xs opacity-60">Querying SerpApi market and news signals...</p>}
+            {!isLoadingDiligence && diligence && (
+              <>
+                <div className="flex items-end gap-3 mb-4">
+                  <span className="text-4xl font-bold text-amber-glow">{diligence.opportunityScore}</span>
+                  <span className="text-xs tracking-widest opacity-60 mb-1">/ 100 {diligence.scoreLabel} SIGNAL</span>
+                </div>
+                <div className="grid md:grid-cols-2 gap-4 text-xs">
+                  <div>
+                    <p className="opacity-50 uppercase tracking-widest mb-2">Demand signals</p>
+                    {diligence.demandSignals.map((signal, i) => <p key={i} className="opacity-75 mb-2">• {signal}</p>)}
+                  </div>
+                  <div>
+                    <p className="opacity-50 uppercase tracking-widest mb-2">Competitor / industry signals</p>
+                    {diligence.competitorSignals.map((signal, i) => <p key={i} className="opacity-75 mb-2">• {signal}</p>)}
+                  </div>
+                </div>
+                {diligence.sources.length > 0 && (
+                  <div className="mt-4 pt-4 border-t border-technical-white/10">
+                    <p className="opacity-50 uppercase tracking-widest mb-2">Cited sources</p>
+                    <div className="flex flex-wrap gap-2">
+                      {diligence.sources.map((source, i) => (
+                        <a key={i} href={source.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 border border-technical-white/20 px-2 py-1 hover:border-amber-glow/60">
+                          <ExternalLink className="w-3 h-3" /> {source.title.slice(0, 42)}{source.title.length > 42 ? '…' : ''}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                <p className="text-[10px] opacity-40 mt-4">Research support only. This score is not legal freedom-to-operate advice.</p>
+              </>
+            )}
+          </div>
         </div>
 
         {/* Footer Actions */}

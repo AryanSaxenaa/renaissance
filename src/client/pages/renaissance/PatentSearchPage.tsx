@@ -8,7 +8,7 @@ import toast from 'react-hot-toast';
 import AppLayout from '@/client/components/renaissance/AppLayout';
 import ThoughtTerminal, { ThoughtMessage } from '@/client/components/renaissance/ThoughtTerminal';
 import PatentCard, { Patent } from '@/client/components/renaissance/PatentCard';
-import PatentDetailModal, { PatentDetail } from '@/client/components/renaissance/PatentDetailModal';
+import PatentDetailModal, { PatentDetail, PatentDiligenceBrief } from '@/client/components/renaissance/PatentDetailModal';
 
 interface SearchHistoryItem {
   _id: string;
@@ -41,6 +41,15 @@ export default function PatentSearchPage() {
   const [heuristicLoad, setHeuristicLoad] = useState(12.5);
   const [analyzingPatentIndex, setAnalyzingPatentIndex] = useState<number | null>(null);
   const [analyzedPatents, setAnalyzedPatents] = useState<Set<string>>(new Set());
+
+  const { data: diligence, isLoading: isLoadingDiligence } = useQuery({
+    ...modelenceQuery<PatentDiligenceBrief>('renaissance.getPatentDiligence', selectedPatent ? {
+      patentId: selectedPatent.patentId,
+      title: selectedPatent.title,
+      abstract: selectedPatent.abstract,
+    } : undefined),
+    enabled: !!selectedPatent,
+  });
 
   // Search patents query
   const { data: patents, isLoading: isSearching, error: searchError } = useQuery({
@@ -439,6 +448,8 @@ export default function PatentSearchPage() {
           onClose={() => setShowModal(false)}
           onRemix={handleRemix}
           isRemixing={isCreatingRemix}
+          diligence={diligence}
+          isLoadingDiligence={isLoadingDiligence}
         />
       )}
     </AppLayout>

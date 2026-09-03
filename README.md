@@ -8,11 +8,12 @@ See Demo - https://youtu.be/xcx4ksbn-zk
 - **AI**: Google Gemini 2.0 Flash (Text & Image Generation)
 - **Database**: MongoDB (via Modelence Cloud)
 - **Frontend**: React + Vite + TailwindCSS
-- **Patents API**: Google Patents via SerpApi
+- **Web research**: SerpApi (Google Patents, Google Search, and Google News)
 
 ## Features
 
 - **Patent Search**: Search expired patents using Google Patents API
+- **Product Diligence**: Enrich a patent with live market and industry signals from SerpApi, linked source citations, and a transparent opportunity score
 - **AI Modernization**: Gemini AI analyzes patents and suggests modern upgrades
 - **Blueprint Generation**: AI-generated technical blueprint images
 - **Remix Laboratory**: Interactive workspace for patent modernization projects
@@ -83,6 +84,10 @@ docker run -p 3000:3000 --env-file .modelence.env renaissance-ai
 | `MODELENCE_SERVICE_ENDPOINT` | Modelence Cloud endpoint |
 | `MODELENCE_SERVICE_TOKEN` | Modelence Cloud authentication token |
 | `MODELENCE_ENVIRONMENT_ID` | Modelence environment identifier |
+
+## SerpApi research workflow
+
+Patent discovery uses the `google_patents` engine. Opening a result runs an event-specific diligence workflow that queries `google` for market and competitor context and `google_news` for current industry signals. The UI links the returned sources and labels the score as research support—not legal freedom-to-operate advice.
 
 ## API Models Used
 

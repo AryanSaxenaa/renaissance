@@ -4,7 +4,7 @@ import { Module, ObjectId, UserInfo } from 'modelence/server';
 import { dbPatents, dbRemixProjects, dbSearchHistory, dbArxivPapers } from './db';
 import { arxivScannerCron, runArxivScanManually } from './cron';
 import { analyzePatentWithGemini, generateBlueprintImage, analyzeMechanicalGaps } from './gemini';
-import { searchGooglePatents, getPatentById, searchPatentsByProblemStatement } from './patents';
+import { searchGooglePatents, getPatentById, searchPatentsByProblemStatement, getPatentDiligenceBrief } from './patents';
 
 // Generate blueprint SVG based on patent division
 function generateBlueprintSvg(patent: { division: string }): string {
@@ -182,6 +182,22 @@ export default new Module('renaissance', {
       } catch (error) {
         console.error('[Renaissance] Get patent error:', error);
         throw new Error(`Failed to fetch patent: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      }
+    },
+
+    // Build a live, cited opportunity brief using SerpApi web and news results.
+    getPatentDiligence: async (args: unknown) => {
+      const { patentId, title, abstract } = z.object({
+        patentId: z.string(),
+        title: z.string(),
+        abstract: z.string(),
+      }).parse(args);
+
+      try {
+        return await getPatentDiligenceBrief({ patentId, title, abstract });
+      } catch (error) {
+        console.error('[Renaissance] Diligence research error:', error);
+        throw new Error(`Live diligence research failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
       }
     },
 
