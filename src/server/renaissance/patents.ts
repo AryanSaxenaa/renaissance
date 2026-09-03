@@ -344,8 +344,8 @@ export async function getPatentDiligenceBrief(
 ): Promise<PatentDiligenceBrief> {
   const topic = `${patent.title} ${patent.abstract}`.slice(0, 320);
   const [marketData, newsData] = await Promise.all([
-    searchSerpApi({ engine: 'google', q: `${topic} market applications competitors`, num: '5' }),
-    searchSerpApi({ engine: 'google_news', q: `${patent.title} technology`, num: '5' }),
+    searchSerpApi({ engine: 'google', q: `${topic} market applications competitors`, num: '10' }),
+    searchSerpApi({ engine: 'google_news', q: `${patent.title} technology`, num: '10' }),
   ]);
 
   const marketResults = marketData.organic_results || [];
