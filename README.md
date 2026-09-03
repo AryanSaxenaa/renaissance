@@ -15,6 +15,24 @@ Most expired patents are not useless. They are starting points: a pump, valve, s
 
 The important output is not a pretty image. It is the reasoning chain from an old mechanism to a plausible modern direction.
 
+## Interface guide
+
+### Patent Search
+
+The home/search workspace is the starting point. Enter a mechanism or problem statement and Renaissance queries SerpApi’s Google Patents engine for older candidates. Each result can be opened for its patent metadata, source links, and a live diligence brief. The `REMIX` action sends the selected patent to the analysis pipeline.
+
+### Remix Laboratory
+
+The laboratory is the detail view for one remix project. It shows the source patent reference, generated blueprint, modernization cards, engineering properties, and the analysis thought log. `COMMIT REMIX` archives the current project state, while the delete action removes it from the project store. A missing project is reported as an expired or unavailable project rather than silently showing an empty screen.
+
+### Archive Library
+
+The archive is the project index, not another patent search. It lists remix projects created by the public demo and links each card back to its laboratory view. Projects are stored by the Railway API and currently persist in its local JSON store; they are not tied to an account because the hackathon build intentionally has no authentication.
+
+### Configuration
+
+Configuration is a read-only system page for the hackathon build. It identifies the live providers used by the deployed application: DeepSeek V4 Flash through OpenRouter for analysis, Gemini 2.5 Flash Image through OpenRouter for blueprints, and SerpApi Google Patents for discovery. There are no fake provider switches or account controls. Permanent preferences, notifications, exports, and multi-user storage are outside the current demo scope.
+
 ## What Renaissance does
 
 ### Discovery
