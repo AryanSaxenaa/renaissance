@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { modelenceQuery, modelenceMutation, createQueryKey } from '@/client/lib/api';
+import { apiQuery, apiMutation, createQueryKey } from '@/client/lib/api';
 import { Save, Trash2, Loader2, ArrowLeft, AlertCircle, Beaker } from 'lucide-react';
 import toast from 'react-hot-toast';
 import AppLayout from '@/client/components/renaissance/AppLayout';
@@ -58,13 +58,13 @@ export default function LaboratoryPage() {
 
   // Fetch project data
   const { data: project, isLoading, error } = useQuery({
-    ...modelenceQuery<RemixProject>('renaissance.getProject', { projectId }),
+    ...apiQuery<RemixProject>('renaissance.getProject', { projectId }),
     enabled: !!projectId && !!user,
   });
 
   // Update project mutation
   const { mutate: updateProject, isPending: isUpdating } = useMutation({
-    ...modelenceMutation('renaissance.updateProject'),
+    ...apiMutation('renaissance.updateProject'),
     onSuccess: () => {
       toast.success('Project saved');
       queryClient.invalidateQueries({ queryKey: createQueryKey('renaissance.getProject', { projectId }) });
@@ -76,7 +76,7 @@ export default function LaboratoryPage() {
 
   // Delete project mutation
   const { mutate: deleteProject, isPending: isDeleting } = useMutation({
-    ...modelenceMutation('renaissance.deleteProject'),
+    ...apiMutation('renaissance.deleteProject'),
     onSuccess: () => {
       toast.success('Project deleted');
       window.location.href = '/archive';

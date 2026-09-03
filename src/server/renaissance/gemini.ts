@@ -336,58 +336,6 @@ function generateFallbackAnalysis(
 }
 
 /**
- * Check if a new ArXiv paper is relevant to a remix project using Gemini
- */
-export async function checkPaperRelevance(
-  paper: { title: string; abstract: string; relevantMaterials: string[] },
-  project: { title: string; modernizations: Array<{ aspect: string; modernized: string; material: string }> }
-): Promise<{ isRelevant: boolean; feasibilityChange: string }> {
-  const prompt = `You are evaluating if a new scientific paper could improve an engineering project.
-
-PAPER:
-Title: ${paper.title}
-Abstract: ${paper.abstract}
-Materials mentioned: ${paper.relevantMaterials.join(', ')}
-
-PROJECT:
-Title: ${project.title}
-Modernizations: ${project.modernizations.map(m => `${m.aspect}: ${m.modernized} (${m.material})`).join('; ')}
-
-Respond in JSON format ONLY:
-{
-  "isRelevant": true/false,
-  "feasibilityChange": "Brief explanation of how this paper could improve the project (or 'Not relevant' if isRelevant is false)"
-}`;
-
-  try {
-    const response = await callGeminiApi(prompt);
-
-    let jsonStr = response;
-    const jsonMatch = response.match(/\{[\s\S]*\}/);
-    if (jsonMatch) {
-      jsonStr = jsonMatch[0];
-    }
-
-    const result = JSON.parse(jsonStr);
-    return {
-      isRelevant: result.isRelevant === true,
-      feasibilityChange: result.feasibilityChange || 'Analysis complete',
-    };
-  } catch (error) {
-    console.error('[Gemini AI] Relevance check error:', error);
-    // Fallback to keyword matching
-    const projectText = `${project.title} ${project.modernizations.map(m => m.material).join(' ')}`.toLowerCase();
-    const isRelevant = paper.relevantMaterials.some(mat => projectText.includes(mat.toLowerCase()));
-    return {
-      isRelevant,
-      feasibilityChange: isRelevant
-        ? `New research in ${paper.relevantMaterials[0] || 'materials'} may improve feasibility`
-        : 'Not relevant',
-    };
-  }
-}
-
-/**
  * Generate a modernized blueprint image using Gemini 2.0 Flash Image Generation
  */
 export async function generateBlueprintImage(

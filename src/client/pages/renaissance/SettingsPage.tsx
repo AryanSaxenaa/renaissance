@@ -1,4 +1,4 @@
-import { AlertCircle, User, Bell, Palette, Database, Cpu } from 'lucide-react';
+import { AlertCircle, User, Cpu } from 'lucide-react';
 import AppLayout from '@/client/components/renaissance/AppLayout';
 import ThoughtTerminal from '@/client/components/renaissance/ThoughtTerminal';
 
@@ -90,10 +90,6 @@ export default function SettingsPage() {
                   <label className="text-[10px] opacity-50 uppercase tracking-widest">Patent Database</label>
                   <p className="mt-1">SerpApi Google Patents</p>
                 </div>
-                <div>
-                  <label className="text-[10px] opacity-50 uppercase tracking-widest">Material Science Feed</label>
-                  <p className="mt-1">Not connected in public demo mode</p>
-                </div>
               </div>
               <div className="pt-4 border-t border-technical-white/10">
                 <div className="flex items-center justify-between text-[10px]">
@@ -107,92 +103,6 @@ export default function SettingsPage() {
             </div>
           </div>
 
-          {/* Notifications */}
-          <div className="border border-technical-white/20 bg-cyanotype-dark/80">
-            <div className="p-4 border-b border-technical-white/10 flex items-center gap-3">
-              <Bell className="w-5 h-5 text-amber-glow" />
-            <h2 className="text-sm font-bold tracking-widest">NOTIFICATION MATRIX</h2>
-            </div>
-            <div className="p-6 space-y-4">
-              <div className="flex items-center justify-between opacity-60">
-                <div>
-                  <p className="text-xs font-bold">ArXiv Material Updates</p>
-                  <p className="text-[10px] opacity-50 mt-1">Planned — no background feed is enabled in this demo</p>
-                </div>
-                <div className="text-[9px] text-amber-glow">
-                  PLANNED
-                </div>
-              </div>
-              <div className="flex items-center justify-between opacity-60">
-                <div>
-                  <p className="text-xs font-bold">Patent Expiry Alerts</p>
-                  <p className="text-[10px] opacity-50 mt-1">Planned — patents are searched on demand</p>
-                </div>
-                <div className="text-[9px] opacity-60">
-                  PLANNED
-                </div>
-              </div>
-              <div className="flex items-center justify-between opacity-60">
-                <div>
-                  <p className="text-xs font-bold">Remix Completion</p>
-                  <p className="text-[10px] opacity-50 mt-1">Shown directly in the Remix Laboratory</p>
-                </div>
-                <div className="text-[9px] text-green-400">
-                  LIVE
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Display Preferences */}
-          <div className="border border-technical-white/20 bg-cyanotype-dark/80">
-            <div className="p-4 border-b border-technical-white/10 flex items-center gap-3">
-              <Palette className="w-5 h-5 text-amber-glow" />
-              <h2 className="text-sm font-bold tracking-widest">DISPLAY PREFERENCES</h2>
-            </div>
-            <div className="p-6 space-y-4">
-              <div>
-                <label className="text-[10px] opacity-50 uppercase tracking-widest">Blueprint Theme</label>
-                <div className="mt-2 flex gap-3">
-                <button type="button" disabled className="w-10 h-10 bg-cyanotype-dark border-2 border-amber-glow" title="Cyanotype (Active)" />
-                  <button type="button" disabled className="w-10 h-10 bg-[#1a1a1a] border border-technical-white/20 opacity-50" title="Dark Slate (planned)" />
-                  <button type="button" disabled className="w-10 h-10 bg-[#f5f5dc] border border-technical-white/20 opacity-50" title="Vellum (planned)" />
-                </div>
-              </div>
-              <div>
-                <label className="text-[10px] opacity-50 uppercase tracking-widest">Grid Density</label>
-                <div className="mt-2 flex gap-2">
-                  <button type="button" disabled className="px-3 py-1 text-[10px] border border-technical-white/20 opacity-50">SPARSE</button>
-                  <button type="button" disabled className="px-3 py-1 text-[10px] border border-amber-glow bg-amber-glow/10">STANDARD</button>
-                  <button type="button" disabled className="px-3 py-1 text-[10px] border border-technical-white/20 opacity-50">DENSE</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Data Management */}
-          <div className="border border-technical-white/20 bg-cyanotype-dark/80">
-            <div className="p-4 border-b border-technical-white/10 flex items-center gap-3">
-              <Database className="w-5 h-5 text-amber-glow" />
-              <h2 className="text-sm font-bold tracking-widest">DATA MANAGEMENT</h2>
-            </div>
-            <div className="p-6 space-y-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-xs font-bold">Export All Projects</p>
-                  <p className="text-[10px] opacity-50 mt-1">Download your remix projects as JSON</p>
-                </div>
-                  <span className="text-[9px] text-amber-glow">PLANNED</span>
-              </div>
-              <div className="flex items-center justify-between pt-4 border-t border-technical-white/10">
-                <div>
-                  <p className="text-xs font-bold text-red-400">Clear Search History</p>
-                  <p className="text-[10px] opacity-50 mt-1">Remove all search records from your account</p>
-                </div>
-                <span className="text-[9px] text-amber-glow">PLANNED</span>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Version Info */}

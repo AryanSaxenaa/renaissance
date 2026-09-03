@@ -22,14 +22,14 @@ export function createQueryKey(name: string, args?: unknown): QueryKey {
   return [name, args];
 }
 
-export function modelenceQuery<T>(name: string, args?: unknown) {
+export function apiQuery<T>(name: string, args?: unknown) {
   return {
     queryKey: createQueryKey(name, args),
     queryFn: () => request<T>(route(name, 'query'), args),
   };
 }
 
-export function modelenceMutation<T = unknown>(name: string) {
+export function apiMutation<T = unknown>(name: string) {
   return {
     mutationFn: (args?: unknown) => request<T>(route(name, 'mutation'), args),
   };

@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useQuery, useMutation } from '@tanstack/react-query';
-import { modelenceQuery, modelenceMutation } from '@/client/lib/api';
+import { apiQuery, apiMutation } from '@/client/lib/api';
 import { Search, Loader2, AlertCircle, History, ChevronLeft, ChevronRight, Database } from 'lucide-react';
 import toast from 'react-hot-toast';
 import AppLayout from '@/client/components/renaissance/AppLayout';
@@ -42,7 +42,7 @@ export default function PatentSearchPage() {
   const [analyzedPatents, setAnalyzedPatents] = useState<Set<string>>(new Set());
 
   const { data: diligence, isLoading: isLoadingDiligence } = useQuery({
-    ...modelenceQuery<PatentDiligenceBrief>('renaissance.getPatentDiligence', selectedPatent ? {
+    ...apiQuery<PatentDiligenceBrief>('renaissance.getPatentDiligence', selectedPatent ? {
       patentId: selectedPatent.patentId,
       title: selectedPatent.title,
       abstract: selectedPatent.abstract,
@@ -52,19 +52,19 @@ export default function PatentSearchPage() {
 
   // Search patents query
   const { data: patents, isLoading: isSearching, error: searchError } = useQuery({
-    ...modelenceQuery<Patent[]>('renaissance.searchPatents', { query: submittedQuery }),
+    ...apiQuery<Patent[]>('renaissance.searchPatents', { query: submittedQuery }),
     enabled: submittedQuery.length > 0,
   });
 
   // Get search history
   const { data: searchHistory } = useQuery({
-    ...modelenceQuery<SearchHistoryItem[]>('renaissance.getSearchHistory'),
+    ...apiQuery<SearchHistoryItem[]>('renaissance.getSearchHistory'),
     enabled: !!user,
   });
 
   // Create remix project mutation
   const { mutate: createRemix, isPending: isCreatingRemix } = useMutation({
-    ...modelenceMutation<{ projectId: string; hasBlueprintImage: boolean }>('renaissance.createRemixProject'),
+    ...apiMutation<{ projectId: string; hasBlueprintImage: boolean }>('renaissance.createRemixProject'),
     onSuccess: (data) => {
       setShowModal(false);
       toast.success('Remix project created!');
@@ -77,7 +77,7 @@ export default function PatentSearchPage() {
 
   // AI analysis mutation for patent preview
   const { mutate: analyzePatent, isPending: isAnalyzing } = useMutation({
-    ...modelenceMutation<PatentPreviewAnalysis>('renaissance.analyzePatentPreview'),
+    ...apiMutation<PatentPreviewAnalysis>('renaissance.analyzePatentPreview'),
     onSuccess: (data) => {
       setAnalyzedPatents((prev) => new Set([...prev, data.patentId]));
 

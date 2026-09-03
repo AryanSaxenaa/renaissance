@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/client/components/ui/Card';
 import { Button } from '@/client/components/ui/Button';
-import Page from '@/client/components/Page';
+import AppLayout from '@/client/components/renaissance/AppLayout';
 
 export default function NotFoundPage() {
   return (
-    <Page>
+    <AppLayout>
       <div className="flex items-center justify-center min-h-full">
         <Card className="w-full max-w-sm mx-auto bg-white text-gray-900">
           <CardHeader className="text-center">
@@ -24,7 +24,7 @@ export default function NotFoundPage() {
           </CardContent>
         </Card>
       </div>
-    </Page>
+    </AppLayout>
   );
 }
 
