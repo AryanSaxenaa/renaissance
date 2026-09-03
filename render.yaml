@@ -3,7 +3,8 @@
   "region": "iad1",
   "env": {
     "OPENROUTER_API_KEY": "@openrouter_api_key",
-    "OPENROUTER_MODEL": "deepseek/deepseek-chat",
+    "OPENROUTER_MODEL": "deepseek/deepseek-v4-flash",
+    "OPENROUTER_IMAGE_MODEL": "google/gemini-2.5-flash-image",
     "DEEPSEEK_API_KEY": "@deepseek_api_key",
     "DEEPSEEK_MODEL": "deepseek-chat",
     "SERPAPI_API_KEY": "@serpapi_api_key",

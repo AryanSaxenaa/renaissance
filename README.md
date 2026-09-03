@@ -34,7 +34,8 @@ See Demo - https://youtu.be/xcx4ksbn-zk
    Then edit `.env`:
    ```
    OPENROUTER_API_KEY=your_openrouter_api_key
-   OPENROUTER_MODEL=deepseek/deepseek-chat
+   OPENROUTER_MODEL=deepseek/deepseek-v4-flash
+   OPENROUTER_IMAGE_MODEL=google/gemini-2.5-flash-image
    DEEPSEEK_API_KEY=your_deepseek_api_key
    DEEPSEEK_MODEL=deepseek-chat
    SERPAPI_API_KEY=your_serpapi_key
@@ -88,7 +89,8 @@ docker run -p 3000:3000 --env-file .env renaissance-ai
 | Variable | Description |
 |----------|-------------|
 | `OPENROUTER_API_KEY` | OpenRouter API key for AI features |
-| `OPENROUTER_MODEL` | OpenRouter model, default: `deepseek/deepseek-chat` |
+| `OPENROUTER_MODEL` | OpenRouter analysis model, default: `deepseek/deepseek-v4-flash` |
+| `OPENROUTER_IMAGE_MODEL` | OpenRouter image model, default: `google/gemini-2.5-flash-image` |
 | `DEEPSEEK_API_KEY` | Optional direct DeepSeek fallback key |
 | `DEEPSEEK_MODEL` | Direct DeepSeek model, default: `deepseek-chat` |
 | `SERPAPI_API_KEY` | SerpApi key for Google Patents search |

@@ -3,6 +3,7 @@
  */
 
 const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
+const OPENROUTER_IMAGE_API_URL = 'https://openrouter.ai/api/v1/images';
 const DEEPSEEK_API_URL = 'https://api.deepseek.com/chat/completions';
 
 function getAiConfig(): { apiKey: string; url: string; model: string; provider: string } {
@@ -10,7 +11,7 @@ function getAiConfig(): { apiKey: string; url: string; model: string; provider: 
     return {
       apiKey: process.env.OPENROUTER_API_KEY,
       url: OPENROUTER_API_URL,
-      model: process.env.OPENROUTER_MODEL || 'deepseek/deepseek-chat',
+      model: process.env.OPENROUTER_MODEL || 'deepseek/deepseek-v4-flash',
       provider: 'OpenRouter',
     };
   }
@@ -23,6 +24,13 @@ function getAiConfig(): { apiKey: string; url: string; model: string; provider: 
     };
   }
   throw new Error('OPENROUTER_API_KEY or DEEPSEEK_API_KEY environment variable is required');
+}
+
+function getOpenRouterApiKey(): string {
+  if (!process.env.OPENROUTER_API_KEY) {
+    throw new Error('OPENROUTER_API_KEY is required for image generation');
+  }
+  return process.env.OPENROUTER_API_KEY;
 }
 
 interface ChatResponse {
@@ -116,7 +124,7 @@ export async function analyzePatentWithGemini(patent: {
   // Log the start
   thoughtLog.push({
     timestamp: new Date(now),
-    message: 'INITIALIZING GEMINI AI ANALYSIS ENGINE...',
+    message: 'INITIALIZING DEEPSEEK AI ANALYSIS ENGINE...',
     type: 'info',
   });
 
@@ -168,7 +176,7 @@ export async function analyzePatentWithGemini(patent: {
 
   thoughtLog.push({
     timestamp: new Date(now + 200),
-    message: 'SENDING PATENT DATA TO GEMINI AI...',
+    message: 'SENDING PATENT DATA TO AI ANALYSIS ENGINE...',
     type: 'info',
   });
 
@@ -177,7 +185,7 @@ export async function analyzePatentWithGemini(patent: {
 
     thoughtLog.push({
       timestamp: new Date(now + 500),
-      message: 'GEMINI AI RESPONSE RECEIVED',
+      message: 'AI RESPONSE RECEIVED',
       type: 'success',
     });
 
@@ -390,12 +398,46 @@ export async function generateBlueprintImage(
   },
   modernizations: ModernizationSuggestion[]
 ): Promise<{ imageBase64: string | null; description: string }> {
-  // OpenRouter and DeepSeek are text providers; retain the blueprint description
-  // and let the deterministic SVG renderer provide the visual fallback.
-  return {
-    imageBase64: null,
-    description: `Modernized ${patent.title} featuring ${modernizations[0]?.material || 'advanced materials'}`,
-  };
+  const modernizationList = modernizations
+    .map((m, i) => `${i + 1}. ${m.aspect}: ${m.original} -> ${m.modernized} (${m.material})`)
+    .join('\n');
+  const prompt = `Technical engineering blueprint of ${patent.title}. Show an exploded isometric view with visible gears, linkages, sensors, structural members, and callout annotations. Use a dark Prussian blue blueprint background with crisp cyan and white technical linework, grid coordinates, and no people or sci-fi styling. Modernization details:\n${modernizationList}`;
+
+  try {
+    const response = await fetch(OPENROUTER_IMAGE_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${getOpenRouterApiKey()}`,
+        'HTTP-Referer': 'https://github.com/AryanSaxenaa/renaissance',
+        'X-Title': 'RenaissanceAI',
+      },
+      body: JSON.stringify({
+        model: process.env.OPENROUTER_IMAGE_MODEL || 'google/gemini-2.5-flash-image',
+        prompt,
+        output_format: 'png',
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`OpenRouter image API error: ${response.status} - ${await response.text()}`);
+    }
+
+    const data = await response.json() as { data?: Array<{ b64_json?: string }> };
+    const imageBase64 = data.data?.[0]?.b64_json || null;
+    if (!imageBase64) throw new Error('OpenRouter image API returned no image data');
+
+    return {
+      imageBase64,
+      description: `OpenRouter image generated with ${process.env.OPENROUTER_IMAGE_MODEL || 'google/gemini-2.5-flash-image'}`,
+    };
+  } catch (error) {
+    console.error('[OpenRouter Image] Falling back to deterministic blueprint:', error);
+    return {
+      imageBase64: null,
+      description: `Modernized ${patent.title} featuring ${modernizations[0]?.material || 'advanced materials'}`,
+    };
+  }
 }
 
 /**
