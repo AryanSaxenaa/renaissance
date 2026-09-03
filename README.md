@@ -4,7 +4,7 @@ Renaissance is a public, browser-based laboratory for finding old patents and tu
 
 Most expired patents are not useless. They are starting points: a pump, valve, sensor, drive train, or manufacturing idea that can be reconsidered with today’s materials, manufacturing methods, and connected controls. Renaissance makes that exploration concrete in a few minutes.
 
-**Demo:** [watch the walkthrough](https://youtu.be/xcx4ksbn-zk) · **Live app:** [renaissance-psi.vercel.app](https://renaissance-psi.vercel.app)
+**Demo:** [watch the walkthrough](https://youtu.be/P1GISv59hgc) · **Live app:** [renaissance-psi.vercel.app](https://renaissance-psi.vercel.app)
 
 ## The demo path
 
