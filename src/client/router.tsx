@@ -36,6 +36,14 @@ const publicRoutes: RouteObject[] = [
     Component: lazy(() => import('./pages/renaissance/SettingsPage'))
   },
   {
+    path: '/evaluation',
+    Component: lazy(() => import('./pages/renaissance/EvaluationPage'))
+  },
+  {
+    path: '/method',
+    Component: lazy(() => import('./pages/renaissance/MethodPage'))
+  },
+  {
     path: '*',
     Component: lazy(() => import('./pages/NotFoundPage'))
   }

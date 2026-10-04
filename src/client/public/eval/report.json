@@ -1,0 +1,75 @@
+{
+  "set": "tests-mini",
+  "n": 5,
+  "statusComparison": {
+    "falseFreeRate": {
+      "count": 0,
+      "denom": 1,
+      "p": 0,
+      "low": 0,
+      "high": 0.7934567085261071,
+      "formatted": "0.0%"
+    },
+    "falseFreeCi95": [
+      0,
+      0.7934567085261071
+    ],
+    "missRate": {
+      "count": 1,
+      "denom": 2,
+      "p": 0.5,
+      "low": 0.09452865480086614,
+      "high": 0.9054713451991339,
+      "formatted": "50.0%"
+    },
+    "uncertaintyRate": 0.2,
+    "naiveVsEngineDisagreements": 1,
+    "rows": [
+      {
+        "id": "m01",
+        "patentId": "SYN-R1",
+        "humanStatus": "in_force",
+        "engineHeadline": "IN_FORCE",
+        "engineConfidence": "HIGH",
+        "naiveExpiredByTerm": false
+      },
+      {
+        "id": "m02",
+        "patentId": "SYN-R2",
+        "humanStatus": "expired_term",
+        "engineHeadline": "LIKELY_FREE",
+        "engineConfidence": "HIGH",
+        "naiveExpiredByTerm": true
+      },
+      {
+        "id": "m03",
+        "patentId": "SYN-R4",
+        "humanStatus": "lapsed_fee",
+        "engineHeadline": "LAPSED_EARLY",
+        "engineConfidence": "MEDIUM",
+        "naiveExpiredByTerm": false
+      },
+      {
+        "id": "m04",
+        "patentId": "SYN-R5",
+        "humanStatus": "related_active",
+        "engineHeadline": "RELATED_ACTIVE",
+        "engineConfidence": "HIGH",
+        "naiveExpiredByTerm": true
+      },
+      {
+        "id": "m05",
+        "patentId": "SYN-R7",
+        "humanStatus": "unknown",
+        "engineHeadline": "NOT_ENOUGH_DATA",
+        "engineConfidence": null,
+        "naiveExpiredByTerm": false
+      }
+    ]
+  },
+  "groundingAudit": {
+    "claimsChecked": 3,
+    "violations": 0
+  },
+  "generatedAt": "2026-10-04T11:50:56.133Z"
+}

@@ -1,0 +1,106 @@
+[
+  {
+    "id": "m01",
+    "patentId": "SYN-R1",
+    "humanStatus": "in_force",
+    "synthetic": true,
+    "now": "2026-06-01",
+    "details": {
+      "patent_id": "SYN-R1",
+      "filing_date": "2015-01-01",
+      "worldwide_applications": [
+        {
+          "country_code": "US",
+          "application_number": "APP1",
+          "filing_date": "2015-01-01",
+          "legal_status_cat": "active",
+          "this_app": true
+        }
+      ],
+      "legal_events": []
+    }
+  },
+  {
+    "id": "m02",
+    "patentId": "SYN-R2",
+    "humanStatus": "expired_term",
+    "synthetic": true,
+    "now": "2026-06-01",
+    "country_status": { "US": "NOT_ACTIVE" },
+    "details": {
+      "patent_id": "SYN-R2",
+      "filing_date": "1970-01-01",
+      "worldwide_applications": [
+        {
+          "country_code": "US",
+          "application_number": "APP1",
+          "filing_date": "1970-01-01",
+          "legal_status_cat": "not active",
+          "this_app": true
+        }
+      ],
+      "legal_events": [{ "code": "EXP", "title": "Expired", "date": "1995-01-01" }]
+    }
+  },
+  {
+    "id": "m03",
+    "patentId": "SYN-R4",
+    "humanStatus": "lapsed_fee",
+    "synthetic": true,
+    "now": "2026-06-01",
+    "details": {
+      "patent_id": "SYN-R4",
+      "filing_date": "2018-01-01",
+      "worldwide_applications": [
+        {
+          "country_code": "US",
+          "application_number": "APP1",
+          "filing_date": "2018-01-01",
+          "legal_status_cat": "not active",
+          "this_app": true
+        }
+      ],
+      "legal_events": [{ "code": "LAPS", "title": "Lapsed", "date": "2022-01-01" }]
+    }
+  },
+  {
+    "id": "m04",
+    "patentId": "SYN-R5",
+    "humanStatus": "related_active",
+    "synthetic": true,
+    "now": "2026-06-01",
+    "details": {
+      "patent_id": "SYN-R5",
+      "filing_date": "1970-01-01",
+      "worldwide_applications": [
+        {
+          "country_code": "US",
+          "application_number": "PARENT",
+          "filing_date": "1970-01-01",
+          "legal_status_cat": "not active",
+          "this_app": true
+        },
+        {
+          "country_code": "US",
+          "application_number": "CHILD",
+          "filing_date": "2019-01-01",
+          "legal_status_cat": "active",
+          "this_app": false
+        }
+      ],
+      "legal_events": []
+    }
+  },
+  {
+    "id": "m05",
+    "patentId": "SYN-R7",
+    "humanStatus": "unknown",
+    "synthetic": true,
+    "now": "2026-06-01",
+    "details": {
+      "patent_id": "SYN-R7",
+      "worldwide_applications": [],
+      "legal_events": []
+    }
+  }
+]

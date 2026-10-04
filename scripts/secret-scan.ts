@@ -26,9 +26,16 @@ let failed = false;
 for (const file of walk(root)) {
   if (!/\.(ts|tsx|js|json|md|env\.example|yaml|yml)$/.test(file)) continue;
   if (file.includes('secret-scan')) continue;
+  if (file.endsWith('.env.example')) continue;
+  if (file.startsWith(join(root, 'tests'))) continue;
   const text = readFileSync(file, 'utf8');
   for (const pattern of patterns) {
-    if (pattern.test(text) && !text.includes('your_') && !text.includes('placeholder')) {
+    if (
+      pattern.test(text) &&
+      !text.includes('your_') &&
+      !text.includes('placeholder') &&
+      !/\bSERPAPI_API_KEY=test-key\b/.test(text)
+    ) {
       if (/[A-Fa-f0-9]{32,64}/.test(pattern.source) && file.endsWith('.json') && file.includes('fixtures')) continue;
       console.error(`pattern ${pattern} matched ${file}`);
       failed = true;

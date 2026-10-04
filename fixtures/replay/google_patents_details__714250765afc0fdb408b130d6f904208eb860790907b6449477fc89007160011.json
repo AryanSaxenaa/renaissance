@@ -1,0 +1,648 @@
+{
+  "search_metadata": {
+    "id": "6ac23dae7bf2f9c6034c8883",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/Eorvj46x9boZNw1ANY47JQhqhPUXfO8I8Cx84exZABY/6ac23dae7bf2f9c6034c8883.json",
+    "markdown_endpoint": "https://serpapi.com/searches/Eorvj46x9boZNw1ANY47JQhqhPUXfO8I8Cx84exZABY/6ac23dae7bf2f9c6034c8883.md",
+    "created_at": "2026-10-04 11:51:10 UTC",
+    "processed_at": "2026-10-04 11:51:10 UTC",
+    "google_patents_details_url": "https://patents.google.com/patent/US1836693A/en",
+    "raw_html_file": "https://serpapi.com/searches/Eorvj46x9boZNw1ANY47JQhqhPUXfO8I8Cx84exZABY/6ac23dae7bf2f9c6034c8883.html",
+    "total_time_taken": 0.45
+  },
+  "search_parameters": {
+    "engine": "google_patents_details",
+    "patent_id": "patent/US1836693A/en"
+  },
+  "title": "Windmill",
+  "type": "patent",
+  "pdf": "https://patentimages.storage.googleapis.com/50/05/4a/5ea41d36469d69/US1836693.pdf",
+  "publication_number": "US1836693A",
+  "country": "United States",
+  "prior_art_keywords": [
+    "blades",
+    "windmill",
+    "movable",
+    "fixed",
+    "alignment"
+  ],
+  "prior_art_date": "1930-07-10",
+  "application_number": "US467006A",
+  "inventors": [
+    {
+      "name": "Urfer Adolf",
+      "link": "https://patents.google.com/?inventor=Urfer+Adolf",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents&inventor=Urfer+Adolf"
+    }
+  ],
+  "assignees": [
+    "Pioneer Instrument Co Inc"
+  ],
+  "priority_date": "1930-07-10",
+  "filing_date": "1930-07-10",
+  "publication_date": "1931-12-15",
+  "worldwide_applications": {
+    "1930": [
+      {
+        "filing_date": "1930-07-10",
+        "country_code": "US",
+        "application_number": "US467006A",
+        "document_id": "patent/US1836693A/en",
+        "legal_status_cat": "not_active",
+        "legal_status": "Expired - Lifetime",
+        "this_app": true
+      },
+      {
+        "filing_date": "1930-11-14",
+        "country_code": "FR",
+        "application_number": "FR706432D",
+        "document_id": "patent/FR706432A/en",
+        "legal_status_cat": "not_active",
+        "legal_status": "Expired"
+      }
+    ]
+  },
+  "events": [
+    {
+      "date": "1930-07-10",
+      "title": "Application filed by Pioneer Instrument Co Inc",
+      "type": "filed",
+      "critical": true,
+      "assignee_search": "Pioneer Instrument Co Inc"
+    },
+    {
+      "date": "1930-07-10",
+      "title": "Priority to US467006A",
+      "type": "priority",
+      "critical": true,
+      "document_id": "patent/US1836693A/en"
+    },
+    {
+      "date": "1930-11-14",
+      "title": "Priority to FR706432D",
+      "type": "priority",
+      "document_id": "patent/FR706432A/en"
+    },
+    {
+      "date": "1931-12-15",
+      "title": "Application granted",
+      "type": "granted",
+      "critical": true
+    },
+    {
+      "date": "1931-12-15",
+      "title": "Publication of US1836693A",
+      "type": "publication",
+      "critical": true,
+      "document_id": "patent/US1836693A/en"
+    },
+    {
+      "date": "1948-12-15",
+      "title": "Anticipated expiration",
+      "type": "legal-status",
+      "critical": true
+    },
+    {
+      "date": "Status",
+      "title": "Expired - Lifetime",
+      "type": "legal-status",
+      "critical": true,
+      "current": true
+    }
+  ],
+  "external_links": [
+    {
+      "text": "USPTO",
+      "link": "https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&p=1&u=/netahtml/PTO/srchnum.html&r=1&f=G&l=50&d=PALL&s1=1836693.PN."
+    },
+    {
+      "text": "USPTO PatentCenter",
+      "link": "https://patentcenter.uspto.gov/applications/"
+    },
+    {
+      "text": "USPTO Assignment",
+      "link": "https://assignment.uspto.gov/patent/index.html#/patent/search/resultFilter?searchInput=1836693"
+    },
+    {
+      "text": "Espacenet",
+      "link": "https://worldwide.espacenet.com/publicationDetails/biblio?CC=US&NR=1836693A&KC=A&FT=D"
+    },
+    {
+      "text": "Global Dossier",
+      "link": "https://globaldossier.uspto.gov/result/application/US//1"
+    },
+    {
+      "text": "Discuss",
+      "link": "https://patents.stackexchange.com/questions/tagged/US1836693"
+    }
+  ],
+  "images": [
+    "https://patentimages.storage.googleapis.com/93/f6/21/d26848f2407642/US1836693-drawings-page-1.png",
+    "https://patentimages.storage.googleapis.com/65/cc/97/deef4bae6a840f/US1836693-drawings-page-2.png",
+    "https://patentimages.storage.googleapis.com/84/ca/46/7e243972b5cf86/US1836693-drawings-page-3.png"
+  ],
+  "classifications": [
+    {
+      "code": "F03D3/062",
+      "description": "Rotors characterised by their construction elements",
+      "leaf": true,
+      "first_code": true,
+      "is_cpc": true
+    },
+    {
+      "code": "B64D41/00",
+      "description": "Power installations for auxiliary purposes",
+      "leaf": true,
+      "is_cpc": true
+    },
+    {
+      "code": "Y02E10/74",
+      "description": "Wind turbines with rotation axis perpendicular to the wind direction",
+      "leaf": true,
+      "additional": true,
+      "is_cpc": true
+    }
+  ],
+  "description_link": "https://serpapi.com/searches/6ac23dae7bf2f9c6034c8883/google_patents_details/description.html",
+  "priority_applications": [
+    {
+      "application_number": "US467006A",
+      "representative_publication": "US1836693A",
+      "primary_language": "en",
+      "priority_date": "1930-07-10",
+      "filing_date": "1930-07-10",
+      "title": "Windmill"
+    },
+    {
+      "application_number": "FR706432D",
+      "representative_publication": "FR706432A",
+      "primary_language": "en",
+      "priority_date": "1930-07-10",
+      "filing_date": "1930-11-14",
+      "title": "Wind vane or wind turbine for controlling aircraft on-board devices"
+    }
+  ],
+  "applications_claiming_priority": [
+    {
+      "application_number": "US467006A",
+      "representative_publication": "US1836693A",
+      "primary_language": "en",
+      "priority_date": "1930-07-10",
+      "filing_date": "1930-07-10",
+      "title": "Windmill"
+    }
+  ],
+  "family_id": "23853964",
+  "cited_by": {
+    "original": [
+      {
+        "publication_number": "US2707521A",
+        "primary_language": "en",
+        "examiner_cited": "*",
+        "priority_date": "1950-04-27",
+        "publication_date": "1955-05-03",
+        "assignee_original": "Rogers Joseph Norman",
+        "title": "Wind motor",
+        "patent_id": "patent/US2707521A/en",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS2707521A%2Fen"
+      },
+      {
+        "publication_number": "US4457669A",
+        "primary_language": "en",
+        "examiner_cited": "*",
+        "priority_date": "1978-10-24",
+        "publication_date": "1984-07-03",
+        "assignee_original": "Corry William R",
+        "title": "Jibe mill",
+        "patent_id": "patent/US4457669A/en",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS4457669A%2Fen"
+      },
+      {
+        "publication_number": "US20050042095A1",
+        "primary_language": "en",
+        "examiner_cited": "*",
+        "priority_date": "2003-08-20",
+        "publication_date": "2005-02-24",
+        "assignee_original": "Arthur Kaliski",
+        "title": "Self regulating rotor",
+        "patent_id": "patent/US20050042095A1/en",
+        "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS20050042095A1%2Fen"
+      }
+    ]
+  },
+  "similar_documents": [
+    {
+      "is_patent": true,
+      "publication_number": "US4718821A",
+      "primary_language": "en",
+      "publication_date": "1988-01-12",
+      "title": "Windmill blade",
+      "patent_id": "patent/US4718821A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS4718821A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US3064942A",
+      "primary_language": "en",
+      "publication_date": "1962-11-20",
+      "title": "Emergency ram air power supply",
+      "patent_id": "patent/US3064942A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS3064942A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US2485543A",
+      "primary_language": "en",
+      "publication_date": "1949-10-25",
+      "title": "Power plant",
+      "patent_id": "patent/US2485543A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS2485543A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US4316699A",
+      "primary_language": "en",
+      "publication_date": "1982-02-23",
+      "title": "Windmill structure and power generator",
+      "patent_id": "patent/US4316699A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS4316699A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US1786057A",
+      "primary_language": "en",
+      "publication_date": "1930-12-23",
+      "title": "Turbine",
+      "patent_id": "patent/US1786057A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS1786057A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "EP0086076A1",
+      "primary_language": "en",
+      "publication_date": "1983-08-17",
+      "title": "A horizontal axis wind energy conversion system with aerodynamic blade pitch control",
+      "patent_id": "patent/EP0086076A1/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FEP0086076A1%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "EP1828598B1",
+      "primary_language": "en",
+      "publication_date": "2009-06-10",
+      "title": "Vertical axis turbine",
+      "patent_id": "patent/EP1828598B1/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FEP1828598B1%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US1341045A",
+      "primary_language": "en",
+      "publication_date": "1920-05-25",
+      "title": "Windmill",
+      "patent_id": "patent/US1341045A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS1341045A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US3217808A",
+      "primary_language": "en",
+      "publication_date": "1965-11-16",
+      "title": "Cooling fans",
+      "patent_id": "patent/US3217808A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS3217808A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US2688285A",
+      "primary_language": "en",
+      "publication_date": "1954-09-07",
+      "title": "Variable stroke control windmill",
+      "patent_id": "patent/US2688285A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS2688285A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US1533467A",
+      "primary_language": "en",
+      "publication_date": "1925-04-14",
+      "title": "Governor for windmills",
+      "patent_id": "patent/US1533467A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS1533467A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US4950131A",
+      "primary_language": "en",
+      "publication_date": "1990-08-21",
+      "title": "High-efficiency turbine, in particular for exploiting wind power in auxiliary power sources for aeronautical applications",
+      "patent_id": "patent/US4950131A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS4950131A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US2986218A",
+      "primary_language": "en",
+      "publication_date": "1961-05-30",
+      "title": "Variable exposure ram air turbine",
+      "patent_id": "patent/US2986218A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS2986218A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US2023684A",
+      "primary_language": "en",
+      "publication_date": "1935-12-10",
+      "title": "Variable pitch propeller for aircraft",
+      "patent_id": "patent/US2023684A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS2023684A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "CA1045038A",
+      "primary_language": "en",
+      "publication_date": "1978-12-26",
+      "title": "Vertical axis wind turbine",
+      "patent_id": "patent/CA1045038A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FCA1045038A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "EP0776820A1",
+      "primary_language": "en",
+      "publication_date": "1997-06-04",
+      "title": "Propeller propulsion unit for aircrafts in general",
+      "patent_id": "patent/EP0776820A1/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FEP0776820A1%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US1770328A",
+      "primary_language": "en",
+      "publication_date": "1930-07-08",
+      "title": "Windmill",
+      "patent_id": "patent/US1770328A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS1770328A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US2055928A",
+      "primary_language": "en",
+      "publication_date": "1936-09-29",
+      "title": "Rotating blade means for aircraft",
+      "patent_id": "patent/US2055928A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS2055928A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US1850721A",
+      "primary_language": "en",
+      "publication_date": "1932-03-22",
+      "title": "Fluid motor",
+      "patent_id": "patent/US1850721A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS1850721A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US3013613A",
+      "primary_language": "en",
+      "publication_date": "1961-12-19",
+      "title": "Air driven turbine",
+      "patent_id": "patent/US3013613A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS3013613A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US2294867A",
+      "primary_language": "en",
+      "publication_date": "1942-09-01",
+      "title": "Variable pitch airscrew for airplanes",
+      "patent_id": "patent/US2294867A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS2294867A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US2876847A",
+      "primary_language": "en",
+      "publication_date": "1959-03-10",
+      "title": "Air driven propeller and governor therefor",
+      "patent_id": "patent/US2876847A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS2876847A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US2237030A",
+      "primary_language": "en",
+      "publication_date": "1941-04-01",
+      "title": "Aeronautical propeller",
+      "patent_id": "patent/US2237030A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS2237030A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US1954811A",
+      "primary_language": "en",
+      "publication_date": "1934-04-17",
+      "title": "Constant speed air motor",
+      "patent_id": "patent/US1954811A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS1954811A%2Fen"
+    },
+    {
+      "is_patent": true,
+      "publication_number": "US2215413A",
+      "primary_language": "en",
+      "publication_date": "1940-09-17",
+      "title": "Self-regulating wind motor",
+      "patent_id": "patent/US2215413A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS2215413A%2Fen"
+    }
+  ],
+  "concepts": {
+    "match": [
+      {
+        "id": "230000008093",
+        "name": "supporting effect",
+        "domain": "Effects",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 37
+      },
+      {
+        "id": "239000012530",
+        "name": "fluid",
+        "domain": "Substances",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 8
+      },
+      {
+        "id": "238000010276",
+        "name": "construction",
+        "domain": "Methods",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 6
+      },
+      {
+        "id": "230000033001",
+        "name": "locomotion",
+        "domain": "Effects",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 6
+      },
+      {
+        "id": "239000000428",
+        "name": "dust",
+        "domain": "Substances",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 3
+      },
+      {
+        "id": "230000001066",
+        "name": "destructive effect",
+        "domain": "Effects",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 2
+      },
+      {
+        "id": "230000003116",
+        "name": "impacting effect",
+        "domain": "Effects",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 2
+      },
+      {
+        "id": "230000007775",
+        "name": "late",
+        "domain": "Effects",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 2
+      },
+      {
+        "id": "239000003129",
+        "name": "oil well",
+        "domain": "Substances",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 2
+      },
+      {
+        "id": "230000000630",
+        "name": "rising effect",
+        "domain": "Effects",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 2
+      },
+      {
+        "id": "XUKUURHRXDUEBC-KAYWLYCHSA-N",
+        "name": "Atorvastatin",
+        "domain": "Chemical compound",
+        "smiles": "C=1C=CC=CC=1C1=C(C=2C=CC(F)=CC=2)N(CC[C@@H](O)C[C@@H](O)CC(O)=O)C(C(C)C)=C1C(=O)NC1=CC=CC=C1",
+        "inchi_key": "XUKUURHRXDUEBC-KAYWLYCHSA-N",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 1
+      },
+      {
+        "id": "101100463469",
+        "name": "Caenorhabditis elegans lin-42 gene",
+        "domain": "Proteins",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 1
+      },
+      {
+        "id": "230000002301",
+        "name": "combined effect",
+        "domain": "Effects",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 1
+      },
+      {
+        "id": "230000003247",
+        "name": "decreasing effect",
+        "domain": "Effects",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 1
+      },
+      {
+        "id": "230000000694",
+        "name": "effects",
+        "domain": "Effects",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 1
+      },
+      {
+        "id": "VKYKSIONXSXAKP-UHFFFAOYSA-N",
+        "name": "hexamethylenetetramine",
+        "domain": "Chemical compound",
+        "smiles": "C1N(C2)CN3CN1CN2C3",
+        "inchi_key": "VKYKSIONXSXAKP-UHFFFAOYSA-N",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 1
+      },
+      {
+        "id": "238000005461",
+        "name": "lubrication",
+        "domain": "Methods",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 1
+      },
+      {
+        "id": "238000000034",
+        "name": "method",
+        "domain": "Methods",
+        "similarity": 0,
+        "sections": [
+          "description"
+        ],
+        "count": 1
+      }
+    ]
+  }
+}

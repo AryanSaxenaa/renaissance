@@ -1,149 +1,79 @@
 # Renaissance
 
-Renaissance is a public, browser-based laboratory for finding old patents and turning promising mechanisms into modern engineering concepts.
+Renaissance turns old patent mechanisms into **cited, one-page design briefs** for engineers and small teams. It uses SerpApi (Google Patents, Shopping, Maps, Scholar, News) for evidence, a **deterministic legal-status engine** (not “filing + 20 years”), and a brief pipeline where **every number must appear in a cited fact**.
 
-Most expired patents are not useless. They are starting points: a pump, valve, sensor, drive train, or manufacturing idea that can be reconsidered with today’s materials, manufacturing methods, and connected controls. Renaissance makes that exploration concrete in a few minutes.
+**Not legal advice.** Status is evidence-based and uncertain; receipts are shown where available.
 
-**Demo:** [watch the walkthrough](https://youtu.be/P1GISv59hgc) · **Live app:** [renaissance-psi.vercel.app](https://renaissance-psi.vercel.app)
-
-## The demo path
-
-1. Search the expired patent archive for a problem or mechanism, such as `gear assembly`, `pump`, or `flow meter`.
-2. Open a result and review the patent summary, expiry information, and live market/news signals.
-3. Start a remix. DeepSeek proposes three specific modernization opportunities, including materials, manufacturing methods, and expected engineering benefits.
-4. Review the result in the Remix Laboratory: the modernization matrix, engineering properties, thought log, and a patent-focused blueprint visual.
-
-The important output is not a pretty image. It is the reasoning chain from an old mechanism to a plausible modern direction.
-
-## Interface guide
-
-### Patent Search
-
-The home/search workspace is the starting point. Enter a mechanism or problem statement and Renaissance queries SerpApi’s Google Patents engine for older candidates. Each result can be opened for its patent metadata, source links, and a live diligence brief. The `REMIX` action sends the selected patent to the analysis pipeline.
-
-### Remix Laboratory
-
-The laboratory is the detail view for one remix project. It shows the source patent reference, generated blueprint, modernization cards, engineering properties, and the analysis thought log. `COMMIT REMIX` archives the current project state, while the delete action removes it from the project store. A missing project is reported as an expired or unavailable project rather than silently showing an empty screen.
-
-### Archive Library
-
-The archive is the project index, not another patent search. It lists remix projects created by the public demo and links each card back to its laboratory view. Projects are stored by the Railway API and currently persist in its local JSON store; they are not tied to an account because the hackathon build intentionally has no authentication.
-
-### Configuration
-
-Configuration is a read-only system page for the hackathon build. It identifies the live providers used by the deployed application: DeepSeek V4 Flash through OpenRouter for analysis, Gemini 2.5 Flash Image through OpenRouter for blueprints, and SerpApi Google Patents for discovery. There are no fake provider switches or account controls. Permanent preferences, notifications, exports, and multi-user storage are outside the current demo scope.
-
-## What Renaissance does
-
-### Discovery
-
-Search is powered by SerpApi’s Google Patents engine and filtered toward patents old enough to be viable remix candidates. Results retain the patent identifier, title, abstract, dates, inventors, claims, PDF link, and thumbnail when the source provides them.
-
-### Diligence
-
-When a patent is opened, Renaissance runs a separate research pass through Google Search and Google News. It extracts demand and competitor signals, links the underlying sources, and presents an opportunity score as research support—not as legal freedom-to-operate advice.
-
-### Modernization
-
-DeepSeek analyzes the patent context as a mechanical engineer and materials scientist. It returns a constrained three-row modernization matrix covering component, original approach, modern equivalent, material, and technical justification. The server validates the response and falls back to engineering heuristics when an AI provider is unavailable.
-
-### Visual communication
-
-The blueprint generator uses the patent context, the engineering description, and the modernization matrix to produce a dark cyanotype technical illustration. The prompt explicitly prohibits unrelated generic mechanisms and asks for a coherent, manufacturable assembly. If image generation fails, the laboratory still renders a deterministic technical SVG rather than a broken page.
-
-## Architecture
-
-Renaissance is a split deployment with a deliberately small public API:
-
-```text
-Vercel (React + Vite)
-          │
-          │  /api/query and /api/mutation
-          ▼
-Railway (Express + TypeScript)
-     ├── SerpApi: patents, search, news
-     ├── OpenRouter / DeepSeek: analysis
-     └── OpenRouter image endpoint: blueprint visual
-```
-
-There is no login or account wall in the hackathon build. The Railway service stores remix projects in a local JSON store so they survive a process restart within the running instance. The filesystem is not durable across every redeploy; Supabase is the natural next step if projects need permanent multi-user storage.
-
-## Stack
-
-- React 18, Vite, TypeScript, Tailwind CSS
-- Express API with CORS and a small query/mutation adapter
-- SerpApi for Google Patents, Google Search, and Google News
-- OpenRouter for model routing
-- DeepSeek Flash for patent analysis by default
-- Google Gemini 2.5 Flash Image through OpenRouter for blueprint visuals by default
-- Railway for the API and Vercel for the frontend
-
-## Run locally
-
-Requirements: Node.js 20+ and API keys for the providers you want to use.
+## See it in under 3 minutes (no keys, no database)
 
 ```bash
-npm install
-cp .env.example .env
+git clone https://github.com/AryanSaxenaa/renaissance.git
+cd renaissance
+npm ci
 npm run dev
 ```
 
-The Vite development server runs at `http://localhost:5173`. For a production-style local run:
+Open [http://localhost:5173/search](http://localhost:5173/search) → sample query **centrifugal governor** → open a hit → dossier tabs (Status, Market, Literature, News, Brief, Evidence).
+
+Replay mode is automatic when `SERPAPI_API_KEY` is unset.
+
+### Live mode (optional; spends SerpApi credits)
+
+Copy `.env.example` to `.env.local`, set `SERPAPI_API_KEY`, `RENAISSANCE_MODE=live`, and (for public demos) `ACCESS_CODE`. Enter the access code on the search page when prompted.
+
+## How SerpApi is used
+
+| Engine | Role | Typical credits |
+|--------|------|-----------------|
+| `google_patents` | Candidate discovery (`before=filing:…`, grants) | 1 / search |
+| `google_patents_details` | Legal status source | 1 / patent |
+| `google_shopping` | Market listings (India domain) | 1 |
+| `google_maps` | Nearby makers | 1 |
+| `google_scholar` | Recent literature | 1 |
+| `google_news` | Assignee/topic signals | 1 |
+
+All calls go through `src/server/serpapi/` (cache, ledger, budget caps, redaction). Each live call records `search_metadata.id`.
+
+## What makes it different
+
+1. **Evidence-based status** with confidence and a “not checked” list — never “safe to copy.”
+2. **Zero uncited numbers** in brief claims (deterministic grounding + verifier).
+3. **Replay mode** with fixtures for judges (`fixtures/replay/`).
+4. **Re-scan** and diff for saved projects (anonymous owner cookie).
+
+## Evaluation (small, honest)
+
+Synthetic mini-set (`npm run eval -- --set=tests-mini`) writes `eval/report.json` and powers `/evaluation`. Expand with hand-labelled patents in `eval/labels/*.jsonl` (see `docs/EVAL.md`).
+
+Latest mini-set metrics are in `eval/report.json` after you run eval — do not copy numbers into docs without running it.
+
+## Deploy on Railway
+
+Single Docker service serves API + built client. See `docs/RAILWAY.md`. Health: `GET /health`.
+
+## Pre-existing work
+
+See `docs/PRE_EXISTING_WORK.md`. Baseline tag: `pre-hackathon-baseline`.
+
+## AI-use disclosure
+
+See `AI_USE.md`.
+
+## Tests
 
 ```bash
+npm test
+npm run secret-scan
+npm run eval -- --set=tests-mini
 npm run build
-npm start
 ```
 
-The API listens on port `3000` unless `PORT` is set. Set `VITE_API_URL=http://localhost:3000/api` when running the frontend separately.
-
-## Environment variables
-
-Provider keys belong on Railway/server-side only. `VITE_API_URL` is the only provider-facing value needed by Vercel.
-
-| Variable | Required | Purpose |
-| --- | --- | --- |
-| `OPENROUTER_API_KEY` | Yes for AI | Routes text and image requests through OpenRouter |
-| `OPENROUTER_MODEL` | No | Analysis model; defaults to `deepseek/deepseek-v4-flash` |
-| `OPENROUTER_IMAGE_MODEL` | No | Image model; defaults to `google/gemini-2.5-flash-image` |
-| `DEEPSEEK_API_KEY` | Optional | Direct text-analysis fallback |
-| `DEEPSEEK_MODEL` | No | Direct fallback model; defaults to `deepseek-chat` |
-| `SERPAPI_API_KEY` | Yes for search | Google Patents, Search, and News access |
-| `VITE_API_URL` | Vercel only | Railway API URL ending in `/api` |
-| `PORT` | No | Railway/runtime port; defaults to `3000` |
-| `PROJECT_STORE_PATH` | No | JSON project-store path; defaults to `.data/renaissance-projects.json` |
-
-Start from [`.env.example`](.env.example) and never commit `.env`.
-
-## Deploy
-
-### Railway API
-
-Create a Railway service from this repository, add the server-side variables above, and deploy. The repository includes `railway.json` and a production start command:
+Record new replay fixtures (spends credits):
 
 ```bash
-npm run build
-npm start
+npm run fixtures:freeze -- "your query"
 ```
 
-Check the service at `/health`; it should return `{ "ok": true }`.
+## Licences
 
-### Vercel frontend
-
-Create a Vercel project from the same repository and set:
-
-```text
-VITE_API_URL=https://<your-railway-service>.up.railway.app/api
-```
-
-Vercel uses `npm run build:client` and publishes `dist/client`. The included `vercel.json` handles client-side routes.
-
-## Engineering and product boundaries
-
-Renaissance is an ideation and research tool. Its generated materials, stress values, efficiency estimates, market signals, and images are starting points for human review. They are not validated designs, patent-law opinions, safety certifications, or manufacturing-ready drawings.
-
-The current hackathon build prioritizes a complete, explainable demo flow over persistent accounts and production-grade collaboration. The clearest production upgrade is replacing the local project store with Supabase and storing generated images in object storage instead of embedding them in project JSON.
-
-## License
-
-MIT
+See `NOTICE.md`. Third-party APIs: SerpApi, OpenRouter (optional LLM).

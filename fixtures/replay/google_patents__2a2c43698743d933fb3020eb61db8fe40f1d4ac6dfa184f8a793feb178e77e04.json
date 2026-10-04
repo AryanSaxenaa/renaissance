@@ -1,24 +1,2977 @@
 {
   "search_metadata": {
-    "id": "replay-patents-search-001",
+    "id": "6ac23dadb9dbc44e441465d0",
     "status": "Success",
-    "json_endpoint": "https://serpapi.com/searches/replay-patents-search-001.json"
+    "json_endpoint": "https://serpapi.com/searches/5644guU91WaAmgEVUnlvPsQuZjcj3A_wrV96vm0UaHY/6ac23dadb9dbc44e441465d0.json",
+    "markdown_endpoint": "https://serpapi.com/searches/5644guU91WaAmgEVUnlvPsQuZjcj3A_wrV96vm0UaHY/6ac23dadb9dbc44e441465d0.md",
+    "created_at": "2026-10-04 11:51:09 UTC",
+    "processed_at": "2026-10-04 11:51:09 UTC",
+    "google_patents_url": "https://patents.google.com/xhr/query?url=q%3Dcentrifugal%2Bgovernor%26before%3Dfiling%3A20060101%26status%3DGRANT%26type%3DPATENT%26num%3D10",
+    "raw_html_file": "https://serpapi.com/searches/5644guU91WaAmgEVUnlvPsQuZjcj3A_wrV96vm0UaHY/6ac23dadb9dbc44e441465d0.html",
+    "prettify_html_file": "https://serpapi.com/searches/5644guU91WaAmgEVUnlvPsQuZjcj3A_wrV96vm0UaHY/6ac23dadb9dbc44e441465d0.prettify",
+    "total_time_taken": 0.94
+  },
+  "search_parameters": {
+    "engine": "google_patents",
+    "q": "centrifugal governor",
+    "before": "filing:20060101",
+    "patent_status": "GRANT",
+    "type": "PATENT",
+    "num": "10"
+  },
+  "search_information": {
+    "total_results": 21452,
+    "total_pages": 100,
+    "page_number": 1
   },
   "organic_results": [
     {
-      "patent_id": "US-US4085846-A",
-      "title": "Speed control system for a centrifugal governor",
-      "filing_date": "1976-05-10",
-      "publication_date": "1978-04-25",
-      "country_status": { "US": "NOT_ACTIVE" },
-      "snippet": "A governor mechanism for regulating rotational speed."
+      "position": 1,
+      "rank": 0,
+      "patent_id": "patent/US1836693A/en",
+      "patent_link": "https://patents.google.com/patent/US1836693A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS1836693A%2Fen",
+      "title": "Windmill",
+      "snippet": "Another object of the invention is to construct a windmill whose speed of rotation is controlled, irrespective of the speed of the air or fluid driving it or the speed of the aeroplane upon which the windmill is mounted, by a centrifugal governor which is light in weight compared with the weight of …",
+      "priority_date": "1930-07-10",
+      "filing_date": "1930-07-10",
+      "grant_date": "1931-12-15",
+      "publication_date": "1931-12-15",
+      "inventor": "Urfer Adolf",
+      "assignee": "Pioneer Instr Co Inc",
+      "publication_number": "US1836693A",
+      "language": "en",
+      "thumbnail": "https://patentimages.storage.googleapis.com/dc/9a/6b/16408932f8a1b3/US1836693-drawings-page-1.png",
+      "pdf": "https://patentimages.storage.googleapis.com/50/05/4a/5ea41d36469d69/US1836693.pdf",
+      "figures": [
+        {
+          "thumbnail": "https://patentimages.storage.googleapis.com/29/c7/77/2d545311dcfcab/US1836693-drawings-page-1.png",
+          "full": "https://patentimages.storage.googleapis.com/93/f6/21/d26848f2407642/US1836693-drawings-page-1.png"
+        },
+        {
+          "thumbnail": "https://patentimages.storage.googleapis.com/ce/6f/a0/59cef6d5399deb/US1836693-drawings-page-2.png",
+          "full": "https://patentimages.storage.googleapis.com/65/cc/97/deef4bae6a840f/US1836693-drawings-page-2.png"
+        },
+        {
+          "thumbnail": "https://patentimages.storage.googleapis.com/84/98/ae/c1a6aa6a682a61/US1836693-drawings-page-3.png",
+          "full": "https://patentimages.storage.googleapis.com/84/ca/46/7e243972b5cf86/US1836693-drawings-page-3.png"
+        }
+      ],
+      "country_status": {
+        "US": "NOT_ACTIVE",
+        "FR": "NOT_ACTIVE"
+      }
     },
     {
-      "patent_id": "US-US3212345-A",
-      "title": "Centrifugal governor linkage",
-      "filing_date": "1962-03-01",
-      "publication_date": "1965-10-12",
-      "country_status": { "US": "NOT_ACTIVE" }
+      "position": 2,
+      "rank": 1,
+      "patent_id": "patent/US1348956A/en",
+      "patent_link": "https://patents.google.com/patent/US1348956A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS1348956A%2Fen",
+      "title": "Governor",
+      "snippet": "During the operation of the driven mem- 0 ber above a given speed, the valve 36 is held open against the tension ofspring 37 by controlling means which exert pressure upon the valvestem 38. Though not limited to any special kind of controlling device I have here shown a centrifugal governor …",
+      "priority_date": "1919-02-06",
+      "filing_date": "1919-02-06",
+      "grant_date": "1920-08-10",
+      "publication_date": "1920-08-10",
+      "inventor": "Jr Frank Pokorny",
+      "assignee": "Francis W Keegan",
+      "publication_number": "US1348956A",
+      "language": "en",
+      "thumbnail": "https://patentimages.storage.googleapis.com/16/77/a3/dfaeaa6ca8aab9/US1348956-drawings-page-1.png",
+      "pdf": "https://patentimages.storage.googleapis.com/eb/d7/60/6e4d6456ab0d8b/US1348956.pdf",
+      "figures": [
+        {
+          "thumbnail": "https://patentimages.storage.googleapis.com/ad/ff/c9/9449aeade940c3/US1348956-drawings-page-1.png",
+          "full": "https://patentimages.storage.googleapis.com/52/48/1b/bac4111fc1bfc0/US1348956-drawings-page-1.png"
+        }
+      ],
+      "country_status": {
+        "US": "NOT_ACTIVE"
+      }
+    },
+    {
+      "position": 3,
+      "rank": 2,
+      "patent_id": "patent/FR890876A/en",
+      "patent_link": "https://patents.google.com/patent/FR890876A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FFR890876A%2Fen",
+      "title": "Centrifugal governor for regulating the rotational speed of internal combustion …",
+      "filing_date": "1943-02-11",
+      "grant_date": "1944-02-21",
+      "publication_date": "1944-02-21",
+      "assignee": "Bosch Gmbh Robert",
+      "publication_number": "FR890876A",
+      "language": "en",
+      "country_status": {
+        "FR": "NOT_ACTIVE"
+      }
+    },
+    {
+      "position": 4,
+      "rank": 3,
+      "patent_id": "patent/RU2008485C1/en",
+      "patent_link": "https://patents.google.com/patent/RU2008485C1/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FRU2008485C1%2Fen",
+      "title": "Fuel injection pump centrifugal governor",
+      "snippet": "FIELD: mechanical engineering; diesel engines. SUBSTANCE: centrifugal governor has sensing member with radial slots installed on shaft in housing, sleeve installed on shaft for axial travel along shaft surface, balls installed in slots of sensing member for engagement with sleeve. Fitted on …",
+      "priority_date": "1990-07-12",
+      "filing_date": "1990-07-12",
+      "grant_date": "1994-02-28",
+      "publication_date": "1994-02-28",
+      "inventor": "И.А. Бекренев",
+      "assignee": "Бекренев Игорь Анатольевич",
+      "publication_number": "RU2008485C1",
+      "language": "en",
+      "thumbnail": "https://patentimages.storage.googleapis.com/b9/dc/3a/74c7bc9eca9979/00000001.png",
+      "pdf": "https://patentimages.storage.googleapis.com/89/c9/3e/4bde129cb33cf9/RU2008485C1.pdf",
+      "figures": [
+        {
+          "thumbnail": "https://patentimages.storage.googleapis.com/ba/cf/50/a9fb44707e581a/00000001.png",
+          "full": "https://patentimages.storage.googleapis.com/0e/47/0d/a8eea144da9ed7/00000001.png"
+        },
+        {
+          "thumbnail": "https://patentimages.storage.googleapis.com/03/60/b3/3c43949a251ff0/00000002.png",
+          "full": "https://patentimages.storage.googleapis.com/45/98/09/fb2e456748a482/00000002.png"
+        },
+        {
+          "thumbnail": "https://patentimages.storage.googleapis.com/10/66/0f/e6474843d1da4e/00000003.png",
+          "full": "https://patentimages.storage.googleapis.com/be/c8/db/617c17d8a45074/00000003.png"
+        }
+      ],
+      "country_status": {
+        "RU": "ACTIVE"
+      }
+    },
+    {
+      "position": 5,
+      "rank": 4,
+      "patent_id": "patent/US2855029A/en",
+      "patent_link": "https://patents.google.com/patent/US2855029A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS2855029A%2Fen",
+      "title": "All-speed governor for gas turbine engines",
+      "snippet": "a corporation It is common practice to utilize a centrifugal governor of the mechanical fly-weight type to control a fuel metering or throttle valve in fuel control systems for gas turbine engines, the governor including a governor spring which is manually adjustable or capable of being reset by a …",
+      "priority_date": "1951-12-26",
+      "filing_date": "1951-12-26",
+      "grant_date": "1958-10-07",
+      "publication_date": "1958-10-07",
+      "inventor": "James M Eastman",
+      "assignee": "Bendix Aviat Corp",
+      "publication_number": "US2855029A",
+      "language": "en",
+      "thumbnail": "https://patentimages.storage.googleapis.com/bd/ba/d1/ef47bda653fdb7/US2855029-drawings-page-1.png",
+      "pdf": "https://patentimages.storage.googleapis.com/8d/7f/0e/74e240d37a8070/US2855029.pdf",
+      "figures": [
+        {
+          "thumbnail": "https://patentimages.storage.googleapis.com/60/be/58/1fbeeccd5e2721/US2855029-drawings-page-1.png",
+          "full": "https://patentimages.storage.googleapis.com/4d/f6/0c/4f7188803ab97e/US2855029-drawings-page-1.png"
+        },
+        {
+          "thumbnail": "https://patentimages.storage.googleapis.com/c7/e2/c8/56c4dc707e98cc/US2855029-drawings-page-2.png",
+          "full": "https://patentimages.storage.googleapis.com/0d/da/71/d5498f53ae7866/US2855029-drawings-page-2.png"
+        }
+      ],
+      "country_status": {
+        "US": "NOT_ACTIVE"
+      }
+    },
+    {
+      "position": 6,
+      "rank": 5,
+      "patent_id": "patent/GB190217086A/en",
+      "patent_link": "https://patents.google.com/patent/GB190217086A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FGB190217086A%2Fen",
+      "title": "Improvements in Centrifugal Governors for Engines or Motors",
+      "snippet": "17,086. Jones, A. P., [Compagnie Duplex]. Aug. 1. Centrifugal governors.-To increase the sensitiveness of a centrifugal governor for a steam or explosion engine, turbine, or other motor, the weights are pivoted on the governor arms, and are connected together by springs acting between the pivots …",
+      "priority_date": "1902-08-01",
+      "filing_date": "1902-08-01",
+      "grant_date": "1903-06-18",
+      "publication_date": "1903-06-18",
+      "inventor": "Allen Parry Jones",
+      "assignee": "Allen Parry Jones",
+      "publication_number": "GB190217086A",
+      "language": "en",
+      "country_status": {
+        "GB": "NOT_ACTIVE"
+      }
+    },
+    {
+      "position": 7,
+      "rank": 6,
+      "patent_id": "patent/US2612944A/en",
+      "patent_link": "https://patents.google.com/patent/US2612944A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS2612944A%2Fen",
+      "title": "Semiisochronous governor for gas turbines automatically modified by fuel …",
+      "snippet": "15. A centrifugal governor for a gas turbine and the like, a manually controlled spring opposing the centrifugal force derived from said governor, a control valve jointly controlled y Said opposing forces, a source of motive fluid for said gas-turbine, a main fluid passage therefor, said control …",
+      "priority_date": "1948-06-07",
+      "filing_date": "1948-06-07",
+      "grant_date": "1952-10-07",
+      "publication_date": "1952-10-07",
+      "inventor": "Jr Andrew William Orr",
+      "assignee": "George M Holley",
+      "publication_number": "US2612944A",
+      "language": "en",
+      "thumbnail": "https://patentimages.storage.googleapis.com/70/f9/4b/794211bc1dee1e/US2612944-drawings-page-1.png",
+      "pdf": "https://patentimages.storage.googleapis.com/b6/f0/a4/a3050aaaeb28aa/US2612944.pdf",
+      "figures": [
+        {
+          "thumbnail": "https://patentimages.storage.googleapis.com/f0/57/5a/843e5f06fab32e/US2612944-drawings-page-1.png",
+          "full": "https://patentimages.storage.googleapis.com/c0/ff/a9/b25f2d21bf8d5e/US2612944-drawings-page-1.png"
+        },
+        {
+          "thumbnail": "https://patentimages.storage.googleapis.com/3c/69/27/f8cc26e6d55e04/US2612944-drawings-page-2.png",
+          "full": "https://patentimages.storage.googleapis.com/93/ea/62/639d2e68deaa4b/US2612944-drawings-page-2.png"
+        }
+      ],
+      "country_status": {
+        "US": "NOT_ACTIVE"
+      }
+    },
+    {
+      "position": 8,
+      "rank": 7,
+      "patent_id": "patent/FR881985A/en",
+      "patent_link": "https://patents.google.com/patent/FR881985A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FFR881985A%2Fen",
+      "title": "Centrifugal governor, in particular for adjusting the speed of rotation of …",
+      "priority_date": "1941-05-13",
+      "filing_date": "1942-05-11",
+      "grant_date": "1943-05-13",
+      "publication_date": "1943-05-13",
+      "assignee": "Bosch Gmbh Robert",
+      "publication_number": "FR881985A",
+      "language": "en",
+      "country_status": {
+        "FR": "NOT_ACTIVE"
+      }
+    },
+    {
+      "position": 9,
+      "rank": 8,
+      "patent_id": "patent/US664392A/en",
+      "patent_link": "https://patents.google.com/patent/US664392A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS664392A%2Fen",
+      "title": "Centrifugal governor.",
+      "snippet": "Il o u 31 5 1 3 1.1 Lam 8 #o 14 izf 'A1- 1 i -f-Lf UNITED STATES PATENT OFFICE. FRANCIS ELLIOOTT, LOF BALTIMORE COUNTY, MARYLAND. n CENTRIFUGAL GOVERNOR. SPECIFICATION forming part of Letters Patent No. 664,392, dated December 2 5, 1900. Application led April 16, 1900. Serial No. 13,020. (No model.",
+      "priority_date": "1900-04-16",
+      "filing_date": "1900-04-16",
+      "grant_date": "1900-12-25",
+      "publication_date": "1900-12-25",
+      "inventor": "Francis Ellicott",
+      "assignee": "Francis Ellicott",
+      "publication_number": "US664392A",
+      "language": "en",
+      "thumbnail": "https://patentimages.storage.googleapis.com/08/96/c4/db9818e33cadc7/US664392-drawings-page-1.png",
+      "pdf": "https://patentimages.storage.googleapis.com/43/d1/8c/6d754f0de6c12e/US664392.pdf",
+      "figures": [
+        {
+          "thumbnail": "https://patentimages.storage.googleapis.com/b2/cb/66/32cd382b5871e0/US664392-drawings-page-1.png",
+          "full": "https://patentimages.storage.googleapis.com/b8/33/fc/eb47eb0b68f93c/US664392-drawings-page-1.png"
+        },
+        {
+          "thumbnail": "https://patentimages.storage.googleapis.com/e2/fd/c4/2b39063b1e608e/US664392-drawings-page-2.png",
+          "full": "https://patentimages.storage.googleapis.com/68/3c/fb/c0ce7a1e817583/US664392-drawings-page-2.png"
+        }
+      ],
+      "country_status": {
+        "US": "NOT_ACTIVE"
+      }
+    },
+    {
+      "position": 10,
+      "rank": 9,
+      "patent_id": "patent/US778248A/en",
+      "patent_link": "https://patents.google.com/patent/US778248A/en",
+      "serpapi_link": "https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS778248A%2Fen",
+      "title": "Centrifugal governor.",
+      "snippet": "' No. 778,248. PATENTBD DEG.27,1904. o. JUNGGREN. 4 ` GENTRIPUGAL GOVERNOR. l APPLIOATION FILED 3111.2, 1994. n invenor: O Scar` Junggren, UNITED STATES Patented December 27, 1904. y PATENT OFFICE. ERAL ELECTRIC COMPANY, A CORPORATION NEW YORK. CENTRIFUGAL GOVERNOR. SPECIFICATION forming part of …",
+      "priority_date": "1904-01-02",
+      "filing_date": "1904-01-02",
+      "grant_date": "1904-12-27",
+      "publication_date": "1904-12-27",
+      "inventor": "Oscar Junggren",
+      "assignee": "Gen Electric",
+      "publication_number": "US778248A",
+      "language": "en",
+      "thumbnail": "https://patentimages.storage.googleapis.com/c2/6a/5b/5d016f0cb06875/US778248-drawings-page-1.png",
+      "pdf": "https://patentimages.storage.googleapis.com/0f/4b/df/6f049a04b73d7d/US778248.pdf",
+      "figures": [
+        {
+          "thumbnail": "https://patentimages.storage.googleapis.com/22/80/82/534595cec80782/US778248-drawings-page-1.png",
+          "full": "https://patentimages.storage.googleapis.com/2d/24/81/cb7f71a9a0cfc9/US778248-drawings-page-1.png"
+        }
+      ],
+      "country_status": {
+        "US": "NOT_ACTIVE"
+      }
     }
-  ]
+  ],
+  "summary": {
+    "assignee": [
+      {
+        "key": "Total",
+        "percentage": 100,
+        "frequency": [
+          {
+            "year_range": "2004-2007",
+            "percentage": 0.6
+          },
+          {
+            "year_range": "2001-2004",
+            "percentage": 1.1
+          },
+          {
+            "year_range": "1998-2001",
+            "percentage": 1.9
+          },
+          {
+            "year_range": "1995-1998",
+            "percentage": 2.1
+          },
+          {
+            "year_range": "1992-1995",
+            "percentage": 1.7
+          },
+          {
+            "year_range": "1989-1992",
+            "percentage": 2.2
+          },
+          {
+            "year_range": "1986-1989",
+            "percentage": 2.9
+          },
+          {
+            "year_range": "1983-1986",
+            "percentage": 2.1
+          },
+          {
+            "year_range": "1980-1983",
+            "percentage": 2.5
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 3.2
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 2.1
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 2.6
+          },
+          {
+            "year_range": "1968-1971",
+            "percentage": 4.2
+          },
+          {
+            "year_range": "1965-1968",
+            "percentage": 1.9
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 2.6
+          },
+          {
+            "year_range": "1959-1962",
+            "percentage": 2.7
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 3
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 2.7
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 6.3
+          },
+          {
+            "year_range": "1947-1950",
+            "percentage": 2.8
+          },
+          {
+            "year_range": "1944-1947",
+            "percentage": 3.1
+          },
+          {
+            "year_range": "1941-1944",
+            "percentage": 3.3
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 4.8
+          },
+          {
+            "year_range": "1935-1938",
+            "percentage": 4.9
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 5.1
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 4.8
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 3.2
+          },
+          {
+            "year_range": "1923-1926",
+            "percentage": 3.4
+          },
+          {
+            "year_range": "1920-1923",
+            "percentage": 2.4
+          },
+          {
+            "year_range": "1917-1920",
+            "percentage": 2.1
+          },
+          {
+            "year_range": "1914-1917",
+            "percentage": 1.6
+          },
+          {
+            "year_range": "1911-1914",
+            "percentage": 2.7
+          },
+          {
+            "year_range": "1908-1911",
+            "percentage": 1.9
+          },
+          {
+            "year_range": "1905-1908",
+            "percentage": 1.5
+          },
+          {
+            "year_range": "1902-1905",
+            "percentage": 1.5
+          },
+          {
+            "year_range": "1899-1902",
+            "percentage": 2.3
+          },
+          {
+            "year_range": "1896-1899",
+            "percentage": 0.2
+          }
+        ]
+      },
+      {
+        "key": "株式会社クボタ",
+        "percentage": 3.5,
+        "frequency": [
+          {
+            "year_range": "2001-2004",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1998-2001",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1995-1998",
+            "percentage": 1.2
+          },
+          {
+            "year_range": "1992-1995",
+            "percentage": 0.7
+          },
+          {
+            "year_range": "1989-1992",
+            "percentage": 0.9
+          }
+        ]
+      },
+      {
+        "key": "Bosch Gmbh Robert",
+        "percentage": 2.9,
+        "frequency": [
+          {
+            "year_range": "1992-1995",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1986-1989",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 0.6
+          },
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1947-1950",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1941-1944",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1935-1938",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "Gen Motors Corp",
+        "percentage": 1.5,
+        "frequency": [
+          {
+            "year_range": "1971-1974",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1959-1962",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1920-1923",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "Bosch Robert",
+        "percentage": 1.5,
+        "frequency": [
+          {
+            "year_range": "1935-1938",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 0.6
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 0.7
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "Robert Bosch Gmbh, 7000 Stuttgart",
+        "percentage": 1.3,
+        "frequency": [
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1965-1968",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "Gen Electric",
+        "percentage": 1,
+        "frequency": [
+          {
+            "year_range": "1959-1962",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1935-1938",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1911-1914",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1908-1911",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1905-1908",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1902-1905",
+            "percentage": 0.3
+          }
+        ]
+      },
+      {
+        "key": "Robert Bosch Gmbh",
+        "percentage": 1,
+        "frequency": [
+          {
+            "year_range": "1989-1992",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1986-1989",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1983-1986",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1980-1983",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "Robert Bosch Akt Ges",
+        "percentage": 1,
+        "frequency": [
+          {
+            "year_range": "1935-1938",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "Fichtel & Sachs Ag",
+        "percentage": 0.9,
+        "frequency": [
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.7
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "Diesel Kiki Co., Ltd.",
+        "percentage": 0.8,
+        "frequency": [
+          {
+            "year_range": "1983-1986",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1980-1983",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "Heinzmann Fritz",
+        "percentage": 0.8,
+        "frequency": [
+          {
+            "year_range": "1959-1962",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.2
+          }
+        ]
+      },
+      {
+        "key": "Ярославский завод дизельной аппаратуры",
+        "percentage": 0.8,
+        "frequency": [
+          {
+            "year_range": "1986-1989",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1983-1986",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1980-1983",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "Aeg",
+        "percentage": 0.7,
+        "frequency": [
+          {
+            "year_range": "1941-1944",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1935-1938",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1923-1926",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "Novi Equipment Co",
+        "percentage": 0.7,
+        "frequency": [
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1947-1950",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1944-1947",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1941-1944",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "Daimler Benz Ag",
+        "percentage": 0.7,
+        "frequency": [
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1959-1962",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.4
+          }
+        ]
+      },
+      {
+        "key": "本田技研工業株式会社",
+        "percentage": 0.7,
+        "frequency": [
+          {
+            "year_range": "2004-2007",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1998-2001",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1995-1998",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1986-1989",
+            "percentage": 0.2
+          }
+        ]
+      },
+      {
+        "key": "Shimano Industrial Co",
+        "percentage": 0.7,
+        "frequency": [
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.7
+          }
+        ]
+      },
+      {
+        "key": "Bell Telephone Labor Inc",
+        "percentage": 0.6,
+        "frequency": [
+          {
+            "year_range": "1959-1962",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "Western Electric Co",
+        "percentage": 0.6,
+        "frequency": [
+          {
+            "year_range": "1926-1929",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1920-1923",
+            "percentage": 0.5
+          }
+        ]
+      }
+    ],
+    "inventor": [
+      {
+        "key": "Total",
+        "percentage": 100,
+        "frequency": [
+          {
+            "year_range": "2004-2007",
+            "percentage": 0.6
+          },
+          {
+            "year_range": "2001-2004",
+            "percentage": 1.1
+          },
+          {
+            "year_range": "1998-2001",
+            "percentage": 1.9
+          },
+          {
+            "year_range": "1995-1998",
+            "percentage": 2.1
+          },
+          {
+            "year_range": "1992-1995",
+            "percentage": 1.7
+          },
+          {
+            "year_range": "1989-1992",
+            "percentage": 2.2
+          },
+          {
+            "year_range": "1986-1989",
+            "percentage": 2.9
+          },
+          {
+            "year_range": "1983-1986",
+            "percentage": 2.1
+          },
+          {
+            "year_range": "1980-1983",
+            "percentage": 2.5
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 3.2
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 2.1
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 2.6
+          },
+          {
+            "year_range": "1968-1971",
+            "percentage": 4.2
+          },
+          {
+            "year_range": "1965-1968",
+            "percentage": 1.9
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 2.6
+          },
+          {
+            "year_range": "1959-1962",
+            "percentage": 2.7
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 3
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 2.7
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 6.3
+          },
+          {
+            "year_range": "1947-1950",
+            "percentage": 2.8
+          },
+          {
+            "year_range": "1944-1947",
+            "percentage": 3.1
+          },
+          {
+            "year_range": "1941-1944",
+            "percentage": 3.3
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 4.8
+          },
+          {
+            "year_range": "1935-1938",
+            "percentage": 4.9
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 5.1
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 4.8
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 3.2
+          },
+          {
+            "year_range": "1923-1926",
+            "percentage": 3.4
+          },
+          {
+            "year_range": "1920-1923",
+            "percentage": 2.4
+          },
+          {
+            "year_range": "1917-1920",
+            "percentage": 2.1
+          },
+          {
+            "year_range": "1914-1917",
+            "percentage": 1.6
+          },
+          {
+            "year_range": "1911-1914",
+            "percentage": 2.7
+          },
+          {
+            "year_range": "1908-1911",
+            "percentage": 1.9
+          },
+          {
+            "year_range": "1905-1908",
+            "percentage": 1.5
+          },
+          {
+            "year_range": "1902-1905",
+            "percentage": 1.5
+          },
+          {
+            "year_range": "1899-1902",
+            "percentage": 2.3
+          },
+          {
+            "year_range": "1896-1899",
+            "percentage": 0.2
+          }
+        ]
+      },
+      {
+        "key": "Ernst Ritter",
+        "percentage": 1,
+        "frequency": [
+          {
+            "year_range": "1980-1983",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 0.3
+          }
+        ]
+      },
+      {
+        "key": "達行 中村",
+        "percentage": 0.9,
+        "frequency": [
+          {
+            "year_range": "1998-2001",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1995-1998",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1989-1992",
+            "percentage": 0.2
+          }
+        ]
+      },
+      {
+        "key": "真裕 長浜",
+        "percentage": 0.8,
+        "frequency": [
+          {
+            "year_range": "1998-2001",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1995-1998",
+            "percentage": 0.5
+          }
+        ]
+      },
+      {
+        "key": "Fritz Heinzmann",
+        "percentage": 0.8,
+        "frequency": [
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1959-1962",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1947-1950",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1941-1944",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "Herman G Adler",
+        "percentage": 0.8,
+        "frequency": [
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1947-1950",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1944-1947",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1941-1944",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 0.2
+          }
+        ]
+      },
+      {
+        "key": "Heinzmann Fritz",
+        "percentage": 0.8,
+        "frequency": [
+          {
+            "year_range": "1959-1962",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.2
+          }
+        ]
+      },
+      {
+        "key": "Василий Васильевич Курманов",
+        "percentage": 0.8,
+        "frequency": [
+          {
+            "year_range": "1986-1989",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1983-1986",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1980-1983",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "Takashi Segawa",
+        "percentage": 0.6,
+        "frequency": [
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.6
+          }
+        ]
+      },
+      {
+        "key": "鉱三 吉田",
+        "percentage": 0.6,
+        "frequency": [
+          {
+            "year_range": "1998-2001",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1995-1998",
+            "percentage": 0.5
+          }
+        ]
+      },
+      {
+        "key": "慶太 内藤",
+        "percentage": 0.6,
+        "frequency": [
+          {
+            "year_range": "1998-2001",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1995-1998",
+            "percentage": 0.4
+          }
+        ]
+      },
+      {
+        "key": "Keizo Shimano",
+        "percentage": 0.6,
+        "frequency": [
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.6
+          }
+        ]
+      },
+      {
+        "key": "俊一 萬羽",
+        "percentage": 0.6,
+        "frequency": [
+          {
+            "year_range": "1998-2001",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1995-1998",
+            "percentage": 0.3
+          }
+        ]
+      },
+      {
+        "key": "健次 山下",
+        "percentage": 0.6,
+        "frequency": [
+          {
+            "year_range": "1998-2001",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1995-1998",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1992-1995",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1989-1992",
+            "percentage": 0.2
+          }
+        ]
+      },
+      {
+        "key": "Геннадий Сергеевич Корнилов",
+        "percentage": 0.5,
+        "frequency": [
+          {
+            "year_range": "1986-1989",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1983-1986",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1980-1983",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "Sieghart Maier",
+        "percentage": 0.5,
+        "frequency": [
+          {
+            "year_range": "1986-1989",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "Борис Павлович Гусев",
+        "percentage": 0.5,
+        "frequency": [
+          {
+            "year_range": "1983-1986",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1980-1983",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "一利 岡本",
+        "percentage": 0.5,
+        "frequency": [
+          {
+            "year_range": "1992-1995",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1989-1992",
+            "percentage": 0.2
+          }
+        ]
+      },
+      {
+        "key": "Horst Schulz",
+        "percentage": 0.5,
+        "frequency": [
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.5
+          }
+        ]
+      },
+      {
+        "key": "裕三 梅田",
+        "percentage": 0.5,
+        "frequency": [
+          {
+            "year_range": "1995-1998",
+            "percentage": 0.5
+          }
+        ]
+      }
+    ],
+    "cpc": [
+      {
+        "key": "Total",
+        "percentage": 100,
+        "frequency": [
+          {
+            "year_range": "2004-2007",
+            "percentage": 0.6
+          },
+          {
+            "year_range": "2001-2004",
+            "percentage": 1.1
+          },
+          {
+            "year_range": "1998-2001",
+            "percentage": 1.9
+          },
+          {
+            "year_range": "1995-1998",
+            "percentage": 2.1
+          },
+          {
+            "year_range": "1992-1995",
+            "percentage": 1.7
+          },
+          {
+            "year_range": "1989-1992",
+            "percentage": 2.2
+          },
+          {
+            "year_range": "1986-1989",
+            "percentage": 2.9
+          },
+          {
+            "year_range": "1983-1986",
+            "percentage": 2.1
+          },
+          {
+            "year_range": "1980-1983",
+            "percentage": 2.5
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 3.2
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 2.1
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 2.6
+          },
+          {
+            "year_range": "1968-1971",
+            "percentage": 4.2
+          },
+          {
+            "year_range": "1965-1968",
+            "percentage": 1.9
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 2.6
+          },
+          {
+            "year_range": "1959-1962",
+            "percentage": 2.7
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 3
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 2.7
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 6.3
+          },
+          {
+            "year_range": "1947-1950",
+            "percentage": 2.8
+          },
+          {
+            "year_range": "1944-1947",
+            "percentage": 3.1
+          },
+          {
+            "year_range": "1941-1944",
+            "percentage": 3.3
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 4.8
+          },
+          {
+            "year_range": "1935-1938",
+            "percentage": 4.9
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 5.1
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 4.8
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 3.2
+          },
+          {
+            "year_range": "1923-1926",
+            "percentage": 3.4
+          },
+          {
+            "year_range": "1920-1923",
+            "percentage": 2.4
+          },
+          {
+            "year_range": "1917-1920",
+            "percentage": 2.1
+          },
+          {
+            "year_range": "1914-1917",
+            "percentage": 1.6
+          },
+          {
+            "year_range": "1911-1914",
+            "percentage": 2.7
+          },
+          {
+            "year_range": "1908-1911",
+            "percentage": 1.9
+          },
+          {
+            "year_range": "1905-1908",
+            "percentage": 1.5
+          },
+          {
+            "year_range": "1902-1905",
+            "percentage": 1.5
+          },
+          {
+            "year_range": "1899-1902",
+            "percentage": 2.3
+          },
+          {
+            "year_range": "1896-1899",
+            "percentage": 0.2
+          }
+        ]
+      },
+      {
+        "key": "G05D",
+        "percentage": 28.5,
+        "frequency": [
+          {
+            "year_range": "1989-1992",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1986-1989",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1980-1983",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.7
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.6
+          },
+          {
+            "year_range": "1965-1968",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1959-1962",
+            "percentage": 1.1
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 1.1
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 1
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 2.2
+          },
+          {
+            "year_range": "1947-1950",
+            "percentage": 1
+          },
+          {
+            "year_range": "1944-1947",
+            "percentage": 1.5
+          },
+          {
+            "year_range": "1941-1944",
+            "percentage": 2.1
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 2.1
+          },
+          {
+            "year_range": "1935-1938",
+            "percentage": 1.6
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 1.7
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 1.7
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 1.3
+          },
+          {
+            "year_range": "1923-1926",
+            "percentage": 1.2
+          },
+          {
+            "year_range": "1920-1923",
+            "percentage": 1
+          },
+          {
+            "year_range": "1917-1920",
+            "percentage": 1
+          },
+          {
+            "year_range": "1914-1917",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1911-1914",
+            "percentage": 0.8
+          },
+          {
+            "year_range": "1908-1911",
+            "percentage": 0.7
+          },
+          {
+            "year_range": "1905-1908",
+            "percentage": 0.6
+          },
+          {
+            "year_range": "1902-1905",
+            "percentage": 0.7
+          },
+          {
+            "year_range": "1899-1902",
+            "percentage": 0.7
+          }
+        ]
+      },
+      {
+        "key": "F02D",
+        "percentage": 17.3,
+        "frequency": [
+          {
+            "year_range": "2001-2004",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1998-2001",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1992-1995",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1989-1992",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1986-1989",
+            "percentage": 1.1
+          },
+          {
+            "year_range": "1983-1986",
+            "percentage": 0.6
+          },
+          {
+            "year_range": "1980-1983",
+            "percentage": 1.3
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 1.2
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 1.3
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 1.4
+          },
+          {
+            "year_range": "1968-1971",
+            "percentage": 1.1
+          },
+          {
+            "year_range": "1965-1968",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1959-1962",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 0.7
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 1.3
+          },
+          {
+            "year_range": "1947-1950",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1944-1947",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1941-1944",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1935-1938",
+            "percentage": 0.7
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 0.8
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1923-1926",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1920-1923",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1914-1917",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1911-1914",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1899-1902",
+            "percentage": 0.2
+          }
+        ]
+      },
+      {
+        "key": "Y10T",
+        "percentage": 10.7,
+        "frequency": [
+          {
+            "year_range": "2001-2004",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1998-2001",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1992-1995",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1989-1992",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1986-1989",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1980-1983",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1965-1968",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.6
+          },
+          {
+            "year_range": "1959-1962",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.6
+          },
+          {
+            "year_range": "1947-1950",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1944-1947",
+            "percentage": 0.6
+          },
+          {
+            "year_range": "1941-1944",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 0.8
+          },
+          {
+            "year_range": "1935-1938",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1923-1926",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1920-1923",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1917-1920",
+            "percentage": 0.6
+          },
+          {
+            "year_range": "1914-1917",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1911-1914",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1908-1911",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1905-1908",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1902-1905",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1899-1902",
+            "percentage": 0.5
+          }
+        ]
+      },
+      {
+        "key": "F16H",
+        "percentage": 5.9,
+        "frequency": [
+          {
+            "year_range": "2004-2007",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "2001-2004",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1998-2001",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1995-1998",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1992-1995",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1986-1989",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1983-1986",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1965-1968",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1959-1962",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1941-1944",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1935-1938",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 0.6
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1923-1926",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1920-1923",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1914-1917",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1905-1908",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1902-1905",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1899-1902",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "H01H",
+        "percentage": 4.9,
+        "frequency": [
+          {
+            "year_range": "1995-1998",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1989-1992",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1986-1989",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1965-1968",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1959-1962",
+            "percentage": 0.7
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.6
+          },
+          {
+            "year_range": "1947-1950",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1944-1947",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1941-1944",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1935-1938",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1911-1914",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1908-1911",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "H02P",
+        "percentage": 4.1,
+        "frequency": [
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1959-1962",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1947-1950",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1944-1947",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1941-1944",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1935-1938",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1923-1926",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1917-1920",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1896-1899",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "H02K",
+        "percentage": 3.3,
+        "frequency": [
+          {
+            "year_range": "2004-2007",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1965-1968",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1959-1962",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.6
+          },
+          {
+            "year_range": "1947-1950",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1944-1947",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1923-1926",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1917-1920",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1899-1902",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "G01P",
+        "percentage": 2.8,
+        "frequency": [
+          {
+            "year_range": "1986-1989",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1965-1968",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1923-1926",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1920-1923",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1914-1917",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1911-1914",
+            "percentage": 0.7
+          },
+          {
+            "year_range": "1908-1911",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1902-1905",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1899-1902",
+            "percentage": 0.4
+          }
+        ]
+      },
+      {
+        "key": "Y02E",
+        "percentage": 2.8,
+        "frequency": [
+          {
+            "year_range": "2001-2004",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1983-1986",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1980-1983",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1935-1938",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1923-1926",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1905-1908",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1902-1905",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1899-1902",
+            "percentage": 0.6
+          }
+        ]
+      },
+      {
+        "key": "Y10S",
+        "percentage": 2.8,
+        "frequency": [
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1965-1968",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1959-1962",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1947-1950",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1944-1947",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1935-1938",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 0.4
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1917-1920",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "F02B",
+        "percentage": 2.6,
+        "frequency": [
+          {
+            "year_range": "2001-2004",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1998-2001",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1995-1998",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1992-1995",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1989-1992",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1986-1989",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1983-1986",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1980-1983",
+            "percentage": 0.6
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1959-1962",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1944-1947",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "F02P",
+        "percentage": 2.3,
+        "frequency": [
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1947-1950",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1935-1938",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1929-1932",
+            "percentage": 0.5
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1923-1926",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1917-1920",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1911-1914",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "F02M",
+        "percentage": 2,
+        "frequency": [
+          {
+            "year_range": "2004-2007",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1992-1995",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1989-1992",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1986-1989",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1983-1986",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1980-1983",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1965-1968",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1944-1947",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1920-1923",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1917-1920",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "F16D",
+        "percentage": 2,
+        "frequency": [
+          {
+            "year_range": "1995-1998",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1944-1947",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1941-1944",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1935-1938",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1920-1923",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1908-1911",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1905-1908",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "B62M",
+        "percentage": 1.7,
+        "frequency": [
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1968-1971",
+            "percentage": 1.5
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "F01D",
+        "percentage": 1.5,
+        "frequency": [
+          {
+            "year_range": "1980-1983",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1953-1956",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1950-1953",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1938-1941",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1923-1926",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1917-1920",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1914-1917",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1911-1914",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1905-1908",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1899-1902",
+            "percentage": 0.2
+          }
+        ]
+      },
+      {
+        "key": "Y02T",
+        "percentage": 1.4,
+        "frequency": [
+          {
+            "year_range": "2004-2007",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1998-2001",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1995-1998",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1986-1989",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1983-1986",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1980-1983",
+            "percentage": 0.3
+          },
+          {
+            "year_range": "1974-1977",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1968-1971",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1914-1917",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1911-1914",
+            "percentage": 0.1
+          }
+        ]
+      },
+      {
+        "key": "F03B",
+        "percentage": 1.2,
+        "frequency": [
+          {
+            "year_range": "1935-1938",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1926-1929",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1923-1926",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1905-1908",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1902-1905",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1899-1902",
+            "percentage": 0.6
+          }
+        ]
+      },
+      {
+        "key": "B60W",
+        "percentage": 1.2,
+        "frequency": [
+          {
+            "year_range": "1986-1989",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1977-1980",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1971-1974",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1965-1968",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1962-1965",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1959-1962",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1956-1959",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1941-1944",
+            "percentage": 0.1
+          },
+          {
+            "year_range": "1932-1935",
+            "percentage": 0.2
+          },
+          {
+            "year_range": "1923-1926",
+            "percentage": 0.1
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": {
+    "current": 1,
+    "next": "https://patents.google.com/xhr/query?url=q%3Dcentrifugal%2Bgovernor%26before%3Dfiling%3A20060101%26status%3DGRANT%26type%3DPATENT%26page%3D2%26num%3D10"
+  },
+  "serpapi_pagination": {
+    "current": 1,
+    "next": "https://serpapi.com/search.json?before=filing%3A20060101&engine=google_patents&num=10&page=2&patent_status=GRANT&q=centrifugal+governor&type=PATENT"
+  }
 }

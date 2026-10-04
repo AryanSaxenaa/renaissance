@@ -22,6 +22,8 @@ const navItems = [
 ];
 
 const subNavItems = [
+  { path: '/evaluation', label: 'EVALUATION', icon: BookOpen },
+  { path: '/method', label: 'METHOD', icon: BookOpen },
   { path: '/settings', label: 'CONFIGURATION', icon: Settings },
 ];
 

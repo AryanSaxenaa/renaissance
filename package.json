@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "lint": "tsc --noEmit",
     "secret-scan": "tsx scripts/secret-scan.ts",
-    "eval": "echo \"eval harness not yet wired\""
+    "eval": "tsx eval/run.ts",
+    "fixtures:freeze": "tsx scripts/freeze-fixtures.ts"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.12",

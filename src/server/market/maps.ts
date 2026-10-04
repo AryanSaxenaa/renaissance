@@ -63,7 +63,7 @@ export async function fetchMaps(
   query: string,
   city: string,
   ctx: { scanId?: string; patentId?: string },
-): Promise<{ facts: Fact[]; callId: string; searchMetadataId: string | null }> {
+): Promise<{ facts: Fact[]; callId: string; searchMetadataId: string | null; body: SerpResponse }> {
   const { body, receipt } = await client.call('google_maps', mapsParams(query, city), ctx);
   const source = {
     callId: receipt.callId,
@@ -72,5 +72,5 @@ export async function fetchMaps(
     path: 'local_results',
   };
   const facts = body.error ? [] : mapsFacts(body, source, city);
-  return { facts, callId: receipt.callId, searchMetadataId: receipt.searchMetadataId };
+  return { facts, callId: receipt.callId, searchMetadataId: receipt.searchMetadataId, body };
 }

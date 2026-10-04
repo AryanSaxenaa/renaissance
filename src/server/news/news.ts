@@ -48,9 +48,9 @@ export async function fetchNews(
   query: string,
   ctx: { scanId?: string; patentId?: string },
   options?: { skip?: boolean },
-): Promise<{ facts: Fact[]; callId: string; searchMetadataId: string | null }> {
+): Promise<{ facts: Fact[]; callId: string; searchMetadataId: string | null; body: SerpResponse }> {
   if (options?.skip) {
-    return { facts: [], callId: 'skipped', searchMetadataId: null };
+    return { facts: [], callId: 'skipped', searchMetadataId: null, body: {} };
   }
   const { body, receipt } = await client.call('google_news', newsParams(query), ctx);
   const source = {
@@ -60,5 +60,5 @@ export async function fetchNews(
     path: 'news_results',
   };
   const facts = body.error ? [] : newsFacts(body, source);
-  return { facts, callId: receipt.callId, searchMetadataId: receipt.searchMetadataId };
+  return { facts, callId: receipt.callId, searchMetadataId: receipt.searchMetadataId, body };
 }

@@ -11,7 +11,7 @@ function walk(dir: string): string[] {
     if (statSync(p).isDirectory()) {
       if (name === 'renaissance') continue;
       out.push(...walk(p));
-    } else if (p.endsWith('.ts') && !p.endsWith('railway.ts')) out.push(p);
+    } else if (p.endsWith('.ts')) out.push(p);
   }
   return out;
 }

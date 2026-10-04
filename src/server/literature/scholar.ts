@@ -32,7 +32,7 @@ export async function fetchScholar(
   client: SerpClient,
   query: string,
   ctx: { scanId?: string; patentId?: string },
-): Promise<{ facts: Fact[]; callId: string; searchMetadataId: string | null }> {
+): Promise<{ facts: Fact[]; callId: string; searchMetadataId: string | null; body: SerpResponse }> {
   const { body, receipt } = await client.call('google_scholar', scholarParams(query), ctx);
   const source = {
     callId: receipt.callId,
@@ -41,5 +41,5 @@ export async function fetchScholar(
     path: 'organic_results',
   };
   const facts = body.error ? [] : scholarFacts(body, source);
-  return { facts, callId: receipt.callId, searchMetadataId: receipt.searchMetadataId };
+  return { facts, callId: receipt.callId, searchMetadataId: receipt.searchMetadataId, body };
 }

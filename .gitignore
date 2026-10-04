@@ -41,3 +41,5 @@ yarn-error.log*
 Thumbs.db
 .vercel
 .data
+tsconfig.tsbuildinfo
+fixtures/_raw/
