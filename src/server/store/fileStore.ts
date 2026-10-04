@@ -11,13 +11,16 @@ type FileDb = {
   serpCalls: SerpReceipt[];
 };
 
-const defaultPath = resolve('.data/renaissance-db.json');
+function defaultDbPath(): string {
+  const base = process.env.RENAISSANCE_DATA_DIR?.trim() || '.data';
+  return resolve(base, 'renaissance-db.json');
+}
 
 export class FileStore implements RenaissanceStore {
   private db: FileDb = { owners: [], projects: [], scans: [], serpCalls: [] };
   private readonly path: string;
 
-  constructor(path = defaultPath) {
+  constructor(path = defaultDbPath()) {
     this.path = path;
   }
 
