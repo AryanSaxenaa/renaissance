@@ -1,9 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import AppLayout from '@/client/components/renaissance/AppLayout';
 import ReplayBanner from '@/client/components/renaissance/ReplayBanner';
+import { useShepherd } from '@/client/context/ShepherdContext';
 import { renaissanceApi } from '@/client/lib/api';
 
 export default function SettingsPage() {
+  const { restartTour, loading: shepherdLoading } = useShepherd();
   const { data: config } = useQuery({
     queryKey: ['config'],
     queryFn: () => renaissanceApi.getConfig(),
@@ -49,6 +51,21 @@ export default function SettingsPage() {
               </pre>
             </div>
           )}
+          <div className="border-t border-technical-white/10 pt-4 space-y-3">
+            <p className="text-[10px] uppercase tracking-widest opacity-50">Guided tour</p>
+            <button
+              type="button"
+              disabled={shepherdLoading}
+              onClick={() => void restartTour()}
+              className="text-xs uppercase tracking-widest border border-technical-white/30 px-4 py-2 hover:bg-white/5 disabled:opacity-50"
+            >
+              Start Shepherd mode
+            </button>
+            <p className="text-xs opacity-60">
+              Optional walkthrough with preloaded replay evidence. Live search and scans work normally after you exit the
+              tour.
+            </p>
+          </div>
           <p className="text-xs opacity-60 border-t border-technical-white/10 pt-4">
             Access codes are never stored in the browser. For public live demos, enter your code on the search page when
             prompted.

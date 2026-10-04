@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { Loader2, Printer } from 'lucide-react';
@@ -7,7 +7,10 @@ import ReplayBanner from '@/client/components/renaissance/ReplayBanner';
 import StatusStamp from '@/client/components/renaissance/StatusStamp';
 import BriefSheet from '@/client/components/renaissance/BriefSheet';
 import FactCitation from '@/client/components/renaissance/FactCitation';
+import { useShepherd } from '@/client/context/ShepherdContext';
 import { renaissanceApi } from '@/client/lib/api';
+import { demoScanFromPack, loadShepherdPack } from '@/client/lib/shepherdPack';
+import { SHEPHERD_DEMO_SCAN_ID } from '@/client/lib/shepherdStorage';
 
 const TABS = ['Status', 'Market', 'Literature', 'News', 'Brief', 'Evidence'] as const;
 type Tab = (typeof TABS)[number];
@@ -15,12 +18,25 @@ type Tab = (typeof TABS)[number];
 export default function DossierPage() {
   const { scanId } = useParams<{ scanId: string }>();
   const [tab, setTab] = useState<Tab>('Status');
+  const { active: shepherdActive, step } = useShepherd();
+  const isDemoScan = scanId === SHEPHERD_DEMO_SCAN_ID;
+
+  useEffect(() => {
+    if (shepherdActive && 'tab' in step && step.tab) setTab(step.tab);
+  }, [shepherdActive, step]);
 
   const { data: scan, isLoading, error, refetch } = useQuery({
     queryKey: ['scan', scanId],
-    queryFn: () => renaissanceApi.getScan(scanId!),
+    queryFn: async () => {
+      if (isDemoScan) {
+        const pack = await loadShepherdPack();
+        return demoScanFromPack(pack);
+      }
+      return renaissanceApi.getScan(scanId!);
+    },
     enabled: Boolean(scanId),
-    refetchInterval: (q) => (q.state.data?.status === 'complete' || q.state.data?.status === 'failed' ? false : 1500),
+    refetchInterval: (q) =>
+      isDemoScan || q.state.data?.status === 'complete' || q.state.data?.status === 'failed' ? false : 1500,
   });
 
   const marketFacts = scan?.facts.filter((f) => f.kind === 'market' || f.kind === 'maker') ?? [];
@@ -31,6 +47,11 @@ export default function DossierPage() {
   return (
     <AppLayout>
       <ReplayBanner />
+      {shepherdActive && isDemoScan && (
+        <p className="mx-6 mt-2 text-xs border border-amber-400/40 bg-amber-500/10 px-3 py-2 text-amber-100">
+          Shepherd mode: preloaded replay dossier. Exit the tour to run live scans with your access code.
+        </p>
+      )}
       <div className="flex-1 overflow-y-auto p-6 max-w-6xl mx-auto w-full">
         <div className="flex items-center justify-between mb-6">
           <div>

@@ -1,0 +1,390 @@
+{
+  "query": "centrifugal governor",
+  "city": "Pune",
+  "search": {
+    "hits": [
+      {
+        "patent_id": "patent/US1836693A/en",
+        "title": "Windmill",
+        "publication_date": "1931-12-15",
+        "filing_date": "1930-07-10",
+        "inventor": "Urfer Adolf",
+        "assignee": "Pioneer Instr Co Inc",
+        "country_status": {
+          "US": "NOT_ACTIVE",
+          "FR": "NOT_ACTIVE"
+        },
+        "snippet": "Another object of the invention is to construct a windmill whose speed of rotation is controlled, irrespective of the speed of the air or fluid driving it or the speed of the aeroplane upon which the windmill is mounted, by a centrifugal governor which is light in weight compared with the weight of "
+      },
+      {
+        "patent_id": "patent/US1348956A/en",
+        "title": "Governor",
+        "publication_date": "1920-08-10",
+        "filing_date": "1919-02-06",
+        "inventor": "Jr Frank Pokorny",
+        "assignee": "Francis W Keegan",
+        "country_status": {
+          "US": "NOT_ACTIVE"
+        },
+        "snippet": "During the operation of the driven mem- 0 ber above a given speed, the valve 36 is held open against the tension ofspring 37 by controlling means which exert pressure upon the valvestem 38. Though not limited to any special kind of controlling device I have here shown a centrifugal governor …"
+      },
+      {
+        "patent_id": "patent/FR890876A/en",
+        "title": "Centrifugal governor for regulating the rotational speed of internal combustion …",
+        "publication_date": "1944-02-21",
+        "filing_date": "1943-02-11",
+        "assignee": "Bosch Gmbh Robert",
+        "country_status": {
+          "FR": "NOT_ACTIVE"
+        }
+      },
+      {
+        "patent_id": "patent/RU2008485C1/en",
+        "title": "Fuel injection pump centrifugal governor",
+        "publication_date": "1994-02-28",
+        "filing_date": "1990-07-12",
+        "inventor": "И.А. Бекренев",
+        "assignee": "Бекренев Игорь Анатольевич",
+        "country_status": {
+          "RU": "ACTIVE"
+        },
+        "snippet": "FIELD: mechanical engineering; diesel engines. SUBSTANCE: centrifugal governor has sensing member with radial slots installed on shaft in housing, sleeve installed on shaft for axial travel along shaft surface, balls installed in slots of sensing member for engagement with sleeve. Fitted on …"
+      },
+      {
+        "patent_id": "patent/US2855029A/en",
+        "title": "All-speed governor for gas turbine engines",
+        "publication_date": "1958-10-07",
+        "filing_date": "1951-12-26",
+        "inventor": "James M Eastman",
+        "assignee": "Bendix Aviat Corp",
+        "country_status": {
+          "US": "NOT_ACTIVE"
+        },
+        "snippet": "a corporation It is common practice to utilize a centrifugal governor of the mechanical fly-weight type to control a fuel metering or throttle valve in fuel control systems for gas turbine engines, the governor including a governor spring which is manually adjustable or capable of being reset by a …"
+      }
+    ],
+    "receipt": {
+      "callId": "225ed2d6-3b5b-4c5c-b85d-19d0da807c4d",
+      "searchMetadataId": "6ac23dadb9dbc44e441465d0"
+    }
+  },
+  "scan": {
+    "projectId": "93ac332a-54d3-459d-bc2c-add06838101a",
+    "kind": "initial",
+    "mode": "replay",
+    "status": "complete",
+    "facts": [
+      {
+        "id": "F1",
+        "key": "status.own.verdict",
+        "kind": "status",
+        "text": "Own-office verdict: NOT_ENOUGH_DATA (confidence: n/a)",
+        "value": "NOT_ENOUGH_DATA",
+        "source": {
+          "callId": "fd7e9bde-191f-4d57-a377-e807a8f33ea2",
+          "engine": "google_patents_details",
+          "searchMetadataId": "6ac23dae7bf2f9c6034c8883",
+          "path": "patent_details"
+        }
+      },
+      {
+        "id": "F2",
+        "key": "status.own.office",
+        "kind": "status",
+        "text": "Own office: XX",
+        "value": "XX",
+        "source": {
+          "callId": "fd7e9bde-191f-4d57-a377-e807a8f33ea2",
+          "engine": "google_patents_details",
+          "searchMetadataId": "6ac23dae7bf2f9c6034c8883",
+          "path": "patent_details"
+        }
+      },
+      {
+        "id": "F3",
+        "key": "status.term.elapsed",
+        "kind": "status",
+        "text": "Term estimate elapsed: true",
+        "value": "true",
+        "source": {
+          "callId": "fd7e9bde-191f-4d57-a377-e807a8f33ea2",
+          "engine": "google_patents_details",
+          "searchMetadataId": "6ac23dae7bf2f9c6034c8883",
+          "path": "patent_details"
+        }
+      },
+      {
+        "id": "F4",
+        "key": "patent.title",
+        "kind": "patent_text",
+        "text": "Windmill",
+        "source": {
+          "callId": "fd7e9bde-191f-4d57-a377-e807a8f33ea2",
+          "engine": "google_patents_details",
+          "searchMetadataId": "6ac23dae7bf2f9c6034c8883",
+          "path": "patent_details"
+        }
+      },
+      {
+        "id": "F1",
+        "key": "market.n_listings",
+        "kind": "market",
+        "text": "Shopping listings found: 3",
+        "value": 3,
+        "source": {
+          "callId": "93598e5a-d866-4820-a58b-6b94bc94e8d5",
+          "engine": "google_shopping",
+          "searchMetadataId": "replay-shopping-001",
+          "path": "shopping_results"
+        }
+      },
+      {
+        "id": "F2",
+        "key": "market.n_sellers",
+        "kind": "market",
+        "text": "Distinct sellers: 2",
+        "value": 2,
+        "source": {
+          "callId": "93598e5a-d866-4820-a58b-6b94bc94e8d5",
+          "engine": "google_shopping",
+          "searchMetadataId": "replay-shopping-001",
+          "path": "shopping_results"
+        }
+      },
+      {
+        "id": "F3",
+        "key": "market.price_median",
+        "kind": "market",
+        "text": "Median extracted price: 1200",
+        "value": 1200,
+        "unit": "INR",
+        "source": {
+          "callId": "93598e5a-d866-4820-a58b-6b94bc94e8d5",
+          "engine": "google_shopping",
+          "searchMetadataId": "replay-shopping-001",
+          "path": "shopping_results"
+        }
+      },
+      {
+        "id": "F4",
+        "key": "market.price_min",
+        "kind": "market",
+        "text": "Minimum extracted price: 890",
+        "value": 890,
+        "unit": "INR",
+        "source": {
+          "callId": "93598e5a-d866-4820-a58b-6b94bc94e8d5",
+          "engine": "google_shopping",
+          "searchMetadataId": "replay-shopping-001",
+          "path": "shopping_results"
+        }
+      },
+      {
+        "id": "F5",
+        "key": "market.price_max",
+        "kind": "market",
+        "text": "Maximum extracted price: 3500",
+        "value": 3500,
+        "unit": "INR",
+        "source": {
+          "callId": "93598e5a-d866-4820-a58b-6b94bc94e8d5",
+          "engine": "google_shopping",
+          "searchMetadataId": "replay-shopping-001",
+          "path": "shopping_results"
+        }
+      },
+      {
+        "id": "F6",
+        "key": "market.few_listings",
+        "kind": "market",
+        "text": "Few shopping listings matched the query",
+        "value": "true",
+        "source": {
+          "callId": "93598e5a-d866-4820-a58b-6b94bc94e8d5",
+          "engine": "google_shopping",
+          "searchMetadataId": "replay-shopping-001",
+          "path": "shopping_results"
+        }
+      },
+      {
+        "id": "F7",
+        "key": "makers.n_places",
+        "kind": "maker",
+        "text": "Map places near Pune: 2",
+        "value": 2,
+        "source": {
+          "callId": "06c12b81-7ddb-42a1-8907-5eb96625d10f",
+          "engine": "google_maps",
+          "searchMetadataId": "replay-maps-pune-001",
+          "path": "local_results"
+        }
+      },
+      {
+        "id": "F11",
+        "key": "lit.n_recent",
+        "kind": "paper",
+        "text": "Recent scholar results: 2",
+        "value": 2,
+        "source": {
+          "callId": "4ca9b34c-a14d-4503-be01-1ac01ea15094",
+          "engine": "google_scholar",
+          "searchMetadataId": "replay-scholar-001",
+          "path": "organic_results"
+        }
+      },
+      {
+        "id": "F8",
+        "key": "news.n_articles",
+        "kind": "news",
+        "text": "News articles: 1",
+        "value": 1,
+        "source": {
+          "callId": "caa8bc0c-bcd9-4b06-8738-adf554d38f63",
+          "engine": "google_news",
+          "searchMetadataId": "replay-news-001",
+          "path": "news_results"
+        }
+      },
+      {
+        "id": "F9",
+        "key": "news.latest",
+        "kind": "news",
+        "text": "Latest headline: Small manufacturers revisit mechanical governors",
+        "source": {
+          "callId": "caa8bc0c-bcd9-4b06-8738-adf554d38f63",
+          "engine": "google_news",
+          "searchMetadataId": "replay-news-001",
+          "path": "news_results"
+        }
+      },
+      {
+        "id": "F10",
+        "key": "news.latest_date",
+        "kind": "news",
+        "text": "Latest article date: 2024-06-12",
+        "value": "2024-06-12",
+        "source": {
+          "callId": "caa8bc0c-bcd9-4b06-8738-adf554d38f63",
+          "engine": "google_news",
+          "searchMetadataId": "replay-news-001",
+          "path": "news_results"
+        }
+      }
+    ],
+    "removedByVerifier": 0,
+    "credits": 5,
+    "id": "21e1a8f6-da44-4eb9-983d-7c998f0f6db5",
+    "createdAt": "2026-10-04T12:31:03.882Z",
+    "statusReport": {
+      "ownOffice": "XX",
+      "headline": "NOT_ENOUGH_DATA",
+      "confidence": null,
+      "termEstimate": {
+        "earliestFiling": "1930-07-10",
+        "endEstimate": "1950-07-10",
+        "elapsed": true,
+        "caveat": "Estimated 20-year term; adjustments and extensions not verified from retrieved data"
+      },
+      "members": [],
+      "events": [],
+      "otherOffices": {},
+      "rulesFired": [
+        "R7"
+      ],
+      "unrecognised": [],
+      "notChecked": [
+        "Jurisdictions not represented in the patent family",
+        "Design patents and trade dress",
+        "Term adjustments and patent term extensions",
+        "Reinstatement or restoration after lapse",
+        "Unpaid-fee grace periods",
+        "Licences and assignments",
+        "Data freshness beyond response metadata"
+      ],
+      "evidence": [
+        {
+          "callId": "fd7e9bde-191f-4d57-a377-e807a8f33ea2",
+          "searchMetadataId": "6ac23dae7bf2f9c6034c8883",
+          "path": "patent_details"
+        }
+      ]
+    },
+    "brief": {
+      "schema": "design_brief/1",
+      "summary": [
+        {
+          "text": "Own-office verdict: NOT_ENOUGH_DATA (confidence: n/a)",
+          "factIds": [
+            "F1"
+          ]
+        },
+        {
+          "text": "Windmill",
+          "factIds": [
+            "F4"
+          ]
+        }
+      ],
+      "mechanism": [
+        {
+          "text": "Windmill",
+          "factIds": [
+            "F4"
+          ]
+        }
+      ],
+      "marketReality": [
+        {
+          "text": "Shopping listings found: 3",
+          "factIds": [
+            "F1"
+          ]
+        },
+        {
+          "text": "Distinct sellers: 2",
+          "factIds": [
+            "F2"
+          ]
+        },
+        {
+          "text": "Median extracted price: 1200",
+          "factIds": [
+            "F3"
+          ]
+        },
+        {
+          "text": "Map places near Pune: 2",
+          "factIds": [
+            "F7"
+          ]
+        }
+      ],
+      "suggestions": [
+        {
+          "title": "Material refresh",
+          "component": "Primary structure",
+          "direction": "Consider modern alloys or composites where loads allow, after independent stress review.",
+          "assumptions": [
+            "Loads similar to original design intent",
+            "Manufacturing constraints unknown"
+          ],
+          "factIds": [
+            "F4"
+          ],
+          "engineeringJudgement": true,
+          "kind": "suggestion"
+        }
+      ],
+      "risks": [],
+      "nextSteps": [
+        "Confirm status with counsel before production use.",
+        "Review cited literature for recent mechanism variants.",
+        "Validate market listings against your target product category."
+      ],
+      "statusLine": "Not enough data to assess status for XX.",
+      "removedByVerifier": 0
+    }
+  },
+  "featuredPatentId": "patent/US1836693A/en",
+  "demoScanId": "shepherd-demo"
+}

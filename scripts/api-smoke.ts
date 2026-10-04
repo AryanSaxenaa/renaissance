@@ -131,21 +131,18 @@ async function runRemote(base: string, accessCode: string): Promise<Result[]> {
   push('GET /api/v1/search (no code)', r.status === 401, r.status);
 
   r = await req('GET', '/api/v1/search?q=centrifugal+governor');
-  push(
-    'GET /api/v1/search',
-    r.status === 200 && (r.json as { hits?: unknown[] }).hits?.length,
-    r.status,
-  );
+  const hits = (r.json as { hits?: { patent_id: string }[] }).hits ?? [];
+  push('GET /api/v1/search', r.status === 200 && hits.length > 0, r.status);
 
   r = await req('POST', '/api/v1/estimate', { kind: 'dossier' });
   push('POST /api/v1/estimate', r.status === 200, r.status);
 
-  // Cookie jar for owner
+  const patentId = hits[0]?.patent_id ?? 'patent/US1836693A/en';
   const scanRes = await fetch(`${base}/api/v1/scans`, {
     method: 'POST',
     headers,
     body: JSON.stringify({
-      patentId: 'US-US4085846-A',
+      patentId,
       query: 'centrifugal governor',
       city: 'Pune',
     }),
@@ -155,7 +152,7 @@ async function runRemote(base: string, accessCode: string): Promise<Result[]> {
   const scanBody = (await scanRes.json()) as { scanId?: string; projectId?: string };
   push('POST /api/v1/scans', scanRes.status === 202, scanRes.status, scanBody.scanId);
 
-  const cookieHdr = cookie ? { Cookie: cookie } : {};
+  const cookieHdr: Record<string, string> | undefined = cookie ? { Cookie: cookie } : undefined;
   let finalStatus = 'pending';
   for (let i = 0; i < 60; i++) {
     await new Promise((res) => setTimeout(res, 500));

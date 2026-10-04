@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { AlertCircle, Loader2, Search } from 'lucide-react';
 import toast from 'react-hot-toast';
 import AppLayout from '@/client/components/renaissance/AppLayout';
 import ReplayBanner from '@/client/components/renaissance/ReplayBanner';
+import { useShepherd } from '@/client/context/ShepherdContext';
 import { ApiError, renaissanceApi, type PatentSearchHit } from '@/client/lib/api';
+import { SHEPHERD_DEMO_SCAN_ID } from '@/client/lib/shepherdStorage';
 
 const SAMPLE_QUERIES = ['centrifugal governor'];
 
@@ -49,11 +51,20 @@ function HitCard({
 export default function PatentSearchPage() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+  const { active: shepherdActive, pack: shepherdPack, goToStep } = useShepherd();
   const initialQuery = searchParams.get('q') || '';
   const [query, setQuery] = useState(initialQuery);
   const [submitted, setSubmitted] = useState(initialQuery);
   const [city, setCity] = useState('Pune');
   const [accessCode, setAccessCode] = useState('');
+
+  useEffect(() => {
+    if (shepherdActive && shepherdPack) {
+      setQuery(shepherdPack.query);
+      setSubmitted(shepherdPack.query);
+      setCity(shepherdPack.city);
+    }
+  }, [shepherdActive, shepherdPack]);
 
   const { data: config } = useQuery({
     queryKey: ['config'],
@@ -65,15 +76,20 @@ export default function PatentSearchPage() {
     queryFn: () => renaissanceApi.estimateCredits('search'),
   });
 
+  const useShepherdSearch =
+    shepherdActive && shepherdPack !== null && submitted === shepherdPack.query;
+
   const {
-    data: searchResult,
+    data: liveSearchResult,
     isFetching,
     error: searchError,
   } = useQuery({
     queryKey: ['search', submitted],
     queryFn: () => renaissanceApi.search(submitted, accessCode || undefined),
-    enabled: submitted.length > 0,
+    enabled: submitted.length > 0 && !useShepherdSearch,
   });
+
+  const searchResult = useShepherdSearch ? shepherdPack!.search : liveSearchResult;
 
   const startScan = useMutation({
     mutationFn: (hit: PatentSearchHit) =>
@@ -165,7 +181,13 @@ export default function PatentSearchPage() {
             ))}
           </div>
 
-          {config?.mode === 'live' && (
+          {shepherdActive && (
+            <p className="text-xs border border-amber-400/40 bg-amber-500/10 px-3 py-2 text-amber-100">
+              Shepherd mode: preloaded replay results. Exit the tour from the banner to run live searches.
+            </p>
+          )}
+
+          {config?.mode === 'live' && !shepherdActive && (
             <label className="block text-xs">
               <span className="opacity-60">Access code (live)</span>
               <input
@@ -197,7 +219,14 @@ export default function PatentSearchPage() {
                 key={hit.patent_id}
                 hit={hit}
                 loading={startScan.isPending}
-                onOpen={() => startScan.mutate(hit)}
+                onOpen={() => {
+                  if (shepherdActive && shepherdPack) {
+                    navigate(`/dossier/${SHEPHERD_DEMO_SCAN_ID}`);
+                    goToStep(2);
+                    return;
+                  }
+                  startScan.mutate(hit);
+                }}
               />
             ))}
           </div>

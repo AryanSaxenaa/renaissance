@@ -17,6 +17,9 @@ import { SerpClient } from './serpapi/client.js';
 export function createApp(): Express {
   const app = express();
   const config = getConfig();
+  if (config.NODE_ENV === 'production') {
+    app.set('trust proxy', 1);
+  }
 
   const origins = config.CORS_ORIGINS?.split(',').map((s) => s.trim()).filter(Boolean);
   if (origins?.length) {
