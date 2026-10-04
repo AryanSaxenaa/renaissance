@@ -42,7 +42,7 @@ export function createApp(): Express {
   const clientDist = resolve('dist/client');
   if (config.NODE_ENV === 'production' && existsSync(clientDist)) {
     app.use(express.static(clientDist));
-    app.get('*', (req: express.Request, res: express.Response, next: express.NextFunction) => {
+    app.get('/{*path}', (req: express.Request, res: express.Response, next: express.NextFunction) => {
       if (req.path.startsWith('/api')) return next();
       res.sendFile(resolve(clientDist, 'index.html'));
     });
