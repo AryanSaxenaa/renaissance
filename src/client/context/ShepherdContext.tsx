@@ -27,7 +27,7 @@ export const SHEPHERD_STEPS = [
   {
     id: 'results',
     title: 'Pick a candidate',
-    body: 'Each card shows a pre-screen status chip from patent metadata. Open the featured grant to continue.',
+    body: 'Open the highlighted US4085846 grant (“Speed control system for a centrifugal governor”) to see a LIKELY FREE status and cited brief.',
     path: '/search',
   },
   {

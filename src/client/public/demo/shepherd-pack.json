@@ -4,72 +4,32 @@
   "search": {
     "hits": [
       {
-        "patent_id": "patent/US1836693A/en",
-        "title": "Windmill",
-        "publication_date": "1931-12-15",
-        "filing_date": "1930-07-10",
-        "inventor": "Urfer Adolf",
-        "assignee": "Pioneer Instr Co Inc",
-        "country_status": {
-          "US": "NOT_ACTIVE",
-          "FR": "NOT_ACTIVE"
-        },
-        "snippet": "Another object of the invention is to construct a windmill whose speed of rotation is controlled, irrespective of the speed of the air or fluid driving it or the speed of the aeroplane upon which the windmill is mounted, by a centrifugal governor which is light in weight compared with the weight of "
-      },
-      {
-        "patent_id": "patent/US1348956A/en",
-        "title": "Governor",
-        "publication_date": "1920-08-10",
-        "filing_date": "1919-02-06",
-        "inventor": "Jr Frank Pokorny",
-        "assignee": "Francis W Keegan",
+        "patent_id": "US-US4085846-A",
+        "title": "Speed control system for a centrifugal governor",
+        "publication_date": "1978-04-25",
+        "filing_date": "1976-05-10",
         "country_status": {
           "US": "NOT_ACTIVE"
         },
-        "snippet": "During the operation of the driven mem- 0 ber above a given speed, the valve 36 is held open against the tension ofspring 37 by controlling means which exert pressure upon the valvestem 38. Though not limited to any special kind of controlling device I have here shown a centrifugal governor …"
+        "snippet": "A governor mechanism for regulating rotational speed."
       },
       {
-        "patent_id": "patent/FR890876A/en",
-        "title": "Centrifugal governor for regulating the rotational speed of internal combustion …",
-        "publication_date": "1944-02-21",
-        "filing_date": "1943-02-11",
-        "assignee": "Bosch Gmbh Robert",
+        "patent_id": "US-US3212345-A",
+        "title": "Centrifugal governor linkage",
+        "publication_date": "1965-10-12",
+        "filing_date": "1962-03-01",
         "country_status": {
-          "FR": "NOT_ACTIVE"
+          "US": "NOT_ACTIVE"
         }
-      },
-      {
-        "patent_id": "patent/RU2008485C1/en",
-        "title": "Fuel injection pump centrifugal governor",
-        "publication_date": "1994-02-28",
-        "filing_date": "1990-07-12",
-        "inventor": "И.А. Бекренев",
-        "assignee": "Бекренев Игорь Анатольевич",
-        "country_status": {
-          "RU": "ACTIVE"
-        },
-        "snippet": "FIELD: mechanical engineering; diesel engines. SUBSTANCE: centrifugal governor has sensing member with radial slots installed on shaft in housing, sleeve installed on shaft for axial travel along shaft surface, balls installed in slots of sensing member for engagement with sleeve. Fitted on …"
-      },
-      {
-        "patent_id": "patent/US2855029A/en",
-        "title": "All-speed governor for gas turbine engines",
-        "publication_date": "1958-10-07",
-        "filing_date": "1951-12-26",
-        "inventor": "James M Eastman",
-        "assignee": "Bendix Aviat Corp",
-        "country_status": {
-          "US": "NOT_ACTIVE"
-        },
-        "snippet": "a corporation It is common practice to utilize a centrifugal governor of the mechanical fly-weight type to control a fuel metering or throttle valve in fuel control systems for gas turbine engines, the governor including a governor spring which is manually adjustable or capable of being reset by a …"
       }
     ],
     "receipt": {
-      "callId": "225ed2d6-3b5b-4c5c-b85d-19d0da807c4d",
-      "searchMetadataId": "6ac23dadb9dbc44e441465d0"
+      "callId": "shepherd-search-replay",
+      "searchMetadataId": "replay-patents-search-001"
     }
   },
   "scan": {
-    "projectId": "93ac332a-54d3-459d-bc2c-add06838101a",
+    "projectId": "0c681fc2-eafb-45c7-9835-1ad2988e05d6",
     "kind": "initial",
     "mode": "replay",
     "status": "complete",
@@ -78,12 +38,12 @@
         "id": "F1",
         "key": "status.own.verdict",
         "kind": "status",
-        "text": "Own-office verdict: NOT_ENOUGH_DATA (confidence: n/a)",
-        "value": "NOT_ENOUGH_DATA",
+        "text": "Own-office verdict: LIKELY_FREE (confidence: HIGH)",
+        "value": "LIKELY_FREE",
         "source": {
-          "callId": "fd7e9bde-191f-4d57-a377-e807a8f33ea2",
+          "callId": "143b806a-3518-4fa3-a42f-c75db06b0713",
           "engine": "google_patents_details",
-          "searchMetadataId": "6ac23dae7bf2f9c6034c8883",
+          "searchMetadataId": "replay-details-us4085846",
           "path": "patent_details"
         }
       },
@@ -91,12 +51,12 @@
         "id": "F2",
         "key": "status.own.office",
         "kind": "status",
-        "text": "Own office: XX",
-        "value": "XX",
+        "text": "Own office: US",
+        "value": "US",
         "source": {
-          "callId": "fd7e9bde-191f-4d57-a377-e807a8f33ea2",
+          "callId": "143b806a-3518-4fa3-a42f-c75db06b0713",
           "engine": "google_patents_details",
-          "searchMetadataId": "6ac23dae7bf2f9c6034c8883",
+          "searchMetadataId": "replay-details-us4085846",
           "path": "patent_details"
         }
       },
@@ -107,9 +67,9 @@
         "text": "Term estimate elapsed: true",
         "value": "true",
         "source": {
-          "callId": "fd7e9bde-191f-4d57-a377-e807a8f33ea2",
+          "callId": "143b806a-3518-4fa3-a42f-c75db06b0713",
           "engine": "google_patents_details",
-          "searchMetadataId": "6ac23dae7bf2f9c6034c8883",
+          "searchMetadataId": "replay-details-us4085846",
           "path": "patent_details"
         }
       },
@@ -117,11 +77,35 @@
         "id": "F4",
         "key": "patent.title",
         "kind": "patent_text",
-        "text": "Windmill",
+        "text": "Speed control system for a centrifugal governor",
         "source": {
-          "callId": "fd7e9bde-191f-4d57-a377-e807a8f33ea2",
+          "callId": "143b806a-3518-4fa3-a42f-c75db06b0713",
           "engine": "google_patents_details",
-          "searchMetadataId": "6ac23dae7bf2f9c6034c8883",
+          "searchMetadataId": "replay-details-us4085846",
+          "path": "patent_details"
+        }
+      },
+      {
+        "id": "F5",
+        "key": "patent.abstract",
+        "kind": "patent_text",
+        "text": "A mechanical governor uses flyweights to modulate fuel flow.",
+        "source": {
+          "callId": "143b806a-3518-4fa3-a42f-c75db06b0713",
+          "engine": "google_patents_details",
+          "searchMetadataId": "replay-details-us4085846",
+          "path": "patent_details"
+        }
+      },
+      {
+        "id": "F6",
+        "key": "patent.claim1",
+        "kind": "patent_text",
+        "text": "A centrifugal governor comprising a rotating spindle and pivoting flyweights.",
+        "source": {
+          "callId": "143b806a-3518-4fa3-a42f-c75db06b0713",
+          "engine": "google_patents_details",
+          "searchMetadataId": "replay-details-us4085846",
           "path": "patent_details"
         }
       },
@@ -132,7 +116,7 @@
         "text": "Shopping listings found: 3",
         "value": 3,
         "source": {
-          "callId": "93598e5a-d866-4820-a58b-6b94bc94e8d5",
+          "callId": "1d414fe7-b4ee-469b-8b82-ec1fd52e4281",
           "engine": "google_shopping",
           "searchMetadataId": "replay-shopping-001",
           "path": "shopping_results"
@@ -145,7 +129,7 @@
         "text": "Distinct sellers: 2",
         "value": 2,
         "source": {
-          "callId": "93598e5a-d866-4820-a58b-6b94bc94e8d5",
+          "callId": "1d414fe7-b4ee-469b-8b82-ec1fd52e4281",
           "engine": "google_shopping",
           "searchMetadataId": "replay-shopping-001",
           "path": "shopping_results"
@@ -159,7 +143,7 @@
         "value": 1200,
         "unit": "INR",
         "source": {
-          "callId": "93598e5a-d866-4820-a58b-6b94bc94e8d5",
+          "callId": "1d414fe7-b4ee-469b-8b82-ec1fd52e4281",
           "engine": "google_shopping",
           "searchMetadataId": "replay-shopping-001",
           "path": "shopping_results"
@@ -173,7 +157,7 @@
         "value": 890,
         "unit": "INR",
         "source": {
-          "callId": "93598e5a-d866-4820-a58b-6b94bc94e8d5",
+          "callId": "1d414fe7-b4ee-469b-8b82-ec1fd52e4281",
           "engine": "google_shopping",
           "searchMetadataId": "replay-shopping-001",
           "path": "shopping_results"
@@ -187,7 +171,7 @@
         "value": 3500,
         "unit": "INR",
         "source": {
-          "callId": "93598e5a-d866-4820-a58b-6b94bc94e8d5",
+          "callId": "1d414fe7-b4ee-469b-8b82-ec1fd52e4281",
           "engine": "google_shopping",
           "searchMetadataId": "replay-shopping-001",
           "path": "shopping_results"
@@ -200,7 +184,7 @@
         "text": "Few shopping listings matched the query",
         "value": "true",
         "source": {
-          "callId": "93598e5a-d866-4820-a58b-6b94bc94e8d5",
+          "callId": "1d414fe7-b4ee-469b-8b82-ec1fd52e4281",
           "engine": "google_shopping",
           "searchMetadataId": "replay-shopping-001",
           "path": "shopping_results"
@@ -213,7 +197,7 @@
         "text": "Map places near Pune: 2",
         "value": 2,
         "source": {
-          "callId": "06c12b81-7ddb-42a1-8907-5eb96625d10f",
+          "callId": "0234b08d-cc14-4402-bdad-3d0c971a2a75",
           "engine": "google_maps",
           "searchMetadataId": "replay-maps-pune-001",
           "path": "local_results"
@@ -226,7 +210,7 @@
         "text": "Recent scholar results: 2",
         "value": 2,
         "source": {
-          "callId": "4ca9b34c-a14d-4503-be01-1ac01ea15094",
+          "callId": "c502da77-c417-4930-be41-ccacca336e70",
           "engine": "google_scholar",
           "searchMetadataId": "replay-scholar-001",
           "path": "organic_results"
@@ -239,7 +223,7 @@
         "text": "News articles: 1",
         "value": 1,
         "source": {
-          "callId": "caa8bc0c-bcd9-4b06-8738-adf554d38f63",
+          "callId": "f28600d9-f750-4233-8d3e-a8c1fc289541",
           "engine": "google_news",
           "searchMetadataId": "replay-news-001",
           "path": "news_results"
@@ -251,7 +235,7 @@
         "kind": "news",
         "text": "Latest headline: Small manufacturers revisit mechanical governors",
         "source": {
-          "callId": "caa8bc0c-bcd9-4b06-8738-adf554d38f63",
+          "callId": "f28600d9-f750-4233-8d3e-a8c1fc289541",
           "engine": "google_news",
           "searchMetadataId": "replay-news-001",
           "path": "news_results"
@@ -264,7 +248,7 @@
         "text": "Latest article date: 2024-06-12",
         "value": "2024-06-12",
         "source": {
-          "callId": "caa8bc0c-bcd9-4b06-8738-adf554d38f63",
+          "callId": "f28600d9-f750-4233-8d3e-a8c1fc289541",
           "engine": "google_news",
           "searchMetadataId": "replay-news-001",
           "path": "news_results"
@@ -273,23 +257,38 @@
     ],
     "removedByVerifier": 0,
     "credits": 5,
-    "id": "21e1a8f6-da44-4eb9-983d-7c998f0f6db5",
-    "createdAt": "2026-10-04T12:31:03.882Z",
+    "id": "f7f16969-f99b-4fba-bed1-8207d17f4a87",
+    "createdAt": "2026-10-04T12:47:30.647Z",
     "statusReport": {
-      "ownOffice": "XX",
-      "headline": "NOT_ENOUGH_DATA",
-      "confidence": null,
+      "ownOffice": "US",
+      "headline": "LIKELY_FREE",
+      "confidence": "HIGH",
       "termEstimate": {
-        "earliestFiling": "1930-07-10",
-        "endEstimate": "1950-07-10",
+        "earliestFiling": "1976-05-10",
+        "endEstimate": "1996-05-10",
         "elapsed": true,
         "caveat": "Estimated 20-year term; adjustments and extensions not verified from retrieved data"
       },
-      "members": [],
-      "events": [],
+      "members": [
+        {
+          "office": "US",
+          "appNo": "US567890",
+          "cat": "NON_ACTIVE",
+          "raw": "not active",
+          "thisApp": true
+        }
+      ],
+      "events": [
+        {
+          "code": "EXP",
+          "title": "Expired",
+          "date": "1998-05-10",
+          "recognised": true
+        }
+      ],
       "otherOffices": {},
       "rulesFired": [
-        "R7"
+        "R2"
       ],
       "unrecognised": [],
       "notChecked": [
@@ -303,8 +302,8 @@
       ],
       "evidence": [
         {
-          "callId": "fd7e9bde-191f-4d57-a377-e807a8f33ea2",
-          "searchMetadataId": "6ac23dae7bf2f9c6034c8883",
+          "callId": "143b806a-3518-4fa3-a42f-c75db06b0713",
+          "searchMetadataId": "replay-details-us4085846",
           "path": "patent_details"
         }
       ]
@@ -313,13 +312,13 @@
       "schema": "design_brief/1",
       "summary": [
         {
-          "text": "Own-office verdict: NOT_ENOUGH_DATA (confidence: n/a)",
+          "text": "Own-office verdict: LIKELY_FREE (confidence: HIGH)",
           "factIds": [
             "F1"
           ]
         },
         {
-          "text": "Windmill",
+          "text": "Speed control system for a centrifugal governor",
           "factIds": [
             "F4"
           ]
@@ -327,9 +326,15 @@
       ],
       "mechanism": [
         {
-          "text": "Windmill",
+          "text": "Speed control system for a centrifugal governor",
           "factIds": [
             "F4"
+          ]
+        },
+        {
+          "text": "A mechanical governor uses flyweights to modulate fuel flow.",
+          "factIds": [
+            "F5"
           ]
         }
       ],
@@ -381,10 +386,10 @@
         "Review cited literature for recent mechanism variants.",
         "Validate market listings against your target product category."
       ],
-      "statusLine": "Not enough data to assess status for XX.",
+      "statusLine": "Appears free to use in US (confidence: HIGH). No active family member found in the records retrieved.",
       "removedByVerifier": 0
     }
   },
-  "featuredPatentId": "patent/US1836693A/en",
+  "featuredPatentId": "US-US4085846-A",
   "demoScanId": "shepherd-demo"
 }

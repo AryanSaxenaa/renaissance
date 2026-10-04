@@ -23,18 +23,29 @@ function HitCard({
   hit,
   onOpen,
   loading,
+  featured,
 }: {
   hit: PatentSearchHit;
   onOpen: () => void;
   loading: boolean;
+  featured?: boolean;
 }) {
   return (
     <button
       type="button"
       onClick={onOpen}
       disabled={loading}
-      className="index-card w-full text-left p-4 border border-technical-white/20 hover:border-technical-white/40 transition-colors disabled:opacity-50"
+      className={`index-card w-full text-left p-4 border transition-colors disabled:opacity-50 ${
+        featured
+          ? 'border-amber-500 ring-2 ring-amber-400/50'
+          : 'border-technical-white/20 hover:border-technical-white/40'
+      }`}
     >
+      {featured && (
+        <span className="text-[9px] uppercase tracking-widest text-amber-800 font-bold block mb-1">
+          Tour pick · open this dossier
+        </span>
+      )}
       <div className="flex justify-between gap-2 mb-2">
         <span className="text-[10px] font-mono opacity-70">{hit.patent_id}</span>
         <span className="text-[9px] uppercase px-1 bg-white/10">{statusChip(hit.country_status)}</span>
@@ -218,6 +229,7 @@ export default function PatentSearchPage() {
               <HitCard
                 key={hit.patent_id}
                 hit={hit}
+                featured={shepherdActive && hit.patent_id === shepherdPack?.featuredPatentId}
                 loading={startScan.isPending}
                 onOpen={() => {
                   if (shepherdActive && shepherdPack) {

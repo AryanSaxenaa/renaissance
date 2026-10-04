@@ -14,7 +14,8 @@
     "lint": "tsc --noEmit",
     "secret-scan": "tsx scripts/secret-scan.ts",
     "eval": "tsx eval/run.ts",
-    "fixtures:freeze": "tsx scripts/freeze-fixtures.ts"
+    "fixtures:freeze": "tsx scripts/freeze-fixtures.ts",
+    "shepherd:export": "tsx scripts/export-shepherd-pack.ts"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.12",
