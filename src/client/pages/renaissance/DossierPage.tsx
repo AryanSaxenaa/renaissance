@@ -48,7 +48,7 @@ export default function DossierPage() {
     <AppLayout>
       <ReplayBanner />
       {shepherdActive && isDemoScan && (
-        <p className="mx-6 mt-2 text-xs border border-amber-400/40 bg-amber-500/10 px-3 py-2 text-amber-100">
+        <p className="shepherd-surface mx-6 mt-2 text-xs border border-slate-200 px-3 py-2 shadow-sm">
           Shepherd mode: preloaded replay dossier. Exit the tour to run live scans with your access code.
         </p>
       )}

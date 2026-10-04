@@ -159,3 +159,57 @@ body {
 .scrollbar-blueprint::-webkit-scrollbar-thumb:hover {
   background: rgba(224, 224, 224, 0.5);
 }
+
+/* Shepherd tour — always readable (not overridden by app dark theme) */
+.shepherd-surface {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  isolation: isolate;
+}
+
+.shepherd-surface h1,
+.shepherd-surface h2,
+.shepherd-surface h3,
+.shepherd-surface p,
+.shepherd-surface span,
+.shepherd-surface label,
+.shepherd-surface button {
+  color: inherit;
+}
+
+.shepherd-surface h2 {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.shepherd-surface .shepherd-muted {
+  color: #64748b !important;
+}
+
+.shepherd-surface .shepherd-body {
+  color: #334155 !important;
+}
+
+.shepherd-surface .shepherd-btn-primary {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+  border: 1px solid #0f172a !important;
+}
+
+.shepherd-surface .shepherd-btn-secondary {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+.shepherd-surface .shepherd-btn-accent {
+  background-color: #059669 !important;
+  color: #ffffff !important;
+  border: 1px solid #059669 !important;
+}
+
+.shepherd-surface .shepherd-btn-nav {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+}

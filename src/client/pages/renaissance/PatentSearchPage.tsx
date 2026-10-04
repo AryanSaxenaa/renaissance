@@ -182,8 +182,8 @@ export default function PatentSearchPage() {
           </div>
 
           {shepherdActive && (
-            <p className="text-xs border border-amber-400/40 bg-amber-500/10 px-3 py-2 text-amber-100">
-              Shepherd mode: preloaded replay results. Exit the tour from the banner to run live searches.
+            <p className="shepherd-surface text-xs border border-slate-200 px-3 py-2 shadow-sm">
+              Shepherd mode: preloaded replay results. Exit the tour from the step card to run live searches.
             </p>
           )}
 
