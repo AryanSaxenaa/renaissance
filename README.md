@@ -1,6 +1,6 @@
 # Renaissance
 
-SerpApi India Hackathon 2026 — **Track: Knowledge & Public Interest**. Cited design briefs from patent and market evidence via **SerpApi** (Google Patents, Patents Details, Shopping, Maps, Scholar, News). Not legal advice.
+SerpApi India Hackathon 2026 — **Track: Commerce & Market Intelligence** (patent status + Shopping/Maps market facts). Cited design briefs via **SerpApi** (Google Patents, Patents Details, Shopping, Maps, Scholar, News). Not legal advice.
 
 ## Run locally (no API key)
 

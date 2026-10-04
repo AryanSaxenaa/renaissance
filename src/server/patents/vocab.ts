@@ -6,6 +6,7 @@ const STATUS_MAP: Record<string, LegalCategory> = {
   ACTIVE: 'ACTIVE',
   granted: 'ACTIVE',
   'not active': 'NON_ACTIVE',
+  not_active: 'NON_ACTIVE',
   'Not Active': 'NON_ACTIVE',
   NOT_ACTIVE: 'NON_ACTIVE',
   expired: 'NON_ACTIVE',
@@ -31,6 +32,16 @@ const CLOSING_EVENT_CODES = new Set([
 
 const FEE_EVENT_CODES = new Set(['FEE', 'MAINTENANCE', 'RENEWAL', 'FEE_PAYMENT']);
 
+/** SerpApi timeline types that do not affect freedom-to-operate confidence. */
+const ROUTINE_EVENT_TYPES = new Set([
+  'filed',
+  'priority',
+  'granted',
+  'publication',
+  'published',
+  'legal-status',
+]);
+
 export function normaliseLegalStatus(raw: string | undefined): { cat: LegalCategory; unrecognised?: string } {
   if (!raw || raw.trim() === '') return { cat: 'UNKNOWN' };
   const trimmed = raw.trim();
@@ -55,6 +66,18 @@ export function isFeeEvent(code: string | undefined, title: string | undefined):
   if (FEE_EVENT_CODES.has(c)) return true;
   const t = (title ?? '').toLowerCase();
   return t.includes('fee') || t.includes('maintenance') || t.includes('renewal');
+}
+
+export function isRoutineTimelineEvent(code: string | undefined, title: string | undefined): boolean {
+  const c = (code ?? '').toLowerCase();
+  if (ROUTINE_EVENT_TYPES.has(c)) return true;
+  const t = (title ?? '').toLowerCase();
+  return (
+    t.includes('application filed') ||
+    t.includes('application granted') ||
+    t.includes('priority to') ||
+    t.includes('publication of')
+  );
 }
 
 export function mapCountryStatus(status: string | undefined): LegalCategory | null {

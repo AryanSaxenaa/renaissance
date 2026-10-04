@@ -1,5 +1,11 @@
 import type { Confidence, StatusEvent, StatusMember, StatusReport, Verdict } from '../../shared/types.js';
-import { isClosingEvent, isFeeEvent, mapCountryStatus, normaliseLegalStatus } from './vocab.js';
+import {
+  isClosingEvent,
+  isFeeEvent,
+  isRoutineTimelineEvent,
+  mapCountryStatus,
+  normaliseLegalStatus,
+} from './vocab.js';
 import type { PatentDetails, WorldwideApplication } from './types.js';
 
 export type StatusInput = {
@@ -93,7 +99,8 @@ export function computeStatusReport(input: StatusInput): StatusReport {
   const events: StatusEvent[] = (details.legal_events ?? []).map((e) => {
     const code = e.code ?? '';
     const title = e.title ?? '';
-    const recognised = isClosingEvent(code, title) || isFeeEvent(code, title);
+    const recognised =
+      isClosingEvent(code, title) || isFeeEvent(code, title) || isRoutineTimelineEvent(code, title);
     if (!recognised && (code || title)) unrecognised.push(code || title);
     return { code, title, date: e.date ?? '', recognised };
   });
