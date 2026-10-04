@@ -16,7 +16,7 @@ interface AppLayoutProps {
 }
 
 const navItems = [
-  { path: '/', label: 'PATENT SEARCH', icon: Database },
+  { path: '/search', label: 'PATENT SEARCH', icon: Database },
   { path: '/laboratory', label: 'REMIX LABORATORY', icon: FlaskConical },
   { path: '/archive', label: 'ARCHIVE LIBRARY', icon: BookOpen },
 ];
@@ -26,7 +26,6 @@ const subNavItems = [
 ];
 
 export default function AppLayout({ children, sidebar }: AppLayoutProps) {
-  const user = { handle: 'PUBLIC OPERATOR' };
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -69,8 +68,8 @@ export default function AppLayout({ children, sidebar }: AppLayoutProps) {
 
         {/* Public demo status */}
         <div className="text-right text-[10px] tracking-widest">
-          <p className="opacity-40">DEMO ACCESS</p>
-          <p className="text-amber-glow">{user.handle}</p>
+          <p className="opacity-40">SESSION</p>
+          <p className="text-amber-glow">Anonymous owner</p>
         </div>
       </header>
 
@@ -123,17 +122,15 @@ export default function AppLayout({ children, sidebar }: AppLayoutProps) {
           </nav>
 
           {/* New Mission Button */}
-          {user && (
-            <div className="pt-6 border-t border-technical-white/10">
-              <Link
-                to="/"
-                className="metal-plate w-full py-3 text-xs tracking-widest flex items-center justify-center gap-2"
-              >
-                <PlusSquare className="w-4 h-4" />
-                NEW MISSION
-              </Link>
-            </div>
-          )}
+          <div className="pt-6 border-t border-technical-white/10">
+            <Link
+              to="/search"
+              className="metal-plate w-full py-3 text-xs tracking-widest flex items-center justify-center gap-2"
+            >
+              <PlusSquare className="w-4 h-4" />
+              NEW SEARCH
+            </Link>
+          </div>
         </aside>
 
         {/* Main Content */}

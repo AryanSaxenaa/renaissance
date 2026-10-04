@@ -1,0 +1,12 @@
+{
+  "search_metadata": {
+    "id": "replay-shopping-001",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/replay-shopping-001.json"
+  },
+  "shopping_results": [
+    { "title": "Governor spare kit", "source": "Industrial Supply Co", "extracted_price": 1200 },
+    { "title": "Centrifugal governor assembly", "source": "Mechanical Parts India", "extracted_price": 3500 },
+    { "title": "Vintage governor rebuild", "source": "Industrial Supply Co", "extracted_price": 890 }
+  ]
+}

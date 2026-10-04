@@ -1,0 +1,26 @@
+[
+  {
+    "name": "R1_active_own",
+    "synthetic": true,
+    "now": "2026-01-01",
+    "expected": { "headline": "IN_FORCE", "confidence": "HIGH", "rules": ["R1"] },
+    "details": {
+      "patent_id": "SYN-R1",
+      "worldwide_applications": [{ "country_code": "US", "application_number": "1", "filing_date": "2010-01-01", "legal_status_cat": "active", "this_app": true }],
+      "legal_events": []
+    }
+  },
+  {
+    "name": "R2_likely_free_high",
+    "synthetic": true,
+    "now": "2026-01-01",
+    "country_status": { "US": "NOT_ACTIVE" },
+    "expected": { "headline": "LIKELY_FREE", "confidence": "HIGH", "rules": ["R2"] },
+    "details": {
+      "patent_id": "SYN-R2",
+      "filing_date": "1970-01-01",
+      "worldwide_applications": [{ "country_code": "US", "application_number": "1", "filing_date": "1970-01-01", "legal_status_cat": "not active", "this_app": true }],
+      "legal_events": [{ "code": "EXP", "title": "Expired", "date": "1995-01-01" }]
+    }
+  }
+]

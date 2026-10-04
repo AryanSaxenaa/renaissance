@@ -1,0 +1,11 @@
+{
+  "search_metadata": {
+    "id": "replay-scholar-001",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/replay-scholar-001.json"
+  },
+  "organic_results": [
+    { "title": "Analysis of centrifugal governor dynamics", "year": 2022 },
+    { "title": "Modern control of legacy governor mechanisms", "year": 2021 }
+  ]
+}

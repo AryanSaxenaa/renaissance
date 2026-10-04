@@ -1,0 +1,11 @@
+{
+  "search_metadata": {
+    "id": "replay-maps-pune-001",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/replay-maps-pune-001.json"
+  },
+  "local_results": [
+    { "title": "Precision Mechanics Pune", "type": "Manufacturer" },
+    { "title": "Western India Fabricators", "type": "Machine shop" }
+  ]
+}

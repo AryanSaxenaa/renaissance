@@ -1,0 +1,27 @@
+{
+  "search_metadata": {
+    "id": "replay-details-us4085846",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/replay-details-us4085846.json"
+  },
+  "patent_details": {
+    "title": "Speed control system for a centrifugal governor",
+    "abstract": "A mechanical governor uses flyweights to modulate fuel flow.",
+    "filing_date": "1976-05-10",
+    "publication_date": "1978-04-25",
+    "claims": ["A centrifugal governor comprising a rotating spindle and pivoting flyweights."],
+    "worldwide_applications": [
+      {
+        "country_code": "US",
+        "application_number": "US567890",
+        "filing_date": "1976-05-10",
+        "legal_status_cat": "not active",
+        "this_app": true
+      }
+    ],
+    "parent_applications": [],
+    "legal_events": [
+      { "code": "EXP", "title": "Expired", "date": "1998-05-10" }
+    ]
+  }
+}

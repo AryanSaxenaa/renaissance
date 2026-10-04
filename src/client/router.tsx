@@ -12,6 +12,10 @@ const publicRoutes: RouteObject[] = [
     Component: lazy(() => import('./pages/renaissance/PatentSearchPage'))
   },
   {
+    path: '/dossier/:scanId',
+    Component: lazy(() => import('./pages/renaissance/DossierPage'))
+  },
+  {
     path: '/laboratory',
     Component: lazy(() => import('./pages/renaissance/LaboratoryPage'))
   },
@@ -22,6 +26,10 @@ const publicRoutes: RouteObject[] = [
   {
     path: '/archive',
     Component: lazy(() => import('./pages/renaissance/ArchivePage'))
+  },
+  {
+    path: '/archive/:projectId',
+    Component: lazy(() => import('./pages/renaissance/ProjectPage'))
   },
   {
     path: '/settings',

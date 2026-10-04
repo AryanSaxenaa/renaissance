@@ -23,8 +23,8 @@ export default function LandingPage() {
           <div className="hidden md:flex items-center gap-10">
             <a className="text-xs font-medium text-technical-white/70 hover:text-white transition-colors tracking-widest cursor-pointer" onClick={() => navigate('/archive')}>01. ARCHIVES</a>
             <a className="text-xs font-medium text-technical-white/70 hover:text-white transition-colors tracking-widest cursor-pointer" onClick={() => navigate('/search')}>02. SYNTHESIS</a>
-            <a className="text-xs font-medium text-technical-white/70 hover:text-white transition-colors tracking-widest cursor-pointer" onClick={() => navigate('/laboratory')}>03. LABORATORY</a>
-            <a className="text-xs font-medium text-technical-white/70 hover:text-white transition-colors tracking-widest" href="#pricing">04. PRICING</a>
+            <a className="text-xs font-medium text-technical-white/70 hover:text-white transition-colors tracking-widest cursor-pointer" onClick={() => navigate('/archive')}>03. ARCHIVE</a>
+            <a className="text-xs font-medium text-technical-white/70 hover:text-white transition-colors tracking-widest cursor-pointer" onClick={() => navigate('/settings')}>04. SETTINGS</a>
           </div>
           <button
             onClick={handleEnterLab}
@@ -50,7 +50,7 @@ export default function LandingPage() {
               Reborn <br/>From The <br/><span className="text-technical-white/40">Archives</span>
             </h1>
             <p className="text-technical-white/80 text-lg md:text-xl max-w-md font-light leading-relaxed">
-              Remix the past to engineer the future with The Industrial Alchemist. Advanced AI synthesis of expired patents and mechanical blueprints.
+              Turn old mechanisms into cited, one-page design briefs. Legal status from patent records—not filing-date guesses—with SerpApi receipts on every claim.
             </p>
             <div className="pt-4">
               <button

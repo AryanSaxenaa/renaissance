@@ -1,0 +1,24 @@
+{
+  "search_metadata": {
+    "id": "replay-patents-search-001",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/replay-patents-search-001.json"
+  },
+  "organic_results": [
+    {
+      "patent_id": "US-US4085846-A",
+      "title": "Speed control system for a centrifugal governor",
+      "filing_date": "1976-05-10",
+      "publication_date": "1978-04-25",
+      "country_status": { "US": "NOT_ACTIVE" },
+      "snippet": "A governor mechanism for regulating rotational speed."
+    },
+    {
+      "patent_id": "US-US3212345-A",
+      "title": "Centrifugal governor linkage",
+      "filing_date": "1962-03-01",
+      "publication_date": "1965-10-12",
+      "country_status": { "US": "NOT_ACTIVE" }
+    }
+  ]
+}

@@ -31,7 +31,7 @@ export default function BlueprintCanvas({
   svgContent,
   blueprintImageBase64,
   modernizations = [],
-  properties,
+  properties: _properties,
   className,
 }: BlueprintCanvasProps) {
   // Default blueprint SVG if none provided
