@@ -2,6 +2,7 @@
   "name": "renaissance",
   "private": true,
   "version": "0.1.0",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "build": "npm run build:client && npm run build:server",
