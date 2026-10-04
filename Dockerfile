@@ -12,6 +12,7 @@ COPY package*.json ./
 RUN npm ci --omit=dev
 COPY --from=build /app/dist ./dist
 COPY fixtures ./fixtures
+COPY data ./data
 COPY src/server/store/migrations ./dist/server/store/migrations
 RUN mkdir -p /app/.data && chown -R node:node /app/.data
 USER node
