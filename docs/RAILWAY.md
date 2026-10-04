@@ -1,27 +1,39 @@
 # Railway deployment
 
-## Services
+Single service serves the Express API and the Vite-built client (`dist/client`).
 
-| Service | Notes |
-|---------|--------|
-| `renaissance` | Dockerfile at repo root; serves API + `dist/client` |
-| Postgres (plugin) | `DATABASE_URL=${{Postgres.DATABASE_URL}}`, set `RENAISSANCE_STORE=postgres` |
+## Service
 
-## Variables (production)
+| Item | Value |
+|------|--------|
+| Dockerfile | Repo root |
+| Health | `GET /health` |
+| Ready | `GET /health/ready` (file or Postgres store) |
 
-See `.env.example`. Required for public live demo:
+## Variables (production live demo)
 
-- `PUBLIC_DEMO_MODE=true`
-- `ACCESS_CODE` (secret)
-- `SERPAPI_API_KEY`
-- `OPENROUTER_API_KEY` (optional; replay draft works without LLM)
+See `.env.example`. Typical production set:
 
-## Health
+| Variable | Purpose |
+|----------|---------|
+| `NODE_ENV` | `production` |
+| `RENAISSANCE_MODE` | `live` |
+| `SERPAPI_API_KEY` | **Required** for live SerpApi engines |
+| `PUBLIC_DEMO_MODE` | `true` to require access code on search/scans |
+| `ACCESS_CODE` | Secret; users enter on search page (`X-Access-Code`) |
+| `OPENROUTER_API_KEY` | Optional; LLM briefs (deterministic draft if unset) |
+| `OPENROUTER_MODEL` | e.g. `deepseek/deepseek-chat` |
+| `RENAISSANCE_STORE` | `file` (default) or `pg` with `DATABASE_URL` |
+| `RENAISSANCE_DATA_DIR` | Writable path for file store (Docker: `/app/.data`) |
+| `LOG_LEVEL` | `info` |
 
-- `GET /health` — liveness
-- `GET /health/ready` — store readiness
+Optional Postgres plugin: set `DATABASE_URL=${{Postgres.DATABASE_URL}}` and `RENAISSANCE_STORE=pg` for durable projects/scans.
 
-## Local production smoke test
+## Docker image contents
+
+Includes `fixtures/replay/`, `data/cities.json`, and built client (including `/demo/shepherd-pack.json` for Shepherd mode).
+
+## Local production smoke
 
 ```bash
 docker build -t renaissance .
@@ -29,3 +41,7 @@ docker run -p 3000:3000 -e RENAISSANCE_MODE=replay renaissance
 ```
 
 Open http://localhost:3000
+
+## Deploy
+
+Link repo to Railway, set variables above, deploy from `main`. `railway.json` points health check to `/health`.

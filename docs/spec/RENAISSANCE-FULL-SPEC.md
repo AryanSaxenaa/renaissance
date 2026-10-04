@@ -2,6 +2,8 @@
 
 One file for the Cursor agent. Sections are the seven pack files, concatenated unchanged.
 
+**Submission (2026):** Official track **Knowledge & Public Interest** · SerpApi engines & checklist → [../HACKATHON.md](../HACKATHON.md) · User-facing [../../README.md](../../README.md).
+
 ## Table of contents
 
 1. `00-README-for-agent.md` — 00 — READ ME FIRST (Cursor agent): **Renaissance × SerpApi**
@@ -750,7 +752,7 @@ SERPAPI_API_KEY=<secret>
 SERPAPI_MONTHLY_HARD_CAP=240   DAILY_CREDIT_CAP=15   BRIEF_CREDIT_CAP=8   SERPAPI_MAX_PER_HOUR=40
 OPENROUTER_API_KEY=<secret>   OPENROUTER_MODEL=<model slug>        # LLM; DEEPSEEK_* alternative as in baseline
 DATABASE_URL=${{Postgres.DATABASE_URL}}
-RENAISSANCE_STORE=postgres         # postgres | file
+RENAISSANCE_STORE=pg               # pg | file
 RETENTION_DAYS=14
 DEFAULT_CITY=Pune
 LOG_LEVEL=info

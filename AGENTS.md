@@ -1,6 +1,6 @@
 # Contributing to Renaissance
 
-Renaissance is a SerpApi hackathon project: cited free-to-use design briefs from patent and market evidence.
+Renaissance is a **[SerpApi India Hackathon 2026](https://serpapi.github.io/serpapi-india-hackathon-2026/)** project (**Track: Knowledge & Public Interest**). It produces cited design briefs from **SerpApi** patent, market, scholar, and news evidence. See [docs/HACKATHON.md](docs/HACKATHON.md).
 
 ## Development
 
@@ -9,12 +9,13 @@ npm ci
 npm run dev
 ```
 
-With no `SERPAPI_API_KEY`, the server runs in **replay mode** (fixtures under `fixtures/replay/`). API on port 3000; Vite on 5173 with `/api` proxied.
+With no `SERPAPI_API_KEY`, the server runs in **replay mode** (`fixtures/replay/`). API on port 3000; Vite on 5173 with `/api` proxied.
 
 ## Architecture
 
-- `src/server/` — Express 5 REST API (`/api/v1/*`), SerpApi client, status engine, brief pipeline
-- `src/client/` — React 18 + Vite + Tailwind 3
+- `src/server/serpapi/` — **only** SerpApi entry point (client, cache, ledger, budget)
+- `src/server/` — Express 5 REST (`/api/v1/*`), status engine, brief pipeline
+- `src/client/` — React 18 + Vite + Tailwind 3 (Shepherd tour uses `/demo/shepherd-pack.json`)
 - `src/shared/types.ts` — shared types
 - `docs/spec/` — full build specification
 

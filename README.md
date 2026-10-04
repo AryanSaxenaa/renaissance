@@ -1,10 +1,14 @@
 # Renaissance
 
-Renaissance turns old patent mechanisms into **cited, one-page design briefs** for engineers and small teams. It uses SerpApi (Google Patents, Shopping, Maps, Scholar, News) for evidence, a **deterministic legal-status engine** (not “filing + 20 years”), and a brief pipeline where **every number must appear in a cited fact**.
+**SerpApi India Hackathon 2026** · Track **Knowledge & Public Interest** · Submit by **10 Oct 2026, 23:59 IST**
 
-**Not legal advice.** Status is evidence-based and uncertain; receipts are shown where available.
+Renaissance turns old patent mechanisms into **cited, one-page design briefs** for engineers and small teams. **SerpApi is the evidence layer**: Google Patents (search + details), Shopping, Maps, Scholar, and News feed a deterministic legal-status engine and a brief pipeline where **every number must appear in a cited fact**.
 
-## See it in under 3 minutes (no keys, no database)
+**Not legal advice.** Status is evidence-based; receipts (`search_metadata.id`) are shown where available.
+
+Full hackathon framing, track rationale, and submission checklist: **[docs/HACKATHON.md](docs/HACKATHON.md)**.
+
+## See it in under 3 minutes (no SerpApi key)
 
 ```bash
 git clone https://github.com/AryanSaxenaa/renaissance.git
@@ -13,67 +17,93 @@ npm ci
 npm run dev
 ```
 
-Open [http://localhost:5173/search](http://localhost:5173/search) → sample query **centrifugal governor** → open a hit → dossier tabs (Status, Market, Literature, News, Brief, Evidence).
+Open [http://localhost:5173](http://localhost:5173) → optional **Shepherd mode** tour (preloaded replay dossier) or **Skip** → [Search](http://localhost:5173/search) → sample **centrifugal governor** → open a hit → dossier tabs (Status, Market, Literature, News, Brief, Evidence).
 
-Replay mode is automatic when `SERPAPI_API_KEY` is unset.
+Replay mode is automatic when `SERPAPI_API_KEY` is unset (`fixtures/replay/`).
 
-### Live mode (optional; spends SerpApi credits)
+## Live SerpApi mode (optional; spends credits)
 
-Copy `.env.example` to `.env.local`, set `SERPAPI_API_KEY`, `RENAISSANCE_MODE=live`, and (for public demos) `ACCESS_CODE`. Enter the access code on the search page when prompted.
+1. Copy `.env.example` → `.env.local`
+2. Set `SERPAPI_API_KEY` ([free tier](https://serpapi.com/users/sign_up?plan=free&utm_source=india_hackathon_26) includes monthly credits)
+3. Set `RENAISSANCE_MODE=live`
+4. For a public demo: `PUBLIC_DEMO_MODE=true` and a strong `ACCESS_CODE` — enter the code on the search page when prompted
+5. Optional LLM briefs: `OPENROUTER_API_KEY` (falls back to deterministic draft if unset)
 
-## How SerpApi is used
+Record replay fixtures after a live run (uses credits):
+
+```bash
+npm run fixtures:freeze -- "centrifugal governor"
+npm run fixtures:freeze -- "centrifugal governor" --minimal   # ~2 credits
+```
+
+Regenerate the Shepherd tour pack from curated replay fixtures:
+
+```bash
+npm run shepherd:export
+```
+
+## How SerpApi powers the product
 
 | Engine | Role | Typical credits |
 |--------|------|-----------------|
 | `google_patents` | Candidate discovery (`before=filing:…`, grants) | 1 / search |
-| `google_patents_details` | Legal status source | 1 / patent |
-| `google_shopping` | Market listings (India domain) | 1 |
-| `google_maps` | Nearby makers | 1 |
-| `google_scholar` | Recent literature | 1 |
-| `google_news` | Assignee/topic signals | 1 |
+| `google_patents_details` | Family members, legal events → status rules R1–R8 | 1 / patent |
+| `google_shopping` | Market listings (India: `google.co.in`, `gl=in`) | 1 |
+| `google_maps` | Nearby makers (city from `data/cities.json`) | 1 |
+| `google_scholar` | Recent literature (`as_ylo` from filing window) | 1 |
+| `google_news` | Topic / assignee signals | 1 |
 
-All calls go through `src/server/serpapi/` (cache, ledger, budget caps, redaction). Each live call records `search_metadata.id`.
+Implementation: **`src/server/serpapi/`** only (cache, ledger, budget caps, redaction). REST API: `/api/v1/search`, `/api/v1/scans`, evidence bundle. No SerpApi calls from the client.
 
 ## What makes it different
 
-1. **Evidence-based status** with confidence and a “not checked” list — never “safe to copy.”
-2. **Zero uncited numbers** in brief claims (deterministic grounding + verifier).
-3. **Replay mode** with fixtures for judges (`fixtures/replay/`).
+1. **Evidence-based patent status** with confidence and a “not checked” list — never “safe to copy.”
+2. **Zero uncited numbers** in brief claims (grounding + verifier).
+3. **Replay mode + Shepherd tour** so judges can try it without keys.
 4. **Re-scan** and diff for saved projects (anonymous owner cookie).
 
-## Evaluation (small, honest)
+## Architecture
 
-Synthetic mini-set (`npm run eval -- --set=tests-mini`) writes `eval/report.json` and powers `/evaluation`. Expand with hand-labelled patents in `eval/labels/*.jsonl` (see `docs/EVAL.md`).
+| Layer | Stack |
+|-------|--------|
+| API | Express 5, `/api/v1/*`, `src/server/` |
+| Client | React 18, Vite, Tailwind 3, `src/client/` |
+| Shared types | `src/shared/types.ts` |
+| Spec | `docs/spec/RENAISSANCE-FULL-SPEC.md` |
 
-Latest mini-set metrics are in `eval/report.json` after you run eval — do not copy numbers into docs without running it.
-
-## Deploy on Railway
-
-Single Docker service serves API + built client. See `docs/RAILWAY.md`. Health: `GET /health`.
-
-## Pre-existing work
-
-See `docs/PRE_EXISTING_WORK.md`. Baseline tag: `pre-hackathon-baseline`.
-
-## AI-use disclosure
-
-See `AI_USE.md`.
-
-## Tests
+## Evaluation
 
 ```bash
-npm test
-npm run secret-scan
 npm run eval -- --set=tests-mini
-npm run build
 ```
 
-Record new replay fixtures (spends credits):
+Writes `eval/report.json` and powers `/evaluation`. Hand-labelled patents: `eval/labels/hand.jsonl` — see [docs/EVAL.md](docs/EVAL.md). **Do not copy metric numbers into docs without running eval.**
+
+## Deploy
+
+Single Docker image (API + static client). [docs/RAILWAY.md](docs/RAILWAY.md) · Health: `GET /health` · Ready: `GET /health/ready`
+
+## Tests & hygiene
 
 ```bash
-npm run fixtures:freeze -- "your query"
+npm test                 # 45 unit/integration tests
+npm run secret-scan
+npm run build
+npx tsx scripts/api-smoke.ts   # optional; set BASE_URL + ACCESS_CODE for live smoke
 ```
+
+## Other docs
+
+| Doc | Purpose |
+|-----|---------|
+| [docs/HACKATHON.md](docs/HACKATHON.md) | Track, SerpApi mapping, submission checklist |
+| [docs/RAILWAY.md](docs/RAILWAY.md) | Production env vars |
+| [docs/EVAL.md](docs/EVAL.md) | Status metrics |
+| [docs/FINAL_CHECK.md](docs/FINAL_CHECK.md) | Pre-submit gate |
+| [docs/PRE_EXISTING_WORK.md](docs/PRE_EXISTING_WORK.md) | Baseline tag `pre-hackathon-baseline` |
+| [AI_USE.md](AI_USE.md) | AI disclosure |
+| [NOTICE.md](NOTICE.md) | Licences |
 
 ## Licences
 
-See `NOTICE.md`. Third-party APIs: SerpApi, OpenRouter (optional LLM).
+See [NOTICE.md](NOTICE.md). Third-party APIs: **SerpApi** (required for live data), OpenRouter (optional LLM).

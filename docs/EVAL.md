@@ -1,5 +1,7 @@
 # Evaluation
 
+Status metrics support the **Knowledge & Public Interest** hackathon story: evidence-based patent status vs naive heuristics. SerpApi **Google Patents Details** feeds the engine under test; eval itself runs offline on fixtures and labelled JSON.
+
 ## Synthetic mini set (offline)
 
 ```bash
